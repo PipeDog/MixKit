@@ -12,27 +12,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// @brief 回调状态码类型约束
-typedef NSInteger MKCallbackCode NS_TYPED_ENUM;
-
-/// @brief 成功状态码，值为 0
-MK_EXTERN MKCallbackCode const MKCallbackCodeSuccess;
-
 /// @brief 回调数据实体类型约束
-typedef NSDictionary *MKResponse;
-
-/// @brief 回调数据包装函数
-/// @param code 回调状态码
-/// @param message 描述信息
-/// @param data 回调数据实体
-/// @return 完整回调数据
-MK_EXTERN MKResponse MKResponseMake(MKCallbackCode code,
-                                    NSString * _Nullable message,
-                                    NSDictionary * _Nullable data);
+typedef NSArray *MKResponse;
 
 /// @brief 桥接回调类型规范
 typedef void (^MKResponseCallback)(MKResponse response);
-
 
 /// @brief 桥接模块信息存储结构
 typedef struct {

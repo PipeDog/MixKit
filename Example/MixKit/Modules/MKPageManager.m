@@ -8,6 +8,7 @@
 
 #import "MKPageManager.h"
 #import "MKUtil.h"
+#import "MKResponseWrapper.h"
 
 @implementation MKPageManager
 
@@ -24,6 +25,9 @@ MK_EXPORT_METHOD(setTitle, setTitleWithParams:callback:)
 - (void)setTitleWithParams:(NSDictionary *)params callback:(MKResponseCallback)callback {
     UIViewController *controller = MKGetPageByBridge(self.bridge);
     controller.title = params[@"title"];
+    
+    NSDictionary *resp = MKResponseMake(MKCallbackCodeSuccess, @"Set title success!", nil);
+    !callback ?: callback(@[resp]);
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "MKAlertManager.h"
 #import <MKWebView.h>
 #import "MKUtil.h"
+#import "MKResponseWrapper.h"
 
 @implementation MKAlertManager
 
@@ -28,8 +29,8 @@ MK_EXPORT_METHOD(showAlert, showAlertWithParams:callback:)
     UIViewController *controller = MKGetPageByBridge(self.bridge);
     [controller presentViewController:alertController animated:YES completion:nil];
 
-    MKResponse response = MKResponseMake(MKCallbackCodeSuccess, @"Success", nil);
-    !callback ?: callback(response);
+    NSDictionary *resp = MKResponseMake(MKCallbackCodeSuccess, @"Success", nil);
+    !callback ?: callback(@[resp]);
 }
 
 @end

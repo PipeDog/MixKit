@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSDictionary *MKResponse;
+typedef NSArray *MKResponse;
 typedef void (^MKResponseCallback)(MKResponse response);
 
 @protocol MKBridge;

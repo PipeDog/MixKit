@@ -36,7 +36,7 @@
             };
 
             MKAlertManager.showAlert(params, function (response) {
-                MKLogManager.log({msg: 'LOG' + response});
+                MKLogManager.log({msg: 'LOG' + JSON.stringify(response)});
             });
         }
 
@@ -54,7 +54,7 @@
             };
 
             MKLogManager.logMessage(params, function (response) {
-                MKLogManager.log({msg: 'LOG' + response});
+                MKLogManager.log({msg: 'LOG' + JSON.stringify(response)});
             });
         }
 
@@ -64,7 +64,7 @@
 
         function setTitle() {
             MKPageManager.setTitle({title: 'new title'}, function (response) {
-                MKLogManager.log({msg: 'LOG' + response});
+                MKLogManager.log({msg: 'LOG' + JSON.stringify(response)});
             });
         }
     

@@ -8,18 +8,6 @@
 
 #import "MKBridgeModule.h"
 
-MKCallbackCode const MKCallbackCodeSuccess = 0;
-
-MKResponse MKResponseMake(MKCallbackCode code,
-                          NSString * _Nullable message,
-                          NSDictionary * _Nullable data) {
-    NSMutableDictionary *response = [NSMutableDictionary dictionary];
-    response[@"code"] = @(code);
-    response[@"message"] = message ?: @"";
-    response[@"data"] = data ?: @{};
-    return response;
-}
-
 @implementation MKBridgeModule
 
 @end

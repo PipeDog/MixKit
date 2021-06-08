@@ -31,15 +31,15 @@ class NativeModules {
 
         switch (String(window.__mk_systemType)) {
             case '1': // iOS
-                console.log(`INFO: Send ios "${JSON.stringify(message)}"`);
+                console.log(`INFO: Send iOS "${JSON.stringify(message)}"`);
                 window.webkit.messageHandlers.MixKit.postMessage(message);
                 break;
             case '2': // Android
-                console.log(`INFO: Send android "${JSON.stringify(message)}"`);
+                console.log(`INFO: Send Android "${JSON.stringify(message)}"`);
                 window.MixKit.postMessage(JSON.stringify(message));
                 break;
             default: // Unknown
-                console.error('ERROR: Platform is not android or ios!');
+                console.error('ERROR: Platform is not android or iOS!');
                 break;
         }
     }
