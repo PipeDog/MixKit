@@ -1,0 +1,16 @@
+PODS:
+  - MixKit (0.1.0)
+
+DEPENDENCIES:
+  - MixKit (from `../`)
+
+EXTERNAL SOURCES:
+  MixKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MixKit: cba98e58559f80715b34ea8eb6fc47f38151950f
+
+PODFILE CHECKSUM: 7471e162e5d086ec3990d37a284e6a0dc94c6dc4
+
+COCOAPODS: 1.10.1

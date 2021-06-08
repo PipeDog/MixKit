@@ -7,13 +7,27 @@
 //
 
 #import "MKAppDelegate.h"
+#import <MKPerfMonitor.h>
+
+@interface MKAppDelegate () <MKPerfMonitorDelegate>
+
+@end
 
 @implementation MKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [MKPerfMonitor defaultMonitor].delegate = self;
+    [MKPerfMonitor defaultMonitor].autoFlushCount = 100;
+
     return YES;
+}
+
+- (void)perfMonitor:(MKPerfMonitor *)perfMonitor flushAllPerfRecords:(NSArray<NSDictionary *> *)perfRecords
+{
+    NSLog(@"%@", perfRecords);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

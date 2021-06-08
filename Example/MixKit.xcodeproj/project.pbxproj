@@ -24,6 +24,13 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		97A26D3C87176A5E6018778A /* Pods_MixKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A830C90A7B88C16AC334F97C /* Pods_MixKit_Tests.framework */; };
+		DD5BCA5A266F4C8400CB9E4E /* MKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCA59266F4C8400CB9E4E /* MKWebViewController.m */; };
+		DD5BCA63266F4E1800CB9E4E /* mix.js in Resources */ = {isa = PBXBuildFile; fileRef = DD5BCA62266F4E1800CB9E4E /* mix.js */; };
+		DD5BCA69266F4E4C00CB9E4E /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = DD5BCA68266F4E4C00CB9E4E /* demo.html */; };
+		DD5BCA70266F57C600CB9E4E /* MKAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCA6F266F57C600CB9E4E /* MKAlertManager.m */; };
+		DD5BCA75266F5BBC00CB9E4E /* MKLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCA74266F5BBC00CB9E4E /* MKLogManager.m */; };
+		DD5BCA7A266F604A00CB9E4E /* MKPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCA79266F604A00CB9E4E /* MKPageManager.m */; };
+		DD5BCA7F266F608F00CB9E4E /* MKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCA7E266F608F00CB9E4E /* MKUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		08A7E7A39047E5BC3FD9F13F /* Pods-MixKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixKit_Example.release.xcconfig"; path = "Target Support Files/Pods-MixKit_Example/Pods-MixKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		35F5D276D296F56EE5500808 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		35F5D276D296F56EE5500808 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MixKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,10 +69,22 @@
 		74518CC4DF6761A8A7F04A19 /* Pods-MixKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-MixKit_Example/Pods-MixKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87DF4B75DF03713A91BA2334 /* Pods-MixKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-MixKit_Tests/Pods-MixKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A6C699FD09B02C77A61AB787 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A6C699FD09B02C77A61AB787 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A830C90A7B88C16AC334F97C /* Pods_MixKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MixKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29575F40FD2E64E4945127A /* Pods_MixKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MixKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA16AD0D0DE7B2C70EB4D57 /* MixKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MixKit.podspec; path = ../MixKit.podspec; sourceTree = "<group>"; };
+		CEA16AD0D0DE7B2C70EB4D57 /* MixKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MixKit.podspec; path = ../MixKit.podspec; sourceTree = "<group>"; };
+		DD5BCA58266F4C8400CB9E4E /* MKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKWebViewController.h; sourceTree = "<group>"; };
+		DD5BCA59266F4C8400CB9E4E /* MKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKWebViewController.m; sourceTree = "<group>"; };
+		DD5BCA62266F4E1800CB9E4E /* mix.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mix.js; sourceTree = "<group>"; };
+		DD5BCA68266F4E4C00CB9E4E /* demo.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
+		DD5BCA6E266F57C600CB9E4E /* MKAlertManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKAlertManager.h; sourceTree = "<group>"; };
+		DD5BCA6F266F57C600CB9E4E /* MKAlertManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKAlertManager.m; sourceTree = "<group>"; };
+		DD5BCA73266F5BBC00CB9E4E /* MKLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKLogManager.h; sourceTree = "<group>"; };
+		DD5BCA74266F5BBC00CB9E4E /* MKLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKLogManager.m; sourceTree = "<group>"; };
+		DD5BCA78266F604A00CB9E4E /* MKPageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKPageManager.h; sourceTree = "<group>"; };
+		DD5BCA79266F604A00CB9E4E /* MKPageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKPageManager.m; sourceTree = "<group>"; };
+		DD5BCA7D266F608F00CB9E4E /* MKUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKUtil.h; sourceTree = "<group>"; };
+		DD5BCA7E266F608F00CB9E4E /* MKUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKUtil.m; sourceTree = "<group>"; };
 		F72D6525A754D93B32082A3A /* Pods-MixKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MixKit_Tests/Pods-MixKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +122,6 @@
 				F72D6525A754D93B32082A3A /* Pods-MixKit_Tests.debug.xcconfig */,
 				87DF4B75DF03713A91BA2334 /* Pods-MixKit_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,6 +162,9 @@
 		6003F593195388D20070C39A /* Example for MixKit */ = {
 			isa = PBXGroup;
 			children = (
+				DD5BCA6C266F4FC600CB9E4E /* Modules */,
+				DD5BCA61266F4DF800CB9E4E /* JS */,
+				DD5BCA57266F4C7200CB9E4E /* Web */,
 				6003F59C195388D20070C39A /* MKAppDelegate.h */,
 				6003F59D195388D20070C39A /* MKAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -195,6 +216,47 @@
 				A6C699FD09B02C77A61AB787 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		DD5BCA57266F4C7200CB9E4E /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				DD5BCA58266F4C8400CB9E4E /* MKWebViewController.h */,
+				DD5BCA59266F4C8400CB9E4E /* MKWebViewController.m */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		DD5BCA61266F4DF800CB9E4E /* JS */ = {
+			isa = PBXGroup;
+			children = (
+				DD5BCA62266F4E1800CB9E4E /* mix.js */,
+				DD5BCA68266F4E4C00CB9E4E /* demo.html */,
+			);
+			path = JS;
+			sourceTree = "<group>";
+		};
+		DD5BCA6C266F4FC600CB9E4E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DD5BCA82266F6A0700CB9E4E /* Util */,
+				DD5BCA6E266F57C600CB9E4E /* MKAlertManager.h */,
+				DD5BCA6F266F57C600CB9E4E /* MKAlertManager.m */,
+				DD5BCA73266F5BBC00CB9E4E /* MKLogManager.h */,
+				DD5BCA74266F5BBC00CB9E4E /* MKLogManager.m */,
+				DD5BCA78266F604A00CB9E4E /* MKPageManager.h */,
+				DD5BCA79266F604A00CB9E4E /* MKPageManager.m */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DD5BCA82266F6A0700CB9E4E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				DD5BCA7D266F608F00CB9E4E /* MKUtil.h */,
+				DD5BCA7E266F608F00CB9E4E /* MKUtil.m */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +320,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -277,6 +340,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5BCA63266F4E1800CB9E4E /* mix.js in Resources */,
+				DD5BCA69266F4E4C00CB9E4E /* demo.html in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -364,9 +429,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5BCA75266F5BBC00CB9E4E /* MKLogManager.m in Sources */,
+				DD5BCA7F266F608F00CB9E4E /* MKUtil.m in Sources */,
+				DD5BCA7A266F604A00CB9E4E /* MKPageManager.m in Sources */,
 				6003F59E195388D20070C39A /* MKAppDelegate.m in Sources */,
+				DD5BCA5A266F4C8400CB9E4E /* MKWebViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* MKViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				DD5BCA70266F57C600CB9E4E /* MKAlertManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

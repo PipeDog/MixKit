@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="mix.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
+
+    <title>title</title>
+    <style>
+        * {
+            font-size: 50px;
+        }
+        
+        .button {
+            height: 80px;
+            width: 90%;
+            padding: 50px;
+            background-color: #716600;
+            border: solid 1px #bde700;
+            border-radius: 5px;
+            font-size: 1em;
+            color: white
+        }
+    </style>
+
+    <script>
+        var vConsole = new VConsole();
+        let MKAlertManager = NativeModules.AlertManager;
+        let MKLogManager = NativeModules.LogManager;
+        let MKPageManager = NativeModules.PageManager;
+
+        function showAlert() {
+            let params = {
+                title: 'alert title',
+                message: 'This is alert message'
+            };
+
+            MKAlertManager.showAlert(params, function (response) {
+                MKLogManager.log({msg: 'LOG' + response});
+            });
+        }
+
+        function log() {
+            let params = {
+                msg: 'Log something here...'
+            };
+
+            MKLogManager.log(params);
+        }
+
+        function logThenCallback() {
+            let params = {
+                msg: 'Log something here...'
+            };
+
+            MKLogManager.logMessage(params, function (response) {
+                MKLogManager.log({msg: 'LOG' + response});
+            });
+        }
+
+        function goback() {
+            MKPageManager.goback();
+        }
+
+        function setTitle() {
+            MKPageManager.setTitle({title: 'new title'}, function (response) {
+                MKLogManager.log({msg: 'LOG' + response});
+            });
+        }
+    
+    </script>
+
+</head>
+
+<body>
+    </br>
+    <button class="button" type="button" onclick="showAlert()">showAlert</button>
+    </br>
+
+    <button class="button" type="button" onclick="log()">log</button>
+    </br>
+    <button class="button" type="button" onclick="logThenCallback()">logThenCallback</button>
+    </br>
+
+    <button class="button" type="button" onclick="goback()">goback</button>
+    </br>
+    <button class="button" type="button" onclick="setTitle()">setTitle</button>
+    </br>
+</body>
+
+</html>
