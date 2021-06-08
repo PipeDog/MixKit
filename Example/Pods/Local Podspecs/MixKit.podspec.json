@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of MixKit.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/liang/MixKit",
+  "homepage": "https://github.com/PipeDog/MixKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "liang": "leiliang0128@163.com"
   },
   "source": {
-    "git": "https://github.com/liang/MixKit.git",
+    "git": "https://github.com/PipeDog/MixKit",
     "tag": "0.1.0"
   },
   "platforms": {
