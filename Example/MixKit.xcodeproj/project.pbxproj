@@ -73,7 +73,7 @@
 		A6C699FD09B02C77A61AB787 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A830C90A7B88C16AC334F97C /* Pods_MixKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MixKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29575F40FD2E64E4945127A /* Pods_MixKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MixKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA16AD0D0DE7B2C70EB4D57 /* MixKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MixKit.podspec; path = ../MixKit.podspec; sourceTree = "<group>"; };
+		CEA16AD0D0DE7B2C70EB4D57 /* MixKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MixKit.podspec; path = ../MixKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DD5BCA58266F4C8400CB9E4E /* MKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKWebViewController.h; sourceTree = "<group>"; };
 		DD5BCA59266F4C8400CB9E4E /* MKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKWebViewController.m; sourceTree = "<group>"; };
 		DD5BCA62266F4E1800CB9E4E /* mix.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mix.js; sourceTree = "<group>"; };
