@@ -49,7 +49,7 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
     NSString *formattedLog = [NSString stringWithFormat:@"%@ [%@][%@|%@|%lu] %@",
                               [_dateFormatter stringFromDate:[NSDate date]],
                               MKLogGetFlag(level),
-                              filename, funcName, line,
+                              filename, funcName, (unsigned long)line,
                               message];
 
     switch (level) {

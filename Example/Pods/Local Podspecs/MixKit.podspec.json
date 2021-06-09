@@ -1,7 +1,7 @@
 {
   "name": "MixKit",
   "version": "0.1.0",
-  "summary": "A short description of MixKit.",
+  "summary": "MixKit is a lightweight hybrid framework",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/PipeDog/MixKit",
   "license": {
@@ -12,7 +12,7 @@
     "liang": "leiliang0128@163.com"
   },
   "source": {
-    "git": "https://github.com/PipeDog/MixKit",
+    "git": "https://github.com/PipeDog/MixKit.git",
     "tag": "0.1.0"
   },
   "platforms": {
