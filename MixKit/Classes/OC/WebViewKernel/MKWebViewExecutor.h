@@ -11,8 +11,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class MKWebViewBridge;
-
 /// @class MKWebViewExecutor
 /// @brief webView 执行器
 @interface MKWebViewExecutor : MKExecutor

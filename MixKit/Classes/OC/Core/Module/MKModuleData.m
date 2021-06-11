@@ -15,7 +15,7 @@
 
 - (instancetype)initWithModuleName:(NSString *)moduleName moduleClass:(Class)moduleClass {
     if (!moduleName.length || !moduleClass) {
-        MKLogFatal(@"The arguments `moduleName` and `moduleClass` should be valid!");
+        NSAssert(NO, @"The arguments `moduleName` and `moduleClass` should be valid!");
         return nil;
     }
 
@@ -47,8 +47,8 @@
         
         NSArray *infos = ((NSArray *(*)(id, SEL))objc_msgSend)(moduleClass, exportSel);
         if (infos.count != 2) {
-            MKLogFatal(@"Export method [%@] error",
-                         [methodName substringFromIndex:@"__MK_export_method_".length]);
+            NSAssert(NO, @"Export method [%@] error",
+                     [methodName substringFromIndex:@"__MK_export_method_".length]);
             continue;
         }
         
@@ -61,7 +61,7 @@
         SEL nativeSel = NSSelectorFromString(infos[1]);
         Method nativeMethod = class_getInstanceMethod(moduleClass, nativeSel);
         if (!nativeMethod) {
-            MKLogFatal(@"Can not find method named `%@`!", NSStringFromSelector(nativeSel));
+            NSAssert(NO, @"Can not find method named `%@`!", NSStringFromSelector(nativeSel));
             continue;
         }
         

@@ -28,6 +28,7 @@
         let MKAlertManager = NativeModules.AlertManager;
         let MKLogManager = NativeModules.LogManager;
         let MKPageManager = NativeModules.PageManager;
+        let MKConvertDataModule = NativeModules.ConvertDataModule;
 
         function showAlert() {
             let params = {
@@ -58,6 +59,10 @@
             });
         }
 
+        function logDefault() {
+            MKLogManager.logDefault();
+        }
+
         function goback() {
             MKPageManager.goback();
         }
@@ -67,6 +72,189 @@
                 MKLogManager.log({msg: 'LOG' + JSON.stringify(response)});
             });
         }
+
+        function testDataConvert() {
+            MKConvertDataModule.testDictionary({key1: 'value1', key2: 13, key3: 19.8});
+            MKConvertDataModule.testString('test string');
+
+            MKConvertDataModule.testBOOL(true);
+            MKConvertDataModule.testBOOL(false);
+            MKConvertDataModule.testBOOL('True');
+            MKConvertDataModule.testBOOL('False');
+            MKConvertDataModule.testBOOL('true');
+            MKConvertDataModule.testBOOL('false');
+            MKConvertDataModule.testBOOL('YES');
+            MKConvertDataModule.testBOOL('NO');
+
+            MKConvertDataModule.test_Bool(true);
+            MKConvertDataModule.test_Bool(false);
+            MKConvertDataModule.test_Bool('True');
+            MKConvertDataModule.test_Bool('False');
+            MKConvertDataModule.test_Bool('true');
+            MKConvertDataModule.test_Bool('false');
+            MKConvertDataModule.test_Bool('YES');
+            MKConvertDataModule.test_Bool('NO');
+
+            MKConvertDataModule.testDouble(19.0);
+            MKConvertDataModule.testDouble(19.12345678);
+            MKConvertDataModule.testDouble(-1009.987654321);
+
+            MKConvertDataModule.testLongDouble(19.0);
+            MKConvertDataModule.testLongDouble(19.12345678);
+            MKConvertDataModule.testLongDouble(-1009.987654321);
+
+            MKConvertDataModule.testInt(19.0);
+            MKConvertDataModule.testInt(19.12345678);
+            MKConvertDataModule.testInt(-1009.987654321);
+            MKConvertDataModule.testInt(111);
+            MKConvertDataModule.testInt(0);
+            MKConvertDataModule.testInt(-111);
+
+            MKConvertDataModule.testInt8(19.0);
+            MKConvertDataModule.testInt8(19.12345678);
+            MKConvertDataModule.testInt8(-254.987654321);
+            MKConvertDataModule.testInt8(111);
+            MKConvertDataModule.testInt8(0);
+            MKConvertDataModule.testInt8(-111);
+
+            MKConvertDataModule.testInt16(19.0);
+            MKConvertDataModule.testInt16(19.12345678);
+            MKConvertDataModule.testInt16(-254.987654321);
+            MKConvertDataModule.testInt16(111);
+            MKConvertDataModule.testInt16(0);
+            MKConvertDataModule.testInt16(-111);
+
+            MKConvertDataModule.testInt32(19.0);
+            MKConvertDataModule.testInt32(19.12345678);
+            MKConvertDataModule.testInt32(-254.987654321);
+            MKConvertDataModule.testInt32(111);
+            MKConvertDataModule.testInt32(0);
+            MKConvertDataModule.testInt32(-111);
+
+            MKConvertDataModule.testInt64(19.0);
+            MKConvertDataModule.testInt64(19.12345678);
+            MKConvertDataModule.testInt64(-254.987654321);
+            MKConvertDataModule.testInt64(111);
+            MKConvertDataModule.testInt64(0);
+            MKConvertDataModule.testInt64(-111);
+
+            MKConvertDataModule.testUint8(19.0);
+            MKConvertDataModule.testUint8(19.12345678);
+            MKConvertDataModule.testUint8(-254.987654321);
+            MKConvertDataModule.testUint8(111);
+            MKConvertDataModule.testUint8(0);
+            MKConvertDataModule.testUint8(-111);
+
+            MKConvertDataModule.testUint16(19.0);
+            MKConvertDataModule.testUint16(19.12345678);
+            MKConvertDataModule.testUint16(-254.987654321);
+            MKConvertDataModule.testUint16(111);
+            MKConvertDataModule.testUint16(0);
+            MKConvertDataModule.testUint16(-111);
+
+            MKConvertDataModule.testUint32(19.0);
+            MKConvertDataModule.testUint32(19.12345678);
+            MKConvertDataModule.testUint32(-254.987654321);
+            MKConvertDataModule.testUint32(111);
+            MKConvertDataModule.testUint32(0);
+            MKConvertDataModule.testUint32(-111);
+
+            MKConvertDataModule.testUint64(19.0);
+            MKConvertDataModule.testUint64(19.12345678);
+            MKConvertDataModule.testUint64(-254.987654321);
+            MKConvertDataModule.testUint64(111);
+            MKConvertDataModule.testUint64(0);
+            MKConvertDataModule.testUint64(-111);
+
+            MKConvertDataModule.testCGPoint({x: 13.5, y: 20.9});
+            MKConvertDataModule.testCGPoint({x: -13.5, y: 20.9});
+            MKConvertDataModule.testCGPoint({x: 13.5, y: -20.9});
+            MKConvertDataModule.testCGPoint({x: -13.5, y: -20.9});
+
+            MKConvertDataModule.testCGPoint({l: 13.5, t: 20.9});
+            MKConvertDataModule.testCGPoint({l: -13.5, t: 20.9});
+            MKConvertDataModule.testCGPoint({l: 13.5, t: -20.9});
+            MKConvertDataModule.testCGPoint({l: -13.5, t: -20.9});
+
+            MKConvertDataModule.testCGPoint([13.5, 20.8]);
+            MKConvertDataModule.testCGPoint([13.5, -20.8]);
+            MKConvertDataModule.testCGPoint([-13.5, 20.8]);
+            MKConvertDataModule.testCGPoint([-13.5, -20.8]);
+
+            MKConvertDataModule.testCGSize({width: 13.5, height: 20.9});
+            MKConvertDataModule.testCGSize({width: -13.5, height: 20.9});
+            MKConvertDataModule.testCGSize({width: 13.5, height: -20.9});
+            MKConvertDataModule.testCGSize({width: -13.5, height: -20.9});
+
+            MKConvertDataModule.testCGSize([13.5, 20.8]);
+            MKConvertDataModule.testCGSize([13.5, -20.8]);
+            MKConvertDataModule.testCGSize([-13.5, 20.8]);
+            MKConvertDataModule.testCGSize([-13.5, -20.8]);
+
+            MKConvertDataModule.testCGSize({w: 13.5, h: 20.9});
+            MKConvertDataModule.testCGSize({w: -13.5, h: 20.9});
+            MKConvertDataModule.testCGSize({w: 13.5, h: -20.9});
+            MKConvertDataModule.testCGSize({w: -13.5, h: -20.9});
+
+            MKConvertDataModule.testCGRect({x: 12.5, y: 29.9, width: 100.11, height: 987.77});
+            MKConvertDataModule.testCGRect({x: -12.5, y: -29.9, width: -100.11, height: -987.77});
+            MKConvertDataModule.testCGRect([1.1, 2.2, 3.3, 4.4]);
+            MKConvertDataModule.testCGRect([-1.1, -2.2, -3.3, -4.4]);
+            MKConvertDataModule.testCGRect({l: 12.5, t: 29.9, w: 100.11, h: 987.77});
+            MKConvertDataModule.testCGRect({l: -12.5, t: -29.9, w: -100.11, h: -987.77});
+
+            MKConvertDataModule.testUIEdgetInsets({top: 10.1, left: 20.2, bottom: 30.3, right: 40.4});
+            MKConvertDataModule.testUIEdgetInsets({top: -10.1, left: -20.2, bottom: -30.3, right: -40.4});
+            MKConvertDataModule.testUIEdgetInsets([10.1, 20.2, 30.3, 40.4]);
+            MKConvertDataModule.testUIEdgetInsets([-10.1, -20.2, -30.3, -40.4]);
+
+            MKConvertDataModule.testCGPoint([]);
+            MKConvertDataModule.testCGSize([]);
+            MKConvertDataModule.testCGRect([]);
+            MKConvertDataModule.testUIEdgetInsets([]);
+
+            MKConvertDataModule.testCGPoint({});
+            MKConvertDataModule.testCGSize({});
+            MKConvertDataModule.testCGRect({});
+            MKConvertDataModule.testUIEdgetInsets({});
+
+            MKConvertDataModule.testCGPoint(null);
+            MKConvertDataModule.testCGSize(null);
+            MKConvertDataModule.testCGRect(null);
+            MKConvertDataModule.testUIEdgetInsets(null);
+
+            MKConvertDataModule.testCallbacks(function (resp1) {
+                console.log('[1] resp1 callback finished, resp = ' + JSON.stringify(resp1));
+            }, function (resp2) {
+                console.log('[2] resp1 callback finished, resp = ' + JSON.stringify(resp2));             
+            });
+
+            MKConvertDataModule.testCallbacks(null, function (resp2) {
+                console.log('[2] resp1 callback finished, resp = ' + JSON.stringify(resp2));             
+            });
+
+            MKConvertDataModule.testCallbacks(function (resp1) {
+                console.log('[1] resp1 callback finished, resp = ' + JSON.stringify(resp1));             
+            }, null);
+
+
+            // argument count check test
+            // MKConvertDataModule.testGroupCase2({testKey: 'value'}, ['ele1', 'ele2', 76, null],
+            // 'test string', 'False', -12.33, 9998888.7464, 345.98, 1, 2, 3, 4,
+            // 9, 8, 7, 6, [32.5, 76.9],
+            // function (resp) {
+            //     console.log('[0] resp callback finished, resp = ' + JSON.stringify(resp));
+            // });
+
+            // MKConvertDataModule.testGroupCase3({testKey: 'value'}, ['ele1', 'ele2', 76, null],
+            // 'test string',
+            // [32.5, 76.9], [98.8, 10.8], [10.1, 20.2, 30.3, 40.4], [10.1, 20.2, 30.3, 40.4],
+            // function (resp) {
+            //     console.log('[0] resp callback finished, resp = ' + JSON.stringify(resp));
+            // },
+            // 10, 12, 'another string');
+
+        }    
     
     </script>
 
@@ -81,11 +269,17 @@
     </br>
     <button class="button" type="button" onclick="logThenCallback()">logThenCallback</button>
     </br>
+    <button class="button" type="button" onclick="logDefault()">logDefault</button>
+    </br>
 
     <button class="button" type="button" onclick="goback()">goback</button>
     </br>
     <button class="button" type="button" onclick="setTitle()">setTitle</button>
     </br>
+
+    <button class="button" type="button" onclick="testDataConvert()">testDataConvert</button>
+    </br>
+
 </body>
 
 </html>

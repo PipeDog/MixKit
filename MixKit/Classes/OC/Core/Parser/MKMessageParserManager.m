@@ -20,8 +20,8 @@ void MKRegisterMessageParser(Class parserClass) {
     });
         
     if (![parserClass conformsToProtocol:@protocol(MKMessageParser)]) {
-        MKLogFatal(@"%@ does not conform to the `MKMessageParser` protocol",
-                     NSStringFromClass(parserClass));
+        NSCAssert(NO, @"%@ does not conform to the `MKMessageParser` protocol",
+                  NSStringFromClass(parserClass));
         return;
     }
     

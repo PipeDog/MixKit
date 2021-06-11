@@ -100,9 +100,7 @@ static MKModuleManager *__defaultManager;
     if (!moduleData) { return nil; }
     
     MKModuleMethod *method = moduleData.methodMap[JSMethodName];
-    if (!method) {
-        MKLogFatal(@"Get method failed, moduleName = [%@], js_name = [%@]", moduleName, JSMethodName);
-    }
+    NSAssert(method, @"Get method failed, moduleName = [%@], js_name = [%@]", moduleName, JSMethodName);
     return method;
 }
 

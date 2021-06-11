@@ -9,10 +9,18 @@
 #import "MKLogManager.h"
 #import "MKResponseWrapper.h"
 
+struct MKTestStruct {
+    const char *name;
+    int age;
+};
+typedef struct MKTestStruct MKTestStruct;
+
 @implementation MKLogManager
 
 MK_EXPORT_METHOD(log, logWithParams:)
 MK_EXPORT_METHOD(logMessage, logWithParams:callback:)
+MK_EXPORT_METHOD(logDefault, logDefault)
+
 
 - (void)logWithParams:(NSDictionary *)params {
     NSLog(@"[log] %@", params[@"msg"]);
@@ -23,6 +31,10 @@ MK_EXPORT_METHOD(logMessage, logWithParams:callback:)
     
     NSDictionary *resp = MKResponseMake(MKCallbackCodeSuccess, @"Log Success", nil);
     !callback ?: callback(@[resp]);
+}
+
+- (void)logDefault {
+    NSLog(@"logDefault");
 }
 
 @end

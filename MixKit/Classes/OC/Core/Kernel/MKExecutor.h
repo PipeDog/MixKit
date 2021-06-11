@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSArray *MKResponse;
-typedef void (^MKResponseCallback)(MKResponse response);
+typedef void (^MKResponseCallback)(NSArray *arguments);
 
 @protocol MKBridge;
 
@@ -32,11 +31,6 @@ typedef void (^MKResponseCallback)(MKResponse response);
 /// @return 分发方法是否成功
 - (BOOL)callNativeMethod:(id)metaData;
 
-/// @brief 执行回调给 JS 侧
-/// @param response 响应数据
-/// @param callbackID 回调 ID
-- (void)invokeCallbackWithResponse:(MKResponse)response forCallbackID:(NSString *)callbackID;
-
 @end
 
 /// @class MKExecutor
@@ -45,16 +39,6 @@ typedef void (^MKResponseCallback)(MKResponse response);
 
 /// @brief 禁用初始化方法，使用 `MKExecutor` 协议中初始化方法代替
 - (instancetype)init NS_UNAVAILABLE;
-
-/// @brief 构建 callback 回调
-/// @param callbackID 回调 ID
-/// @return callback 实例
-- (MKResponseCallback)makeCallbackWithCallbackID:(NSString *)callbackID;
-
-/// @brief 执行 bridge 回调
-/// @param response 回调参数
-/// @param callbackID 回调 ID
-- (void)executeCallbackWithResponse:(MKResponse)response forCallbackID:(NSString *)callbackID;
 
 @end
 

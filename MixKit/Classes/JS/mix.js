@@ -10,23 +10,18 @@ class NativeModules {
     }
 
     _generateCallbackId() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
             return v.toString(16);
         });
+        return '_$_mk_callback_$_' + uuid;
     }
 
-    _callNativeFunction(moduleName, methodName, params, callback) {
-        var callbackID = null;
-        if (this._getValueType(callback) === 'function') {
-            callbackID = this._generateCallbackId();
-            this._callbacksMap[callbackID] = callback;
-        }
+    _callNativeFunction(moduleName, methodName, nativeArguments) {
         const message = {
-            'moduleName': moduleName,
-            'methodName': methodName,
-            'params': params,
-            'callbackID': callbackID,
+            moduleName: moduleName,
+            methodName: methodName,
+            arguments: nativeArguments
         };
 
         switch (String(window.__mk_systemType)) {
@@ -59,15 +54,22 @@ class NativeModules {
             }
             moduleMethods.forEach(moduleMethodName => {
                 this[moduleName][moduleMethodName] = (...args) => {
-                    if (args.length > 2) {
-                        return console.error('ERROR: Invalid arguments count!');
+                    let numberOfArgs = args.length;
+                    let nativeArguments = new Array(numberOfArgs);
+                    
+                    for (let index = 0; index < numberOfArgs; index++) {
+                        let arg = args[index];
+
+                        if (this._getValueType(arg) === 'function') {
+                            let callbackID = this._generateCallbackId();
+                            this._callbacksMap[callbackID] = arg;
+                            arg = callbackID;
+                        }
+
+                        nativeArguments[index] = arg;
                     }
 
-                    const firstArg = args.length > 0 ? args[0] : null;
-                    const lastArg = args.length > 0 ? args[args.length - 1] : null;
-                    const params = (this._getValueType(firstArg) === 'object' ? firstArg : null);
-                    const callback = (this._getValueType(lastArg) === 'function' ? lastArg : null);
-                    this._callNativeFunction(moduleName, moduleMethodName, params, callback);
+                    this._callNativeFunction(moduleName, moduleMethodName, nativeArguments);
                 };
             });
         });
@@ -92,6 +94,7 @@ class NativeModules {
         }
         callback(res);
     }
+    
 }
 
 NativeModules = new NativeModules(window.__mk_nativeConfig);

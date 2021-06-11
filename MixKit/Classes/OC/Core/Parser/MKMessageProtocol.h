@@ -14,12 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @brief 桥接消息体协议
 @protocol MKMessageBody <NSObject>
 
-@property (nonatomic, copy) NSString *moduleName; ///< 模块名
-@property (nonatomic, copy) NSString *methodName; ///< JS 侧方法名
+@property (nonatomic, copy) NSString *moduleName;   ///< 模块名
+@property (nonatomic, copy) NSString *methodName;   ///< JS 侧方法名
 
 @optional
-@property (nonatomic, copy) NSString *callbackID; ///< 回调 ID
-@property (nonatomic, copy) NSDictionary *params; ///< 参数体
+@property (nonatomic, copy) NSArray *arguments;     ///< 参数列表
 
 @end
 

@@ -13,6 +13,12 @@
 #import "MKWebViewBridge.h"
 #import "MKUtils.h"
 #import "MKDataUtils.h"
+#import "MKModuleMethod.h"
+#import "MKBridgeModule.h"
+#import "MKUtils.h"
+#import "MKDataUtils.h"
+#import "MKModuleMethod+Invoke.h"
+#import "MKDefines.h"
 #import <objc/runtime.h>
 
 @interface MKWebViewExecutor ()
@@ -25,8 +31,8 @@
 
 + (void)registerBridge:(NSString *)bridgeName callbackFunction:(NSString *)funcName {
     if (!bridgeName.length || !funcName.length) {
-        MKLogFatal(@"Invalid argument `bridgeName` or `funcName`, bridgeName = %@, funcName = %@!",
-                     bridgeName, funcName);
+        NSAssert(NO, @"Invalid argument `bridgeName` or `funcName`, bridgeName = %@, funcName = %@!",
+                 bridgeName, funcName);
         return;
     }
     
@@ -55,37 +61,106 @@
     return objc_getAssociatedObject([self class], _cmd);
 }
 
-#pragma mark - Override Methods
-- (MKResponseCallback)makeCallbackWithCallbackID:(NSString *)callbackID {
-    if (!callbackID.length) { return nil; }
+#pragma mark - MKExecutor
+- (BOOL)callNativeMethod:(id)metaData {
+    if (MKIsOnMainQueue()) {
+        return [self _callNativeMethod:metaData];
+    }
     
-    __weak typeof(self) weakSelf = self;
-    MKResponseCallback callback = ^(MKResponse response) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (!strongSelf) { return; }
+    __block BOOL ret = NO;
+    dispatch_semaphore_t lock = dispatch_semaphore_create(0);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ret = [self _callNativeMethod:metaData];
+        dispatch_semaphore_signal(lock);
+    });
+    
+    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+    return ret;
+}
+
+#pragma mark - Tool Methods
+- (BOOL)_callNativeMethod:(id)metaData {
+    id<MKMessageParserManager> manager = self.bridge.bridgeMessageParserManager;
+    
+    [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_MATCH_MESSAGE_PARSER];
+    id<MKMessageParser> parser = [manager parserWithMetaData:metaData];
+    [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_MATCH_MESSAGE_PARSER];
+    
+    if (!parser) { return NO; }
+    
+    id<MKMessageBody> body = parser.messageBody;
+    NSString *moduleName = body.moduleName;
+    NSString *methodName = body.methodName;
         
-        [strongSelf invokeCallbackWithResponse:response forCallbackID:callbackID];
+    MKModuleManager *moduleManager = [MKModuleManager defaultManager];
+    MKModuleMethod *method = [moduleManager methodWithModuleName:moduleName JSMethodName:methodName];
+    id<MKBridgeModule> bridgeModule = [self.bridge.bridgeModuleCreator moduleWithClass:method.cls];
+    
+    if (!bridgeModule) {
+        MKLogError(@"Can not find match module, moduleName = [%@], js_name = [%@].",
+                     moduleName, methodName);
+        return NO;
+    }
+        
+    NSArray *arguments = body.arguments;
+    NSMutableArray *nativeArgs = [NSMutableArray array];
+    
+    for (id arg in arguments) {
+        id nativeArg = arg;
+        
+        if ([arg isKindOfClass:[NSString class]]) {
+            BOOL isCallbackID = [(NSString *)arg hasPrefix:@"_$_mk_callback_$_"];
+            if (isCallbackID) {
+                nativeArg = [self _makeCallbackWithCallbackID:(NSString *)arg];
+            }
+        }
+
+        [nativeArgs addObject:nativeArg];
+    }
+        
+    @try {
+        [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_NATIVE_METHOD];
+        [method mk_invokeWithModule:bridgeModule arguments:nativeArgs];
+        [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_INVOKE_NATIVE_METHOD];
+    } @catch (NSException *exception) {
+        NSAssert(NO, @"Call objc_msgSend fatal!");
+    }
+        
+    return YES;
+}
+
+- (MKResponseCallback)_makeCallbackWithCallbackID:(NSString *)callbackID {
+    @weakify(self)
+    // Marked as autoreleasing, because NSInvocation doesn't retain arguments
+    __autoreleasing MKResponseCallback callback = ^(NSArray *arguments) {
+        @strongify(self)
+        if (!self) { return; }
+                
+        [self _invokeCallbackWithArguments:arguments forCallbackID:callbackID];
     };
     return callback;
 }
 
-- (void)executeCallbackWithResponse:(MKResponse)response forCallbackID:(NSString *)callbackID {
-    if (!callbackID.length) { return; }
-    
-    NSString *format = [self formattedCallbackScript];
-    NSString *JSONText = MKValueToJSONText(response);
-    NSString *script = [NSString stringWithFormat:format, callbackID, JSONText];
-    
-    id<MKScriptEngine> scriptEngine = self.webViewBridge.bridgeDelegate.scriptEngine;
-    [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_CALLBACK_FUNC];
-    
-    [scriptEngine executeScript:script
-                    doneHandler:^(id  _Nullable result, NSError * _Nullable error) {
-        [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_INVOKE_CALLBACK_FUNC];
-        if (error) {
-            MKLogError(@"Invoke callback failed, result = [%@], error = [%@]!", result, error);
-        }
-    }];
+- (void)_invokeCallbackWithArguments:(NSArray *)arguments forCallbackID:(NSString *)callbackID {
+    MKDispatchAsyncMainQueue(^{
+        if (!callbackID.length) { return; }
+        
+        NSString *format = [self formattedCallbackScript];
+        NSString *JSONText = MKValueToJSONText(arguments);
+        NSString *script = [NSString stringWithFormat:format, callbackID, JSONText];
+        
+        id<MKScriptEngine> scriptEngine = self.webViewBridge.bridgeDelegate.scriptEngine;
+        [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_CALLBACK_FUNC];
+        
+        [scriptEngine executeScript:script
+                        doneHandler:^(id  _Nullable result, NSError * _Nullable error) {
+            [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_INVOKE_CALLBACK_FUNC];
+            if (error) {
+                MKLogError(@"Invoke callback failed, result = [%@], error = [%@]!", result, error);
+            }
+        }];
+    });
 }
 
 @end

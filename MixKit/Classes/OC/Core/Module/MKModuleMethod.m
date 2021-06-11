@@ -8,18 +8,6 @@
 
 #import "MKModuleMethod.h"
 
-/**
- arglist: [
-    0. self
-    1. _cmd
-    2. params
-    3. callback
- ]
- */
-#define MK_EXPORT_METHOD_ARGS_NUM_2 2 // self, _cmd
-#define MK_EXPORT_METHOD_ARGS_NUM_3 3 // self, _cmd, (params || callback)
-#define MK_EXPORT_METHOD_ARGS_NUM_4 4 // self, _cmd, params, callback
-
 @implementation MKModuleMethod
 
 - (instancetype)initWithClass:(Class)aClass method:(Method)method {
@@ -45,11 +33,8 @@
         free(returnType);
     }
     unsigned int argumentCount = method_getNumberOfArguments(method);
-    if (argumentCount != MK_EXPORT_METHOD_ARGS_NUM_2 &&
-        argumentCount != MK_EXPORT_METHOD_ARGS_NUM_3 &&
-        argumentCount != MK_EXPORT_METHOD_ARGS_NUM_4) {
-        MKLogFatal(@"Invalid number of method arguments!");
-    }
+    NSAssert(argumentCount - 2 <= 10,
+             @"Too many arguments in this method, method name is `%@`!", _name);
     if (argumentCount > 0) {
         NSMutableArray *argumentTypes = [NSMutableArray new];
         for (unsigned int i = 0; i < argumentCount; i++) {
@@ -66,8 +51,9 @@
         _methodType = MKInstanceMethod;
     } else {
         _methodType = MKUnknownMethod;
-        MKLogFatal(@"Unknown selector [%@]!", _name);
+        NSAssert(NO, @"Unknown selector [%@]!", _name);
     }
+    _methodSignature = [aClass instanceMethodSignatureForSelector:_sel];
     return self;
 }
 

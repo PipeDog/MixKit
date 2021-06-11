@@ -32,6 +32,7 @@
 		DD5BCA7A266F604A00CB9E4E /* MKPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCA79266F604A00CB9E4E /* MKPageManager.m */; };
 		DD5BCA7F266F608F00CB9E4E /* MKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCA7E266F608F00CB9E4E /* MKUtil.m */; };
 		DD5BCA8F266F88C600CB9E4E /* MKResponseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCA8E266F88C600CB9E4E /* MKResponseWrapper.m */; };
+		DD5BCB7A26730B4B00CB9E4E /* MKConvertDataModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BCB7926730B4B00CB9E4E /* MKConvertDataModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		DD5BCA7E266F608F00CB9E4E /* MKUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKUtil.m; sourceTree = "<group>"; };
 		DD5BCA8D266F88C600CB9E4E /* MKResponseWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKResponseWrapper.h; sourceTree = "<group>"; };
 		DD5BCA8E266F88C600CB9E4E /* MKResponseWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKResponseWrapper.m; sourceTree = "<group>"; };
+		DD5BCB7826730B4B00CB9E4E /* MKConvertDataModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKConvertDataModule.h; sourceTree = "<group>"; };
+		DD5BCB7926730B4B00CB9E4E /* MKConvertDataModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKConvertDataModule.m; sourceTree = "<group>"; };
 		F72D6525A754D93B32082A3A /* Pods-MixKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MixKit_Tests/Pods-MixKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +250,8 @@
 				DD5BCA6F266F57C600CB9E4E /* MKAlertManager.m */,
 				DD5BCA73266F5BBC00CB9E4E /* MKLogManager.h */,
 				DD5BCA74266F5BBC00CB9E4E /* MKLogManager.m */,
+				DD5BCB7826730B4B00CB9E4E /* MKConvertDataModule.h */,
+				DD5BCB7926730B4B00CB9E4E /* MKConvertDataModule.m */,
 				DD5BCA78266F604A00CB9E4E /* MKPageManager.h */,
 				DD5BCA79266F604A00CB9E4E /* MKPageManager.m */,
 			);
@@ -439,6 +444,7 @@
 				DD5BCA7A266F604A00CB9E4E /* MKPageManager.m in Sources */,
 				6003F59E195388D20070C39A /* MKAppDelegate.m in Sources */,
 				DD5BCA8F266F88C600CB9E4E /* MKResponseWrapper.m in Sources */,
+				DD5BCB7A26730B4B00CB9E4E /* MKConvertDataModule.m in Sources */,
 				DD5BCA5A266F4C8400CB9E4E /* MKWebViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* MKViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

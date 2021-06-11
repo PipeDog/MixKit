@@ -12,11 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// @brief 回调数据实体类型约束
-typedef NSArray *MKResponse;
-
 /// @brief 桥接回调类型规范
-typedef void (^MKResponseCallback)(MKResponse response);
+typedef void (^MKResponseCallback)(NSArray *arguments);
 
 /// @brief 桥接模块信息存储结构
 typedef struct {

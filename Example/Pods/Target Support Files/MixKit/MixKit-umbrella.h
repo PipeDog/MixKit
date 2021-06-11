@@ -10,6 +10,10 @@
 #endif
 #endif
 
+#import "MKConvert.h"
+#import "MKDataUtils.h"
+#import "MKDefines.h"
+#import "MKUtils.h"
 #import "MKBridge.h"
 #import "MKBridgeModuleCreator.h"
 #import "MKExecutor.h"
@@ -18,13 +22,11 @@
 #import "MKBridgeModule.h"
 #import "MKModuleData.h"
 #import "MKModuleManager.h"
+#import "MKModuleMethod+Invoke.h"
 #import "MKModuleMethod.h"
 #import "MKMessageParser.h"
 #import "MKMessageParserManager.h"
 #import "MKMessageProtocol.h"
-#import "MKDataUtils.h"
-#import "MKDefines.h"
-#import "MKUtils.h"
 #import "MKBuiltinLogListener.h"
 #import "MKLogger.h"
 #import "MKPerfMonitor.h"

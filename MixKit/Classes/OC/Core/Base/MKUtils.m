@@ -22,3 +22,11 @@ BOOL MKIsOnMainQueue(void) {
     return (0 == strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL),
                         dispatch_queue_get_label(dispatch_get_main_queue())));
 }
+
+id MKNullIfNil(id value) {
+    return value ?: (id)kCFNull;
+}
+
+id MKNilIfNull(id value) {
+    return value == (id)kCFNull ? nil : value;
+}

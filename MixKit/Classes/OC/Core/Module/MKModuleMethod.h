@@ -31,7 +31,8 @@ typedef NS_ENUM(NSUInteger, MKMethodType) {
 @property (nonatomic, strong, readonly) NSString *typeEncoding;         ///< method's parameter and return types
 @property (nonatomic, strong, readonly) NSString *returnTypeEncoding;   ///< return value's type
 @property (nonatomic, strong, readonly, nullable) NSArray<NSString *> *argumentTypeEncodings; ///< array of arguments' type
-@property (nonatomic, assign, readonly) MKMethodType methodType;      ///< method type
+@property (nonatomic, assign, readonly) MKMethodType methodType;        ///< method type
+@property (nonatomic, strong, readonly) NSMethodSignature *methodSignature; ///< method's signature
 
 /// @brief 禁用初始化方法，使用 `- [MKModuleMethod initWithClass:method:]` 代替
 - (instancetype)init NS_UNAVAILABLE;

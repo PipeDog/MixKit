@@ -14,8 +14,7 @@
 
 @synthesize moduleName = _moduleName;
 @synthesize methodName = _methodName;
-@synthesize callbackID = _callbackID;
-@synthesize params = _params;
+@synthesize arguments = _arguments;
 
 @end
 
@@ -30,38 +29,17 @@ MK_EXPORT_MESSAGE_PARSER()
         return NO;
     }
     NSDictionary *dict = (NSDictionary *)metaData;
-    return (dict[@"moduleName"] && dict[@"methodName"]);
+    return (dict[@"moduleName"] && dict[@"methodName"] && dict[@"arguments"]);
 }
 
 - (instancetype)initWithMetaData:(id)metaData {
     self = [super init];
     if (self) {
-        id<MKMessageBody> messageBody = [[MKMessageBody alloc] init];
-        
         NSDictionary *dict = (NSDictionary *)metaData;
+        id<MKMessageBody> messageBody = [[MKMessageBody alloc] init];
         messageBody.moduleName = [dict[@"moduleName"] copy];
         messageBody.methodName = [dict[@"methodName"] copy];
-        
-        messageBody.callbackID = ({
-            NSString *callbackID = dict[@"callbackID"];
-            if ([callbackID isKindOfClass:[NSNull class]]) {
-                callbackID = nil;
-            }
-            callbackID;
-        });
-        
-        messageBody.params = ({
-            NSDictionary *params = dict[@"params"];
-            if ([params isKindOfClass:[NSNull class]]) {
-                params = nil;
-            }
-            if (params && ![params isKindOfClass:[NSDictionary class]]) {
-                MKLogFatal(@"The argument `params` type error, params = %@!", params);
-                params = nil;
-            }
-            params;
-        });
-        
+        messageBody.arguments = [dict[@"arguments"] copy];
         _messageBody = messageBody;
     }
     return self;

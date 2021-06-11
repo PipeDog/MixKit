@@ -20,8 +20,8 @@
     // Override point for customization after application launch.
     
     [MKPerfMonitor defaultMonitor].delegate = self;
-    [MKPerfMonitor defaultMonitor].autoFlushCount = 3;
-
+    [MKPerfMonitor defaultMonitor].autoFlushCount = 5;
+    
     return YES;
 }
 

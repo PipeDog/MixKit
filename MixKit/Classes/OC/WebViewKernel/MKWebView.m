@@ -96,8 +96,8 @@ static WKProcessPool *_MKGlobalProcessPool(void) {
         return;
     }
     if (![message.body isKindOfClass:[NSDictionary class]]) {
-        MKLogFatal(@"Invalid `message.body`, message.body's class is [%@], message.body = %@",
-                     [message.body class], message.body);
+        NSAssert(NO, @"Invalid `message.body`, message.body's class is [%@], message.body = %@",
+                 [message.body class], message.body);
         return;
     }
 

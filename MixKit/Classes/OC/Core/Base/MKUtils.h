@@ -16,3 +16,7 @@ MK_EXTERN void MKDispatchAsyncMainQueue(void (^block)(void));
 /// @brief 当前是否处于主队列
 /// @return BOOL 如果 YES
 MK_EXTERN BOOL MKIsOnMainQueue(void);
+
+// Convert nil values to NSNull, and vice-versa
+MK_EXTERN id MKNilIfNull(id value);
+MK_EXTERN id MKNullIfNil(id value);
