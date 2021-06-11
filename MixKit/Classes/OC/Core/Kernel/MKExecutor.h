@@ -10,8 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^MKResponseCallback)(NSArray *arguments);
-
 @protocol MKBridge;
 
 /// @protocol MKExecutor
