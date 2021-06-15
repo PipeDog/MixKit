@@ -9,6 +9,7 @@
 #import "MKPerfMonitor.h"
 
 NSString *const PERF_KEY_REGISTER_MODULE_DATA = @"PERF_KEY_REGISTER_MODULE_DATA";
+NSString *const PERF_KEY_CONVERT_DATA_TO_JSON = @"PERF_KEY_CONVERT_DATA_TO_JSON";
 
 #define Lock() [_lock lock]
 #define Unlock() [_lock unlock]

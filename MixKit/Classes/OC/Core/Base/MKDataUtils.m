@@ -65,7 +65,11 @@ NSData *MKValueToData(id value) {
 }
 
 NSString *MKValueToJSONText(id value) {
+    [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_CONVERT_DATA_TO_JSON];
+    
     NSData *JSONData = MKValueToData(value);
     NSString *JSONText = JSONData ? [[NSString alloc] initWithData:JSONData encoding:NSUTF8StringEncoding] : nil;
+    
+    [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_CONVERT_DATA_TO_JSON];
     return JSONText;
 }

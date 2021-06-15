@@ -29,6 +29,7 @@
         let MKLogManager = NativeModules.LogManager;
         let MKPageManager = NativeModules.PageManager;
         let MKConvertDataModule = NativeModules.ConvertDataModule;
+        let MKCallbackArgumentModule = NativeModules.CallbackArgumentModule;
 
         function showAlert() {
             let params = {
@@ -256,6 +257,11 @@
 
         }    
     
+        function testCallbackArguments() {
+            MKCallbackArgumentModule.callbackArguments(function (a1, a2) {
+                console.log('a1 = ' + a1 + ', a2 = ' + a2);
+            });
+        }
     </script>
 
 </head>
@@ -278,6 +284,9 @@
     </br>
 
     <button class="button" type="button" onclick="testDataConvert()">testDataConvert</button>
+    </br>
+
+    <button class="button" type="button" onclick="testCallbackArguments()">testCallbackArguments</button>
     </br>
 
 </body>
