@@ -55,7 +55,7 @@
     NSMutableArray *argumentBlocks = [[NSMutableArray alloc] initWithCapacity:numberOfArguments - 2];
     
     for (NSUInteger index = 2; index < numberOfArguments; index++) {
-        const char *argumentType = self.argumentTypeEncodings[index].UTF8String;
+        NSString *argumentType = self.argumentTypeEncodings[index];
         
         __weak typeof(self) weakSelf = self;
         [argumentBlocks addObject:^(NSInvocation *invocation, NSUInteger index, id argument) {
@@ -67,7 +67,7 @@
 }
 
 - (void)_mk_setArgument:(id)argument
-           argumentType:(const char *)argumentType
+           argumentType:(NSString *)argumentType
            toInvocation:(NSInvocation *)invocation
                 atIndex:(NSUInteger)index {
 #define MK_NUMBER_CONVERT(match, type, func)        \
@@ -76,7 +76,9 @@ case match: {                                       \
     [invocation setArgument:&_arg atIndex:index];   \
 } return
     
-    switch (argumentType[0]) {
+    const char *cArgumentType = argumentType.UTF8String;
+
+    switch (cArgumentType[0]) {
         case '@': {
             // @encode(block) == "@?", also hits current case '@'
             [invocation setArgument:&argument atIndex:index];
@@ -96,18 +98,18 @@ case match: {                                       \
         MK_NUMBER_CONVERT('D', long double, double);
         
         case '{': {
-            if (strcmp("{CGPoint=dd}", argumentType) == 0 || strcmp("{CGPoint=ff}", argumentType) == 0) {
+            if (strcmp("{CGPoint=dd}", cArgumentType) == 0 || strcmp("{CGPoint=ff}", cArgumentType) == 0) {
                 CGPoint point = [MKConvert CGPoint:argument];
                 [invocation setArgument:&point atIndex:index];
-            } else if (strcmp("{CGSize=dd}", argumentType) == 0 || strcmp("{CGSize=ff}", argumentType) == 0) {
+            } else if (strcmp("{CGSize=dd}", cArgumentType) == 0 || strcmp("{CGSize=ff}", cArgumentType) == 0) {
                 CGSize size = [MKConvert CGSize:argument];
                 [invocation setArgument:&size atIndex:index];
-            } else if (strcmp("{CGRect={CGPoint=dd}{CGSize=dd}}", argumentType) == 0 ||
-                       strcmp("{CGRect={CGPoint=ff}{CGSize=ff}}", argumentType) == 0) {
+            } else if (strcmp("{CGRect={CGPoint=dd}{CGSize=dd}}", cArgumentType) == 0 ||
+                       strcmp("{CGRect={CGPoint=ff}{CGSize=ff}}", cArgumentType) == 0) {
                 CGRect rect = [MKConvert CGRect:argument];
                 [invocation setArgument:&rect atIndex:index];
-            } else if (strcmp("{UIEdgeInsets=dddd}", argumentType) == 0 ||
-                       strcmp("{UIEdgeInsets=ffff}", argumentType) == 0) {
+            } else if (strcmp("{UIEdgeInsets=dddd}", cArgumentType) == 0 ||
+                       strcmp("{UIEdgeInsets=ffff}", cArgumentType) == 0) {
                 UIEdgeInsets insets = [MKConvert UIEdgeInsets:argument];
                 [invocation setArgument:&insets atIndex:index];
             } else {

@@ -26,11 +26,9 @@ class NativeModules {
 
         switch (String(window.__mk_systemType)) {
             case '1': // iOS
-                console.log(`INFO: Send iOS "${JSON.stringify(message)}"`);
                 window.webkit.messageHandlers.MixKit.postMessage(message);
                 break;
             case '2': // Android
-                console.log(`INFO: Send Android "${JSON.stringify(message)}"`);
                 window.MixKit.postMessage(JSON.stringify(message));
                 break;
             default: // Unknown
@@ -92,7 +90,7 @@ class NativeModules {
                 console.error('ERROR: Parse response error!');
             }
         }
-        callback(res);
+        callback.apply(null, res);
     }
     
 }
