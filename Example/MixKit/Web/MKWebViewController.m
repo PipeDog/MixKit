@@ -7,6 +7,7 @@
 //
 
 #import "MKWebViewController.h"
+#import "MKWebView+Console.h"
 
 @interface MKWebViewController () <WKNavigationDelegate, MKWebViewBridgeHandler>
 
@@ -107,6 +108,7 @@
         
         _webView = [[MKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
         _webView.navigationDelegate = self;
+        _webView.openDebugConsole = YES;
         [self.view addSubview:_webView];
     }
     return _webView;

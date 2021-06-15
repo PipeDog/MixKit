@@ -19,6 +19,7 @@
 #import "MKDataUtils.h"
 #import "MKModuleMethod+Invoke.h"
 #import "MKDefines.h"
+#import "MKWebViewPerfConstant.h"
 #import <objc/runtime.h>
 
 @interface MKWebViewExecutor ()
@@ -102,23 +103,25 @@
                      moduleName, methodName);
         return NO;
     }
-        
+    
     NSArray *arguments = body.arguments;
     NSMutableArray *nativeArgs = [NSMutableArray array];
     
-    for (id arg in arguments) {
-        id nativeArg = arg;
-        
-        if ([arg isKindOfClass:[NSString class]]) {
-            BOOL isCallbackID = [(NSString *)arg hasPrefix:@"_$_mk_callback_$_"];
-            if (isCallbackID) {
-                nativeArg = [self _makeCallbackWithCallbackID:(NSString *)arg];
+    [[MKPerfMonitor defaultMonitor] perfBlock:^{
+        for (id arg in arguments) {
+            id nativeArg = arg;
+            
+            if ([arg isKindOfClass:[NSString class]]) {
+                BOOL isCallbackID = [(NSString *)arg hasPrefix:@"_$_mk_callback_$_"];
+                if (isCallbackID) {
+                    nativeArg = [self _makeCallbackWithCallbackID:(NSString *)arg];
+                }
             }
-        }
 
-        [nativeArgs addObject:nativeArg];
-    }
-        
+            [nativeArgs addObject:nativeArg];
+        }
+    } forKey:PERF_KEY_CONVERT_NATIVE_ARGUMENTS];
+    
     @try {
         [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_NATIVE_METHOD];
         [method mk_invokeWithModule:bridgeModule arguments:nativeArgs];

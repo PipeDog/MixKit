@@ -47,6 +47,16 @@ static WKProcessPool *_MKGlobalProcessPool(void) {
 
 @synthesize webViewBridge = _webViewBridge;
 
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        [[NSException exceptionWithName:@"MKWebViewInitException"
+                                 reason:@"Does not support init from nib."
+                               userInfo:nil] raise];
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration {
     // 1. setup configuration
     if (!configuration) {

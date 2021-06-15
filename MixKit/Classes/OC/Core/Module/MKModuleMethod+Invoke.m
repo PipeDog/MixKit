@@ -70,10 +70,10 @@
            argumentType:(const char *)argumentType
            toInvocation:(NSInvocation *)invocation
                 atIndex:(NSUInteger)index {
-#define MK_NUMBER_CONVERT(match, type, func) \
-case match: { \
-    type _arg = [MKConvert func:argument]; \
-    [invocation setArgument:&_arg atIndex:index]; \
+#define MK_NUMBER_CONVERT(match, type, func)        \
+case match: {                                       \
+    type _arg = [MKConvert func:argument];          \
+    [invocation setArgument:&_arg atIndex:index];   \
 } return
     
     switch (argumentType[0]) {

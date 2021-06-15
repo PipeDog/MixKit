@@ -89,17 +89,17 @@ static void MKConvertCGStructValue(const char *type, NSArray *fields, NSDictiona
     }
 }
 
-#define MK_CGSTRUCT_CONVERTER(type, values, aliases) \
-+ (type)type:(id)json                                 \
-{                                                     \
-  static NSArray *fields;                             \
-  static dispatch_once_t onceToken;                   \
-  dispatch_once(&onceToken, ^{                        \
-    fields = values;                                  \
-  });                                                 \
-  type result;                                        \
-  MKConvertCGStructValue(#type, fields, aliases, (CGFloat *)&result, json); \
-  return result;                                      \
+#define MK_CGSTRUCT_CONVERTER(type, values, aliases)    \
++ (type)type:(id)json                                   \
+{                                                       \
+    static NSArray *fields;                             \
+    static dispatch_once_t onceToken;                   \
+    dispatch_once(&onceToken, ^{                        \
+        fields = values;                                \
+    });                                                 \
+    type result;                                        \
+    MKConvertCGStructValue(#type, fields, aliases, (CGFloat *)&result, json); \
+    return result;                                      \
 }
 
 MK_CGSTRUCT_CONVERTER(CGPoint, (@[@"x", @"y"]), (@{@"l": @"x", @"t": @"y"}))

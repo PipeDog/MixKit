@@ -13,6 +13,8 @@
 #import "MKConvert.h"
 #import "MKDataUtils.h"
 #import "MKDefines.h"
+#import "MKLogger.h"
+#import "MKPerfMonitor.h"
 #import "MKUtils.h"
 #import "MKBridge.h"
 #import "MKBridgeModuleCreator.h"
@@ -27,13 +29,17 @@
 #import "MKMessageParser.h"
 #import "MKMessageParserManager.h"
 #import "MKMessageProtocol.h"
+#import "MKConsoleSwitch.h"
+#import "MKConsoleView.h"
 #import "MKBuiltinLogListener.h"
-#import "MKLogger.h"
-#import "MKPerfMonitor.h"
+#import "NSString+MKAdd.h"
+#import "UIView+MKAdd.h"
+#import "MKWebView+Console.h"
 #import "MKWebView.h"
 #import "MKWebViewBridge.h"
 #import "MKWebViewExecutor.h"
 #import "MKWebViewKernel.h"
+#import "MKWebViewPerfConstant.h"
 
 FOUNDATION_EXPORT double MixKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char MixKitVersionString[];

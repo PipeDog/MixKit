@@ -22,10 +22,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     [MKWebViewExecutor registerBridge:@"NativeModules" callbackFunction:@"invokeCallback"];
 
-    [self initUI];
-}
-
-- (void)initUI {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2f];
     button.frame = CGRectMake(20, 100, 60, 40);
@@ -34,7 +30,7 @@
     [button addTarget:self action:@selector(didClickButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
-    
+
 - (void)didClickButton:(id)sender {
     MKWebViewController *webViewController = [[MKWebViewController alloc] init];
     [self.navigationController pushViewController:webViewController animated:YES];

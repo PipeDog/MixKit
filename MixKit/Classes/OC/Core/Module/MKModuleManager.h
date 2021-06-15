@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param JSMethodName JS 函数名
 /// @return 期望的 MKModuleMethod 实例
 - (MKModuleMethod * _Nullable)methodWithModuleName:(NSString *)moduleName
-                                        JSMethodName:(NSString *)JSMethodName;
+                                      JSMethodName:(NSString *)JSMethodName;
 
 @end
 

@@ -10,9 +10,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const PERF_KEY_REGISTER_MODULE_DATA;
-extern NSString *const PERF_KEY_MATCH_MESSAGE_PARSER;
-extern NSString *const PERF_KEY_INVOKE_CALLBACK_FUNC;
-extern NSString *const PERF_KEY_INVOKE_NATIVE_METHOD;
 
 @class MKPerfMonitor;
 
@@ -25,7 +22,6 @@ extern NSString *const PERF_KEY_INVOKE_NATIVE_METHOD;
 @interface MKPerfMonitor : NSObject
 
 @property (class, strong, readonly) MKPerfMonitor *defaultMonitor;
-@property (nonatomic, weak) id<MKPerfMonitorDelegate> delegate;
 @property (nonatomic, assign) BOOL autoFlush;
 @property (nonatomic, assign) NSInteger autoFlushCount;
 
@@ -34,7 +30,10 @@ extern NSString *const PERF_KEY_INVOKE_NATIVE_METHOD;
 - (void)startPerf:(NSString *)key;
 - (void)endPerf:(NSString *)key;
 
-- (void)perfKey:(NSString *)key block:(void (^)(void))block;
+- (void)perfBlock:(void (^)(void))block forKey:(NSString *)key;
+
+- (void)bind:(id<MKPerfMonitorDelegate>)delegate;
+- (void)unbind:(id<MKPerfMonitorDelegate>)delegate;
 
 @end
 

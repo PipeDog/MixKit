@@ -9,9 +9,6 @@
 #import "MKPerfMonitor.h"
 
 NSString *const PERF_KEY_REGISTER_MODULE_DATA = @"PERF_KEY_REGISTER_MODULE_DATA";
-NSString *const PERF_KEY_MATCH_MESSAGE_PARSER = @"PERF_KEY_MATCH_MESSAGE_PARSER";
-NSString *const PERF_KEY_INVOKE_CALLBACK_FUNC = @"PERF_KEY_INVOKE_CALLBACK_FUNC";
-NSString *const PERF_KEY_INVOKE_NATIVE_METHOD = @"PERF_KEY_INVOKE_NATIVE_METHOD";
 
 #define Lock() [_lock lock]
 #define Unlock() [_lock unlock]
@@ -20,6 +17,7 @@ NSString *const PERF_KEY_INVOKE_NATIVE_METHOD = @"PERF_KEY_INVOKE_NATIVE_METHOD"
     NSLock *_lock;
     NSMutableDictionary *_perfDict;
     NSMutableArray *_perfQueue;
+    NSHashTable *_delegates;
 }
 
 + (MKPerfMonitor *)defaultMonitor {
@@ -34,11 +32,12 @@ NSString *const PERF_KEY_INVOKE_NATIVE_METHOD = @"PERF_KEY_INVOKE_NATIVE_METHOD"
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _autoFlush = YES;
+        _autoFlushCount = 0;
         _lock = [[NSLock alloc] init];
         _perfDict = [NSMutableDictionary dictionary];
         _perfQueue = [NSMutableArray array];
-        _autoFlush = YES;
-        _autoFlushCount = 10;
+        _delegates = [NSHashTable weakObjectsHashTable];
     }
     return self;
 }
@@ -50,8 +49,9 @@ NSString *const PERF_KEY_INVOKE_NATIVE_METHOD = @"PERF_KEY_INVOKE_NATIVE_METHOD"
     [_perfQueue removeAllObjects];
     Unlock();
     
-    if ([self.delegate respondsToSelector:@selector(perfMonitor:flushAllPerfRecords:)]) {
-        [self.delegate perfMonitor:self flushAllPerfRecords:perfRecords];
+    NSArray<id<MKPerfMonitorDelegate>> *allDelegates = _delegates.allObjects;
+    for (id<MKPerfMonitorDelegate> delegate in allDelegates) {
+        [delegate perfMonitor:self flushAllPerfRecords:perfRecords];
     }
 }
 
@@ -95,10 +95,22 @@ NSString *const PERF_KEY_INVOKE_NATIVE_METHOD = @"PERF_KEY_INVOKE_NATIVE_METHOD"
     }
 }
 
-- (void)perfKey:(NSString *)key block:(void (^)(void))block {
+- (void)perfBlock:(void (^)(void))block forKey:(NSString *)key {
     [self startPerf:key];
     !block ?: block();
     [self endPerf:key];
+}
+
+- (void)bind:(id<MKPerfMonitorDelegate>)delegate {
+    if ([delegate conformsToProtocol:@protocol(MKPerfMonitorDelegate)]) {
+        [_delegates addObject:delegate];
+    }
+}
+
+- (void)unbind:(id<MKPerfMonitorDelegate>)delegate {
+    if ([_delegates containsObject:delegate]) {
+        [_delegates removeObject:delegate];
+    }
 }
 
 @end
