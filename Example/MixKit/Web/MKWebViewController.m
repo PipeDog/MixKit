@@ -108,7 +108,9 @@
         
         _webView = [[MKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
         _webView.navigationDelegate = self;
+#ifdef DEBUG
         _webView.openDebugConsole = YES;
+#endif
         [self.view addSubview:_webView];
     }
     return _webView;

@@ -30,7 +30,11 @@
 
 #pragma mark - Event Methods
 - (void)_mk_didClickConsoleSwitch:(id)sender {
-    [self.consoleView installTo:self];
+    if (self.consoleView.superview) {
+        [self.consoleView uninstall];
+    } else {
+        [self.consoleView installTo:self];
+    }
 }
 
 #pragma mark - Setter Methods

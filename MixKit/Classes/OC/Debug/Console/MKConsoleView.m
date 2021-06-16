@@ -9,6 +9,7 @@
 #import "NSString+MKAdd.h"
 #import "MKModuleManager.h"
 #import "MKDataUtils.h"
+#import "UIView+MKAdd.h"
 
 typedef NS_ENUM(NSUInteger, MKConsoleType) {
     MKConsoleTypeDebugLog = 0,
@@ -197,6 +198,7 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
 
 @interface MKConsoleView () <MKLogListener, MKPerfMonitorDelegate>
 
+@property (nonatomic, strong) UIPanGestureRecognizer *pan;
 @property (nonatomic, strong) NSMutableArray<MKLogRecordView *> *recordViews;
 @property (nonatomic, strong) NSMutableArray<UIButton *> *consoleTypeButtons;
 @property (nonatomic, strong) UIButton *closeButton;
@@ -244,6 +246,9 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
         button.translatesAutoresizingMaskIntoConstraints = NO;
         [self.consoleTypeButtons addObject:button];
     }
+    
+    _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureAction:)];
+    [self addGestureRecognizer:_pan];
 
     [[MKLogger defaultLogger] addListener:self];
     [[MKPerfMonitor defaultMonitor] bind:self];
@@ -294,9 +299,13 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
 
 - (void)loadExportNativeModules {
     NSDictionary *config = [MKModuleManager defaultManager].injectJSConfig;
-    NSString *exportModules = MKValueToJSONText(config);
-    MKLogRecordView *recordView = self.recordViews[MKConsoleTypeExpInfos];
-    [recordView addRecord:exportModules];
+    
+    [config enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        NSDictionary *dict = @{key: obj};
+        NSString *json = MKValueToJSONText(dict);
+        MKLogRecordView *recordView = self.recordViews[MKConsoleTypeExpInfos];
+        [recordView addRecord:json];
+    }];
 }
 
 - (void)openConsoleViewWithType:(MKConsoleType)type {
@@ -315,6 +324,30 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
 
 - (void)didClickCloseButton:(id)sender {
     [self uninstall];
+}
+
+- (void)handlePanGestureAction:(UIPanGestureRecognizer *)pan {
+    CGFloat const kConsoleMargin = 5.f;
+    UIView *superview = self.superview;
+    CGPoint point = [pan translationInView:superview];
+    
+    self.centerY = self.center.y + point.y;
+    [pan setTranslation:CGPointZero inView:superview];
+    
+    void (^fixRectHandler)(void) = ^{
+        if (self.top < kConsoleMargin) {
+            self.top = kConsoleMargin;
+        }
+        if (self.bottom > self.superview.height - kConsoleMargin) {
+            self.bottom = self.superview.height - kConsoleMargin;
+        }
+    };
+    
+    if (pan.state == UIGestureRecognizerStateEnded || pan.state == UIGestureRecognizerStateChanged) {
+        [UIView animateWithDuration:0.3f animations:^{
+            fixRectHandler();
+        }];
+    }
 }
 
 #pragma mark - MKLogListener

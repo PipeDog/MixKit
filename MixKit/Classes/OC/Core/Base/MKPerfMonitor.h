@@ -10,7 +10,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const PERF_KEY_REGISTER_MODULE_DATA;
-extern NSString *const PERF_KEY_CONVERT_DATA_TO_JSON;
 
 @class MKPerfMonitor;
 

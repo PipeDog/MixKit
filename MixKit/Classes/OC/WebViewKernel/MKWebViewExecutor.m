@@ -149,10 +149,12 @@
     MKDispatchAsyncMainQueue(^{
         if (!callbackID.length) { return; }
         
+        [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_FORMAT_CALLBACK_SCRIPT];
         NSString *format = [self formattedCallbackScript];
         NSString *JSONText = MKValueToJSONText(arguments);
         NSString *script = [NSString stringWithFormat:format, callbackID, JSONText];
-        
+        [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_FORMAT_CALLBACK_SCRIPT];
+                
         id<MKScriptEngine> scriptEngine = self.webViewBridge.bridgeDelegate.scriptEngine;
         [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_CALLBACK_FUNC];
         
