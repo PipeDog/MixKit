@@ -22,6 +22,7 @@
 - (void)_mk_didUpdateConsoleState:(BOOL)open {
     if (open) {
         [self.consoleSwitch installTo:self];
+        [self consoleView]; // lazy load
     } else {
         [self.consoleSwitch uninstall];
         [self.consoleView uninstall];

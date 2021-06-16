@@ -21,7 +21,20 @@ NS_ASSUME_NONNULL_BEGIN
 /// @brief 执行脚本
 /// @param script 脚本语句
 /// @param doneHandler 脚本执行完成回调
-- (void)executeScript:(NSString *)script doneHandler:(void (^ _Nullable)(id _Nullable result, NSError * _Nullable error))doneHandler;
+- (void)executeScript:(NSString *)script
+          doneHandler:(void (^ _Nullable)(id _Nullable result, NSError * _Nullable error))doneHandler;
+
+/// @brief 调用函数
+/// @param method 函数名
+/// @param arguments 参数列表
+- (void)invokeMethod:(NSString *)method withArguments:(NSArray *)arguments;
+
+/// @brief 调用函数
+/// @param method 函数名
+/// @param arguments 参数列表
+/// @param doneHandler 调用异步回调
+- (void)invokeMethod:(NSString *)method withArguments:(NSArray *)arguments
+         doneHandler:(void (^ _Nullable)(id _Nullable result, NSError * _Nullable error))doneHandler;
 
 @end
 

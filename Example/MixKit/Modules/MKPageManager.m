@@ -16,6 +16,7 @@
 
 MK_EXPORT_METHOD(goback, goback)
 MK_EXPORT_METHOD(setTitle, setTitleWithParams:callback:)
+MK_EXPORT_METHOD(openPage, openPage)
 
 - (void)goback {
     UIViewController *controller = MKGetPageByBridge(self.bridge);
@@ -28,6 +29,15 @@ MK_EXPORT_METHOD(setTitle, setTitleWithParams:callback:)
     
     NSDictionary *resp = MKResponseMake(MKCallbackCodeSuccess, @"Set title success!", nil);
     !callback ?: callback(@[resp]);
+}
+
+- (void)openPage {
+    UIViewController *controller = [[UIViewController alloc] init];
+    controller.title = @"from web";
+    controller.view.backgroundColor = [UIColor blueColor];
+    
+    UIViewController *webController = MKGetPageByBridge(self.bridge);
+    [webController.navigationController pushViewController:controller animated:YES];
 }
 
 @end

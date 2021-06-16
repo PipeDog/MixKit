@@ -24,6 +24,22 @@
     </style>
 
     <script>
+        function pageWillAppear(animated) {
+            console.log('pageWillAppear' + animated);
+        }
+    
+        function pageDidAppear(animated) {
+            console.log('pageDidAppear' + animated);
+        }
+    
+        function pageWillDisappear(animated) {
+            console.log('pageWillDisappear' + animated);
+        }
+    
+        function pageDidDisappear(animated) {
+            console.log('pageDidDisappear' + animated);
+        }
+        
         var vConsole = new VConsole();
         let MKAlertManager = NativeModules.AlertManager;
         let MKLogManager = NativeModules.LogManager;
@@ -72,6 +88,10 @@
             MKPageManager.setTitle({title: 'new title'}, function (response) {
                 MKLogManager.log({msg: 'LOG' + JSON.stringify(response)});
             });
+        }
+    
+        function openPage() {
+            MKPageManager.openPage();
         }
 
         function testDataConvert() {
@@ -281,6 +301,8 @@
     <button class="button" type="button" onclick="goback()">goback</button>
     </br>
     <button class="button" type="button" onclick="setTitle()">setTitle</button>
+    </br>
+    <button class="button" type="button" onclick="openPage()">openPage</button>
     </br>
 
     <button class="button" type="button" onclick="testDataConvert()">testDataConvert</button>

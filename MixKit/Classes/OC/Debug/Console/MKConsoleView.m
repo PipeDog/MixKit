@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, MKConsoleType) {
 static inline NSString *MKGetConsoleTypeName(MKConsoleType type) {
     switch (type) {
         case MKConsoleTypeDebugLog: return @"调试日志";
-        case MKConsoleTypeExpInfos: return @"信息导出";
+        case MKConsoleTypeExpInfos: return @"导出信息";
         case MKConsoleTypePerfLogs: return @"性能日志";
         default: return @"";
     }
@@ -181,6 +181,7 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
         _tableView.dataSource = self;
         _tableView.translatesAutoresizingMaskIntoConstraints = NO;
         _tableView.tableFooterView = [[UIView alloc] init];
+        _tableView.showsVerticalScrollIndicator = YES;
         
         [_tableView registerClass:[MKLogRecordCell class] forCellReuseIdentifier:NSStringFromClass([MKLogRecordCell class])];
     }

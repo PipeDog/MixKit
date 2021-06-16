@@ -121,8 +121,34 @@ static WKProcessPool *_MKGlobalProcessPool(void) {
     [self executeScript:script doneHandler:nil];
 }
 
-- (void)executeScript:(NSString *)script doneHandler:(void (^)(id _Nullable, NSError * _Nullable))doneHandler {
+- (void)executeScript:(NSString *)script
+          doneHandler:(void (^)(id _Nullable, NSError * _Nullable))doneHandler {
     MKDispatchAsyncMainQueue(^{
+        [self evaluateJavaScript:script completionHandler:doneHandler];
+    });
+}
+
+- (void)invokeMethod:(NSString *)method withArguments:(NSArray *)arguments {
+    [self invokeMethod:method withArguments:arguments doneHandler:nil];
+}
+
+- (void)invokeMethod:(NSString *)method withArguments:(NSArray *)arguments
+         doneHandler:(void (^)(id _Nullable, NSError * _Nullable))doneHandler {
+    MKDispatchAsyncMainQueue(^{
+        NSMutableString *script = [[NSMutableString alloc] initWithFormat:@"%@(", method];
+        
+        NSUInteger numberOfArguments = arguments.count;
+        [arguments enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            BOOL toJson = ([obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSDictionary class]]);
+            NSString *argument = toJson ? MKValueToJSONText(obj) : [obj description];
+            [script appendString:argument];
+
+            if (idx != numberOfArguments - 1) {
+                [script appendString:@", "];
+            }
+        }];
+
+        [script appendString:@");"];
         [self evaluateJavaScript:script completionHandler:doneHandler];
     });
 }

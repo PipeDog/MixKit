@@ -18,6 +18,26 @@
 
 @implementation MKWebViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.webView invokeMethod:@"pageWillAppear" withArguments:@[@(animated)]];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.webView invokeMethod:@"pageDidAppear" withArguments:@[@(animated)]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.webView invokeMethod:@"pageWillDisappear" withArguments:@[@(animated)]];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.webView invokeMethod:@"pageDidDisappear" withArguments:@[@(animated)]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
