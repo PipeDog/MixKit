@@ -18,7 +18,7 @@ MK_EXTERN void MKRegisterMessageParser(Class);
 
 /// @brief 将给定的类注册为消息解析器，将此宏放在类实现中，
 ///        以便在执行 `+ load` 方法时自动向桥注册模块
-#define MK_EXPORT_MESSAGE_PARSER()                \
+#define MK_EXPORT_MESSAGE_PARSER()              \
 MK_EXTERN void MKRegisterMessageParser(Class);  \
 + (void)load { MKRegisterMessageParser([self class]); }
 
