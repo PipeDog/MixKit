@@ -5,38 +5,6 @@ class NativeModules {
         this._registerModules(props);
     }
 
-    _getValueType(value) {
-        return Object.prototype.toString.call(value).replace(/\s|object|\[|\]/g, '').toLowerCase();
-    }
-
-    _generateCallbackId() {
-        let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-            return v.toString(16);
-        });
-        return '_$_mk_callback_$_' + uuid;
-    }
-
-    _callNativeFunction(moduleName, methodName, nativeArguments) {
-        const message = {
-            moduleName: moduleName,
-            methodName: methodName,
-            arguments: nativeArguments
-        };
-
-        switch (String(window.__mk_systemType)) {
-            case '1': // iOS
-                window.webkit.messageHandlers.MixKit.postMessage(message);
-                break;
-            case '2': // Android
-                window.MixKit.postMessage(JSON.stringify(message));
-                break;
-            default: // Unknown
-                console.error('ERROR: Platform is not android or iOS!');
-                break;
-        }
-    }
-
     _registerModules(modulesMap) {
         if (this._getValueType(modulesMap) !== 'object') {
             return console.error('ERROR: modulesMap is not an object!');
@@ -52,25 +20,57 @@ class NativeModules {
             }
             moduleMethods.forEach(moduleMethodName => {
                 this[moduleName][moduleMethodName] = (...args) => {
-                    let numberOfArgs = args.length;
-                    let nativeArguments = new Array(numberOfArgs);
-                    
-                    for (let index = 0; index < numberOfArgs; index++) {
-                        let arg = args[index];
-
-                        if (this._getValueType(arg) === 'function') {
-                            let callbackID = this._generateCallbackId();
-                            this._callbacksMap[callbackID] = arg;
-                            arg = callbackID;
-                        }
-
-                        nativeArguments[index] = arg;
-                    }
-
-                    this._callNativeFunction(moduleName, moduleMethodName, nativeArguments);
+                    this._callNativeFunction(moduleName, moduleMethodName, args);
                 };
             });
         });
+    }
+
+    _callNativeFunction(moduleName, methodName, args) {
+        let numberOfArgs = args.length;
+        let nativeArguments = new Array(numberOfArgs);
+                    
+        for (let index = 0; index < numberOfArgs; index++) {
+            let arg = args[index];
+
+            if (this._getValueType(arg) === 'function') {
+                let callbackID = this._generateCallbackId();
+                this._callbacksMap[callbackID] = arg;
+                arg = callbackID;
+            }
+
+            nativeArguments[index] = arg;
+        }
+
+        const message = {
+            moduleName: moduleName,
+            methodName: methodName,
+            arguments: nativeArguments
+        };
+
+        switch (String(window.__mk_systemType)) {
+            case '1': { // iOS
+                window.webkit.messageHandlers.MixKit.postMessage(message);
+            } break;
+            case '2': { // Android
+                window.MixKit.postMessage(JSON.stringify(message));
+            } break;
+            default: { // Unknown
+                console.error('ERROR: Platform is not android or iOS!');
+            } break;
+        }
+    }
+
+    _getValueType(value) {
+        return Object.prototype.toString.call(value).replace(/\s|object|\[|\]/g, '').toLowerCase();
+    }
+
+    _generateCallbackId() {
+        let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+        return '_$_mk_callback_$_' + uuid;
     }
 
     invokeCallback(callbackId, response) {
@@ -96,4 +96,3 @@ class NativeModules {
 }
 
 NativeModules = new NativeModules(window.__mk_nativeConfig);
-
