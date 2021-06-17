@@ -20,7 +20,6 @@
 #import "MKModuleMethod+Invoke.h"
 #import "MKDefines.h"
 #import "MKWebViewPerfConstant.h"
-#import <objc/runtime.h>
 
 @interface MKWebViewExecutor ()
 
@@ -120,12 +119,17 @@
 
             [nativeArgs addObject:nativeArg];
         }
-    } forKey:PERF_KEY_CONVERT_NATIVE_ARGUMENTS];
+    } withKey:PERF_KEY_CONVERT_NATIVE_ARGUMENTS];
     
     @try {
-        [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_NATIVE_METHOD];
-        [method mk_invokeWithModule:bridgeModule arguments:nativeArgs];
-        [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_INVOKE_NATIVE_METHOD];
+        NSDictionary *extra = @{
+            @"js_module": moduleName ?: @"",
+            @"js_method": methodName ?: @"",
+        };
+        
+        [[MKPerfMonitor defaultMonitor] perfBlock:^{
+            [method mk_invokeWithModule:bridgeModule arguments:nativeArgs];
+        } withKey:PERF_KEY_INVOKE_NATIVE_METHOD extra:extra];
     } @catch (NSException *exception) {
         NSAssert(NO, @"Call objc_msgSend fatal!");
     }
@@ -153,10 +157,12 @@
         NSString *format = [self formattedCallbackScript];
         NSString *JSONText = MKValueToJSONText(arguments);
         NSString *script = [NSString stringWithFormat:format, callbackID, JSONText];
-        [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_FORMAT_CALLBACK_SCRIPT];
-                
+        
+        NSDictionary *extra = @{@"script": script ?: @""};
+        [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_FORMAT_CALLBACK_SCRIPT extra:extra];
+        
         id<MKScriptEngine> scriptEngine = self.webViewBridge.bridgeDelegate.scriptEngine;
-        [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_CALLBACK_FUNC];
+        [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_CALLBACK_FUNC extra:extra];
         
         [scriptEngine executeScript:script
                         doneHandler:^(id  _Nullable result, NSError * _Nullable error) {

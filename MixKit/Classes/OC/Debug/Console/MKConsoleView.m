@@ -242,6 +242,8 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
 
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.titleLabel.font = [UIFont systemFontOfSize:14];
+        button.layer.borderWidth = 1.f;
+        button.layer.borderColor = [UIColor whiteColor].CGColor;
         [button setTitle:MKGetConsoleTypeName(type) forState:UIControlStateNormal];
         [button addTarget:self action:@selector(didClickConsoleTypeButton:) forControlEvents:UIControlEventTouchUpInside];
         button.translatesAutoresizingMaskIntoConstraints = NO;

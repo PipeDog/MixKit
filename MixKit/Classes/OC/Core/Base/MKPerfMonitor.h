@@ -30,7 +30,11 @@ extern NSString *const PERF_KEY_REGISTER_MODULE_DATA;
 - (void)startPerf:(NSString *)key;
 - (void)endPerf:(NSString *)key;
 
-- (void)perfBlock:(void (^)(void))block forKey:(NSString *)key;
+- (void)startPerf:(NSString *)key extra:(NSDictionary * _Nullable)extra;
+- (void)endPerf:(NSString *)key extra:(NSDictionary * _Nullable)extra;
+
+- (void)perfBlock:(void (^)(void))block withKey:(NSString *)key;
+- (void)perfBlock:(void (^)(void))block withKey:(NSString *)key extra:(NSDictionary * _Nullable)extra;
 
 - (void)bind:(id<MKPerfMonitorDelegate>)delegate;
 - (void)unbind:(id<MKPerfMonitorDelegate>)delegate;

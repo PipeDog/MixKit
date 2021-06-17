@@ -56,17 +56,26 @@ NSString *const PERF_KEY_REGISTER_MODULE_DATA = @"PERF_KEY_REGISTER_MODULE_DATA"
 }
 
 - (void)startPerf:(NSString *)key {
+    [self startPerf:key extra:nil];
+}
+
+- (void)endPerf:(NSString *)key {
+    [self endPerf:key extra:nil];
+}
+
+- (void)startPerf:(NSString *)key extra:(NSDictionary *)extra {
     if (!key.length) { return; }
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[@"startTime"] = @([NSDate date].timeIntervalSince1970 * 1000);
+    dict[@"startExtra"] = extra;
     
     Lock();
     _perfDict[key] = dict;
     Unlock();
 }
 
-- (void)endPerf:(NSString *)key {
+- (void)endPerf:(NSString *)key extra:(NSDictionary *)extra {
     if (!key.length) { return; }
     
     Lock();
@@ -81,6 +90,7 @@ NSString *const PERF_KEY_REGISTER_MODULE_DATA = @"PERF_KEY_REGISTER_MODULE_DATA"
     
     dict[@"endTime"] = @(endTime);
     dict[@"cost"] = @(cost);
+    dict[@"endExtra"] = extra;
     
     Lock();
     _perfDict[key] = nil;
@@ -95,8 +105,12 @@ NSString *const PERF_KEY_REGISTER_MODULE_DATA = @"PERF_KEY_REGISTER_MODULE_DATA"
     }
 }
 
-- (void)perfBlock:(void (^)(void))block forKey:(NSString *)key {
-    [self startPerf:key];
+- (void)perfBlock:(void (^)(void))block withKey:(NSString *)key {
+    [self perfBlock:block withKey:key extra:nil];
+}
+
+- (void)perfBlock:(void (^)(void))block withKey:(NSString *)key extra:(NSDictionary *)extra {
+    [self startPerf:key extra:extra];
     !block ?: block();
     [self endPerf:key];
 }
