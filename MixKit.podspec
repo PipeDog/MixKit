@@ -31,8 +31,9 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'MixKit/Classes/**/*'
-  
-  s.prefix_header_file = 'MixKit/Classes/OC/MixKit.pch'
+  s.source_files = 'MixKit/Classes/**/**/*'
+
+  s.prefix_header_file = 'MixKit/Classes/MixKit.pch'
   
   # s.resource_bundles = {
   #   'MixKit' => ['MixKit/Assets/*.png']

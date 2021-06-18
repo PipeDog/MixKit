@@ -1,5 +1,5 @@
 PODS:
-  - MixKit (0.2.2)
+  - MixKit (0.2.3)
 
 DEPENDENCIES:
   - MixKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MixKit: 6614c6e7b4d46705f30eb3c61bfddcb6fe56c9ef
+  MixKit: 62368636c0ed5d41d58dc264d314a0a3cc05a09e
 
 PODFILE CHECKSUM: 7471e162e5d086ec3990d37a284e6a0dc94c6dc4
 

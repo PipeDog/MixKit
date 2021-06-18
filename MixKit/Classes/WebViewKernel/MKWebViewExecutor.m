@@ -98,8 +98,6 @@
     MKModuleMethod *method = [moduleManager methodWithModuleName:moduleName JSMethodName:methodName];
     id<MKBridgeModule> bridgeModule = [self.bridge.bridgeModuleCreator moduleWithClass:method.cls];
     
-    MKLogInfo(@"[Native] module = %@, method = %@, arguments = %@",
-              method.cls, method.name, parser.messageBody.arguments);
     if (!bridgeModule) {
         MKLogError(@"Can not find match module, moduleName = [%@], js_name = [%@].",
                      moduleName, methodName);
@@ -165,6 +163,7 @@
         
         NSDictionary *extra = @{@"script": script ?: @""};
         [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_FORMAT_CALLBACK_SCRIPT extra:extra];
+        MKLogInfo(@"[JS] callback js script = %@", script);
         
         id<MKScriptEngine> scriptEngine = self.webViewBridge.bridgeDelegate.scriptEngine;
         [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_INVOKE_CALLBACK_FUNC extra:extra];
