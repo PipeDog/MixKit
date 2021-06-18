@@ -16,6 +16,16 @@
 @synthesize methodName = _methodName;
 @synthesize arguments = _arguments;
 
+- (NSString *)description {
+    NSMutableString *fmt = [NSMutableString string];
+    [fmt appendFormat:@"{"];
+    [fmt appendFormat:@"\n\tmoduleName: %@,", self.moduleName];
+    [fmt appendFormat:@"\n\tmethodName: %@", self.methodName];
+    [fmt appendFormat:@"\n\targuments: %@", self.arguments];
+    [fmt appendFormat:@"\n}"];
+    return fmt;
+}
+
 @end
 
 @implementation MKMessageParser
@@ -43,6 +53,10 @@ MK_EXPORT_MESSAGE_PARSER()
         _messageBody = messageBody;
     }
     return self;
+}
+
+- (NSString *)description {
+    return self.messageBody.description;
 }
 
 @end

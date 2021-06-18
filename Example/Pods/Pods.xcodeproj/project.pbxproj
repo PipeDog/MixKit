@@ -7,82 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02B1C92B4C47F4DCB699630533DE98CD /* MKMessageParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5DEB929995D05A0F613A38F56FE7DD /* MKMessageParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		043997D30047742FAC8DAE213A308483 /* MKPerfMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A39890615977BBDAC796B1A3B6453BC7 /* MKPerfMonitor.m */; };
-		0B3E884B6A5D1D9B796A4FC900063FC1 /* MKUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE4CBE52232CEE4E702B4A4697234E99 /* MKUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C121C019D2E874C90B229F85CA49CF6 /* MKConsoleSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 14ECDB82F18BFFF121EEF14BCF686253 /* MKConsoleSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DF47B0FCD797F248B0BE5CC15D69DF7 /* MixKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D22352E0F9B601C24983768DD0E96849 /* MixKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0FF0B7366D93A81B7AF7E5F921AEE65A /* MKBuiltinLogListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC9F278686E7E10ED044A4B9F5D39BD /* MKBuiltinLogListener.m */; };
-		106E6192A18BDFD3A25A6E52C059FD2F /* MKWebViewPerfConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9A968484AEA3633930F12ED232197 /* MKWebViewPerfConstant.m */; };
-		1336CDDCF0E14671925DBE03F60B49A9 /* MKModuleMethod+Invoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F5617C82C6AA50E12C9D18539A42D /* MKModuleMethod+Invoke.m */; };
-		1C549206BBBCD3A1EF6F88A041ECAC6C /* MixKit.pch in Sources */ = {isa = PBXBuildFile; fileRef = 7340E24AB11242C6D4F0BE556D8683CE /* MixKit.pch */; };
-		1CBB4BD32B76453CC0DB6A37A65B85D0 /* MKConvert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ECCCABFC3513782650F1AA1B0F38E9C /* MKConvert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1F3BCDAFBEBE793C846F8C0EC67E8B41 /* mix.js in Sources */ = {isa = PBXBuildFile; fileRef = 892BB206CF84DF7CDB1293D8B5157EA3 /* mix.js */; };
-		275816B1485A56AF99D131201C9932E7 /* MixKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FF0A150D0E55BBDE0461F525E5E807 /* MixKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29E7C4896A8E2B49BB20F95EF6F45DC4 /* MKLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFF1A40E21FCC54964153C029A933B8 /* MKLogger.m */; };
-		2DA1C8FCC303C7F47493CCA93F60DBA4 /* MKBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 885775E1DB2811DDAB44A2DB92154AB6 /* MKBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		31DB410350EFEE91C60CEF5CE9EFEE9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		32642F58240227B867B02FF1A8B30AE5 /* MKBridgeModuleCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = CA555CF0BED4AF69E0F359E6A31C0A60 /* MKBridgeModuleCreator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3EB51F357ABE55FAE2E08DC8BE05836E /* MKMessageParserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4647EA8D325C34C51CCE6703701E3 /* MKMessageParserManager.m */; };
-		406BC20A4F754C4EBF963D33E8502511 /* MKMessageParserManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAB389A1B28ADA93061B01AEF6DE288 /* MKMessageParserManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46CA4CD54CDF95B2EBD53426C8E3B801 /* MKModuleData.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EF641270F7AF40BA7436A9870B17B26 /* MKModuleData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4AA14BC7B82E4BE009D7612FEECB46B7 /* MKDataUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C210DDB410523D3E12EBDD7379EA7E87 /* MKDataUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CFB8240217E030E86BCED3D90DB3F4A /* MKLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1681850A021BD964A59C4CFA596C7969 /* MKLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		517100206F57EA21DC1F0B49DB767C0E /* MKWebViewExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 56740505649E1015E0D05818E0060201 /* MKWebViewExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0624901905FAD06C56EA351BAC2E7553 /* MKBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = A18A2A9C9B028B8858B38506F4BF5090 /* MKBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08B92990398817E65353AEFE1F691B5E /* MKConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CE5391E100D3A0C6AD3B75FCC41468 /* MKConvert.m */; };
+		1386A98C7B15380780B1DF56E21A108E /* MKConsoleSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 0465EC2A85664A011D1D46BF9590D0FA /* MKConsoleSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13AE21BBDF8D14C252B489B2004A73C7 /* MKUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 75EB77708BF6B7CC91D2149E79B574F6 /* MKUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		147C05D69CDA0FB3BDD832B6D383A923 /* NSString+MKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF985A9775C3FC01FE8B6531B8BDDE5 /* NSString+MKAdd.m */; };
+		213F9380CCE74DB42F2402D05DBEFFE3 /* MKWebViewBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = F5F5134242D90773ACCFB2E47CBBE70D /* MKWebViewBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2672A14C3CA8396D1C410D8FDF50DBA4 /* MKExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = F4C001887A75FCB3D8EDF8952B43011A /* MKExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CF0BE1F5120BF40C6B009FF27836BE3 /* MKMessageParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A98183910F6B739C6F126F502FA1B58 /* MKMessageParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32BC2FE191993316DB7BC4AA6A2A1FFD /* MKScriptEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = C38139B4F141E5D8B2F423CFCF79FAA7 /* MKScriptEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345B11D344099AAD6268862ACD8220C1 /* MKMessageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D52FE7BEEFEEB93F877B96C1808F213 /* MKMessageProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D1F4D659C380E23E53ED7AC73746D3F /* MKPerfMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = E839FD24273EE5AE043FD7726151B7C0 /* MKPerfMonitor.m */; };
+		3F00F3978D8D9CA349A82E73846AFE11 /* MKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E420EF33B76FC025AAE480EE030707CA /* MKDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		416CC5379565B9B4CC710C7DEBDDD149 /* MKConsoleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539DFDFBD03813DD7360EF0FBA1B8DC /* MKConsoleView.m */; };
+		481C16F7FEDDA14E473E756EBA179F5E /* MKBridgeModuleCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BB34C3458AD804F70DD2941D4BB9097 /* MKBridgeModuleCreator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4ACC5E882EF5BB78B2E7A230911E6A99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		4E317D3C485C5F89E944547AB2BC0B4C /* MKBridgeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 12188BCE9DA1556EA75ACD58114FD4F5 /* MKBridgeModule.m */; };
+		50BA336EDB87E7AAF7DA9865789B3B39 /* MKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B4006C219305FE1DEC0968F7B14681B /* MKUtils.m */; };
+		5186A7228ADEE8D2DC3D505931EBAACC /* MKWebView+Console.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F226D0C32A93C32A8369A07BA20FA3E /* MKWebView+Console.m */; };
+		53FA14ACB0A9823BB0202AE6F9C75852 /* MixKit.pch in Sources */ = {isa = PBXBuildFile; fileRef = A3B7859DB5F2624878E8422B76378C3D /* MixKit.pch */; };
 		548BDD08CBB979318C6A942691F81B72 /* Pods-MixKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D186A30023372255FD825944150F0B19 /* Pods-MixKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A3ECCE835D8B5C8454B193A7D61B022 /* MKWebView+Console.h in Headers */ = {isa = PBXBuildFile; fileRef = E25AF3B333D866C44DB92CD108375B1C /* MKWebView+Console.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E511588F593640DBA40480C8D2DA300 /* MKWebViewBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = EFA70699B0B4FD1A27076CDBECDC7ECB /* MKWebViewBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		613AA3538CB28C156753ACED90C33D4B /* MKWebView+Console.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A999E14AA3B8185DA88F58DDB21757 /* MKWebView+Console.m */; };
-		66BFEE38FF42DDE62A74039FA72C2A9F /* MKDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3142B11F5D8743ABC31C074630BB38E7 /* MKDataUtils.m */; };
-		67314339F600D71FC3889070C043478C /* MKWebViewPerfConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 34527E551309252451FE15DA27A10A36 /* MKWebViewPerfConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C3D73C541C36639DDBFF89D183B93FB /* MKModuleMethod+Invoke.h in Headers */ = {isa = PBXBuildFile; fileRef = A28E2F18E49BEF758434D8F0A169434E /* MKModuleMethod+Invoke.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70BB7625692F042566A438C77E31D6AF /* MKMessageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 93B25A91B22F7CEB39719651BD997AE6 /* MKMessageProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58CB7195997908B7F59730AC1B4DD06C /* MKDataUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 90D36187BAB15C71F3824692B3175C0C /* MKDataUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A5F20E5268C9F423F5EAF42AAAF191F /* MKWebView+Console.h in Headers */ = {isa = PBXBuildFile; fileRef = 2654C3A93B7948562C1197083A30B562 /* MKWebView+Console.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61A28E19500B07FFA9D857E0BF1F7040 /* MKBridgeModule.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E39687C1E2EAB3B673C6B6CA52395 /* MKBridgeModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		624C788EFDF2A9B27A20122A4F5A4FDE /* MKLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = FCB9E04BE64BC4F14D5294F684A39AB0 /* MKLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62EB81AFE830EE6451FDDFA36225C9B3 /* MKModuleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17600090BB449F406BD7696C9AF906E0 /* MKModuleData.m */; };
+		6AE94017A1D27B5018B25C122C6B5451 /* MKWebViewExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B3A4DD2B502B894070ACE167CC6C4A /* MKWebViewExecutor.m */; };
+		6B1FD5A8C7504CF703F494E6EEC3005F /* MKConsoleView.h in Headers */ = {isa = PBXBuildFile; fileRef = D777FE258B93C95665CE6FAFAB0F5AF7 /* MKConsoleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71378C47067BC8ED2D826CFB4B5D0595 /* MKMessageParserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5A0CC852E4406149D5125C77A378D0 /* MKMessageParserManager.m */; };
 		76BB48C5818C7832377DAA1624C41B03 /* Pods-MixKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 79528BD514659114205E0F3A7710EB8A /* Pods-MixKit_Tests-dummy.m */; };
-		843A9A149F29ACA84AB1533017CF9658 /* MKBridgeModule.h in Headers */ = {isa = PBXBuildFile; fileRef = F742C1441EA5374BCBFE6BFDEC8F7A11 /* MKBridgeModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F83BCBB63ABD57956EE3AE9F3E86648 /* MKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = BB6009333C4719493EB5FC559A2A86C9 /* MKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81B8DFBBB4BE7C9ED64EEE834E770D22 /* MKModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFD41703D656EB1C783E537D09F145D /* MKModuleManager.m */; };
+		83AAAC47A8C62C1354A2D0BB2C5EC13A /* MixKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E22C768EBF5BC6A5E24332371CA7C74 /* MixKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8849ACFDA01412EA1109CEE628CEBE6E /* MKModuleMethod+Invoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 826A6F46BD74F9536A7DBA8F91263E37 /* MKModuleMethod+Invoke.m */; };
 		8991BB6FF486579D91E7A4590E2AF1A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		89BB1648255A683BF6D62229B16E4B23 /* NSString+MKAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = A9DD323CC33F2B4582ED6FA1318A74BD /* NSString+MKAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E5FCDC6056B8FAE1F28AD6FEA8D6DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		92B3B76DF5EE1A971BD626A0725D2D90 /* NSString+MKAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D4279AEEAED626ADA1E9D998BBCFFE /* NSString+MKAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		92FEB1C26D8BD1B1C284AEB4BB85EA30 /* MKConsoleView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF0CCC1A840078CDC5E579D6EBA1D6D2 /* MKConsoleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		932B93C574BEF6A794BD98FB8E31B62E /* MKModuleMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = DEE4C6DD9782475CD29EBDFDB95C7513 /* MKModuleMethod.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94A8E37F2D1786143A4A1F77B28CB9A4 /* UIView+MKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F3E7CA6527015EB4698BFFDE959750 /* UIView+MKAdd.m */; };
-		98588664EAF5DD1DF487CC78795C6EE0 /* MKWebViewExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0F23175B86EE9C123C7468948DD09F /* MKWebViewExecutor.m */; };
-		9B1829CE6410A95E016FE15EB00F85A9 /* MKPerfMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C8F72F55291DA3175B3823880751D19 /* MKPerfMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B55EA6D8DCBC86537FEFCA4424BF19A /* NSString+MKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EB099CF8435A47E0A1C39BC85F6673 /* NSString+MKAdd.m */; };
+		90BE9CC461864D54ABAFB6DE0DFE15E9 /* MKMessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 714D9DE287E92E4BAC2FFB9659A9E240 /* MKMessageParser.m */; };
+		910B8609FD6C3174F666116E03018E07 /* MKConsoleSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 082EC1E44BFD3EF37415A7FC900A32CA /* MKConsoleSwitch.m */; };
 		9B7958F06B3035BF136C84E4EFD8D201 /* Pods-MixKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8032C2070802593E691838054E6B5334 /* Pods-MixKit_Example-dummy.m */; };
-		9E441E2D6C612275FF856657A97B919F /* MKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C73D17C91CBDE261655A96481D0D0A7 /* MKWebView.m */; };
-		A8CDB8B36025100882EB67813D261D83 /* MKModuleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 565633303C8A54EB29F6511E77263B00 /* MKModuleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAD2E78DA956B503292DE2A01D8945E9 /* MKModuleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F42CB01349B7B1E63823170D7883A36 /* MKModuleData.m */; };
-		AB56180377F1B3DF9A914EB8690D58C6 /* MKBridgeModuleCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3D0623FA177BE5B8B182CF0DAED00B /* MKBridgeModuleCreator.m */; };
-		AB8874C17B1465AF6D7FD9C7C4E32638 /* MKScriptEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = DC02B95139F3970DA805FE3D84793C9B /* MKScriptEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B21EA7D98A07B323ED5EC7AFEA98EE9A /* MKBridgeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2705F563A4825715D075104DBC12CD29 /* MKBridgeModule.m */; };
-		B3220A2476C04EA50FEA956FF68DD633 /* MKConsoleSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = A2D849D8F0B0FD02A05B51ACBCF3EB68 /* MKConsoleSwitch.m */; };
-		B51E283E48093926C32276CF432B47AF /* MKModuleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF6693D8CBCBD85A6B9C748731DB56 /* MKModuleMethod.m */; };
-		BB72C1EEDE31FD5CECAE7CE7B67BC826 /* MKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CF99F2287C0548DB24DC4797F3E1D3 /* MKUtils.m */; };
-		C093979BFB95D4FBD6A1CD6155D3A12D /* MKWebViewKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = E0EAEEE4A87B09525FBFD3BD1196F4E8 /* MKWebViewKernel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C632BCDA839BB63D293CBAED87296FDD /* MixKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A65570F1F309FB78D49E549065FEB07C /* MixKit-dummy.m */; };
-		C716CFD51E0945BB03EE8E12F48CE674 /* MKModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E7EA65AA66770F2693E0FDB29891A /* MKModuleManager.m */; };
-		CD48C97A9751989D36C9D6B6AA5DEB52 /* MKConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DD83FA9D9D557933C173F0896B401F /* MKConvert.m */; };
-		CF0FFD3687E1FA44509F14D45B67A873 /* MKExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = D48F5BD9AAEA0E07C395E44246FC6938 /* MKExecutor.m */; };
+		9BF03C2B4CBB2A3AE9EF6AF147C50123 /* MKDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1ABE2FD02A6F41464D791203A84229 /* MKDataUtils.m */; };
+		9CC21BCB2193775DCD4F0D8A1F2CCE1C /* UIView+MKAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = E100F55CA4CC179792C9A5E59CBE180F /* UIView+MKAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CF30A330BE1234C1EDD7A7A4B71D463 /* MixKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A65570F1F309FB78D49E549065FEB07C /* MixKit-dummy.m */; };
+		9F6F23B4B4B3C0F409DF01A480D7822D /* MKModuleData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B04F917112398FF86AEA4333C014BF1 /* MKModuleData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A71F3601E14115D024D9E4E9C23A823B /* UIView+MKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = D14B09FDAD91818ADD058A803CBE3C60 /* UIView+MKAdd.m */; };
+		A9440B198269DACA1375136680C54AF2 /* MKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8798ACDBA4721577A420ACF67E622BB9 /* MKWebView.m */; };
+		AACEA56CF037A4D60E49875B353DF119 /* MixKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FF0A150D0E55BBDE0461F525E5E807 /* MixKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1D829EA7FDFB4D500C98DE241FC7CDA /* MKWebViewBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = CFECA584ABCEA95379D25E452C702B76 /* MKWebViewBridge.m */; };
+		B43E635E564443BD54CF1CBE4103055B /* MKLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B95597741ACDF3475E7038F4A53342CE /* MKLogger.m */; };
+		B983B5355C5282F1B49C26BC1C8C8124 /* MKWebViewPerfConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D91F51F06F7CE765C393A18E8F2242A6 /* MKWebViewPerfConstant.m */; };
+		BFC1E54B4D04D343E9F86C02A73E0213 /* MKModuleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E21FF12021573392D34B4990E92C377 /* MKModuleMethod.m */; };
+		C61881D0C5DB9C370ED17681CBB51E73 /* MKModuleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F38744C79FFBA00F86CA664389BBB3E /* MKModuleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB3E41DC718C0143334266C02C1379C7 /* MKExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7D7D1E869B1630E6FD09FF4548AB54 /* MKExecutor.m */; };
+		D06FBB77730811AEB935418E3D3AED4D /* MKModuleMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = D1017CEA90A17A9D1F666AF7D0922698 /* MKModuleMethod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA1617F50CB0A97A5FEF48D75849571B /* Pods-MixKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 360CD8174C6A76C0B85BCAC6E30DD8CB /* Pods-MixKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE0D73B8FB140E82C8266A2E46AB1EDC /* MKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 54054542E20DB719D1BF718DBABDAB34 /* MKDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E955067A3085BC4039A8DD01D8B92C66 /* MKExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = F182FB2CE2644A27DE9C0F99429C7D59 /* MKExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA007A9CCCF8EE7753E5DD5AF68A211E /* MKWebViewBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = CC151EB60AD0A6CF6AD5C490CA06D1BB /* MKWebViewBridge.m */; };
-		F2BD65014FF08C48E24070B5800B0D13 /* MKConsoleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C7051B45222F481494224607FA4010 /* MKConsoleView.m */; };
-		F3AAE5C4BC00284A937BA6FE24C44A0E /* MKMessageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DF9E986DD65932B051702DE0116F53 /* MKMessageParser.m */; };
-		F5775022D455CCDBA660B0B52CFA9304 /* MKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 13EF74EE02531F6FFF3876ACE19A35FE /* MKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F69C5A36FAA0438955C612EF4F3067F0 /* UIView+MKAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 298801675356CC701A78B82B82308753 /* UIView+MKAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF01D626DBC64333BA8FCA3DC3365D42 /* MKBuiltinLogListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A8649FE788EBDD5D60263BB12A4455F /* MKBuiltinLogListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA8319227B6817ADA67E0309498FB41A /* MKModuleMethod+Invoke.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EEDA3A50196D175311994D6D2E09364 /* MKModuleMethod+Invoke.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0A78C2826416AB772D66D24B98AC63B /* MKWebViewPerfConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2FDF9CD37750ADD2251EB8A4235994 /* MKWebViewPerfConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2CFF649C55BBCA13CAD8193296B916B /* MKWebViewExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = 96FC511C8670690C9703A2458989AD00 /* MKWebViewExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E38C7A1405C715993E71BB135FB42F18 /* mix.js in Sources */ = {isa = PBXBuildFile; fileRef = 892BB206CF84DF7CDB1293D8B5157EA3 /* mix.js */; };
+		E8BB1ADF0CCC59715F5C283EFD4C9609 /* MKMessageParserManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA74EED10A701B2E0CED46B9732846BD /* MKMessageParserManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDCFB23BFA170054B22256A8606B00D6 /* MKConvert.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9053890552DAF45D9E8FA6DECA7DC1 /* MKConvert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2921F700DC27D4FBA7EAD89C74D1FFC /* MKBridgeModuleCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = B48C026A231B204D15C628C732C2BE26 /* MKBridgeModuleCreator.m */; };
+		F6366275D94FC8D50D4AD265E127878A /* MKPerfMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 861F506CA50A32A86B56E14FCE5356FB /* MKPerfMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD3D241D4A8F3031C57B35C0F30D6B83 /* MKWebViewKernel.h in Headers */ = {isa = PBXBuildFile; fileRef = 89872424F1E6E8B86B84FAEA6A25A38F /* MKWebViewKernel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		05C74070ACE34480E0043D7C036DFC8D /* PBXContainerItemProxy */ = {
+		223E9513D287A92E5D2CD5F47247C879 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B6C2760E03FBB0372A9725623A3CBF3E;
 			remoteInfo = MixKit;
 		};
-		256EDD9F9A807F2E8202F1B5FB31F86B /* PBXContainerItemProxy */ = {
+		52D72EB8FD2747B80EA8B3252BCDF284 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -93,93 +91,91 @@
 
 /* Begin PBXFileReference section */
 		03FF0A150D0E55BBDE0461F525E5E807 /* MixKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MixKit-umbrella.h"; sourceTree = "<group>"; };
+		0465EC2A85664A011D1D46BF9590D0FA /* MKConsoleSwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKConsoleSwitch.h; sourceTree = "<group>"; };
 		04EFF23810CB4F9C1BB1AD074746E511 /* MixKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MixKit.debug.xcconfig; sourceTree = "<group>"; };
+		082EC1E44BFD3EF37415A7FC900A32CA /* MKConsoleSwitch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKConsoleSwitch.m; sourceTree = "<group>"; };
 		097F00400E0A007B79A87C79285BDA93 /* Pods_MixKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MixKit_Example.framework; path = "Pods-MixKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D7F5617C82C6AA50E12C9D18539A42D /* MKModuleMethod+Invoke.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKModuleMethod+Invoke.m"; sourceTree = "<group>"; };
-		0F1E7EA65AA66770F2693E0FDB29891A /* MKModuleManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKModuleManager.m; sourceTree = "<group>"; };
-		13EF74EE02531F6FFF3876ACE19A35FE /* MKWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebView.h; sourceTree = "<group>"; };
-		14ECDB82F18BFFF121EEF14BCF686253 /* MKConsoleSwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKConsoleSwitch.h; sourceTree = "<group>"; };
-		15D4279AEEAED626ADA1E9D998BBCFFE /* NSString+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+MKAdd.h"; sourceTree = "<group>"; };
-		1681850A021BD964A59C4CFA596C7969 /* MKLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKLogger.h; sourceTree = "<group>"; };
+		0BB34C3458AD804F70DD2941D4BB9097 /* MKBridgeModuleCreator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKBridgeModuleCreator.h; sourceTree = "<group>"; };
+		12188BCE9DA1556EA75ACD58114FD4F5 /* MKBridgeModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKBridgeModule.m; sourceTree = "<group>"; };
 		16A20618A10576BD25D62BA2A181DDBB /* Pods-MixKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MixKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		17600090BB449F406BD7696C9AF906E0 /* MKModuleData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKModuleData.m; sourceTree = "<group>"; };
 		179FF64BAB95E01343207731A677069D /* Pods-MixKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MixKit_Example.modulemap"; sourceTree = "<group>"; };
-		1DAB389A1B28ADA93061B01AEF6DE288 /* MKMessageParserManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKMessageParserManager.h; sourceTree = "<group>"; };
-		23C7051B45222F481494224607FA4010 /* MKConsoleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKConsoleView.m; sourceTree = "<group>"; };
 		254CD49C89F88BF79848EB051A6E278A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		2654C3A93B7948562C1197083A30B562 /* MKWebView+Console.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKWebView+Console.h"; sourceTree = "<group>"; };
 		26EB549F8320B4EA1579D7F1A8551ADD /* Pods-MixKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MixKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		2705F563A4825715D075104DBC12CD29 /* MKBridgeModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKBridgeModule.m; sourceTree = "<group>"; };
 		27B91724E2C71E90C0F3A4C3B7A44BF1 /* Pods-MixKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MixKit_Tests.modulemap"; sourceTree = "<group>"; };
-		298801675356CC701A78B82B82308753 /* UIView+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+MKAdd.h"; sourceTree = "<group>"; };
-		2B0F23175B86EE9C123C7468948DD09F /* MKWebViewExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKWebViewExecutor.m; sourceTree = "<group>"; };
-		2C73D17C91CBDE261655A96481D0D0A7 /* MKWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKWebView.m; sourceTree = "<group>"; };
-		2DC9F278686E7E10ED044A4B9F5D39BD /* MKBuiltinLogListener.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKBuiltinLogListener.m; sourceTree = "<group>"; };
-		2EF641270F7AF40BA7436A9870B17B26 /* MKModuleData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKModuleData.h; sourceTree = "<group>"; };
-		3142B11F5D8743ABC31C074630BB38E7 /* MKDataUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKDataUtils.m; sourceTree = "<group>"; };
+		2F7D7D1E869B1630E6FD09FF4548AB54 /* MKExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKExecutor.m; sourceTree = "<group>"; };
 		320A68BA7640B47EFF977706BA6118BC /* MixKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MixKit.framework; path = MixKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33454C338F927E10996939DDD6048CB1 /* Pods-MixKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MixKit_Example-Info.plist"; sourceTree = "<group>"; };
-		34527E551309252451FE15DA27A10A36 /* MKWebViewPerfConstant.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebViewPerfConstant.h; sourceTree = "<group>"; };
-		34F9A968484AEA3633930F12ED232197 /* MKWebViewPerfConstant.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKWebViewPerfConstant.m; sourceTree = "<group>"; };
 		360CD8174C6A76C0B85BCAC6E30DD8CB /* Pods-MixKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MixKit_Tests-umbrella.h"; sourceTree = "<group>"; };
+		3A1ABE2FD02A6F41464D791203A84229 /* MKDataUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKDataUtils.m; sourceTree = "<group>"; };
 		3C5D4FC9159F22D06F35CB92B810222C /* MixKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MixKit-prefix.pch"; sourceTree = "<group>"; };
-		42CF99F2287C0548DB24DC4797F3E1D3 /* MKUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKUtils.m; sourceTree = "<group>"; };
-		44EB099CF8435A47E0A1C39BC85F6673 /* NSString+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKAdd.m"; sourceTree = "<group>"; };
 		47B042900632B1078E533DE67DAADB9A /* Pods-MixKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MixKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4843C774E7C130A4158FDF83ECA16CAD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		54054542E20DB719D1BF718DBABDAB34 /* MKDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKDefines.h; sourceTree = "<group>"; };
-		565633303C8A54EB29F6511E77263B00 /* MKModuleManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKModuleManager.h; sourceTree = "<group>"; };
-		56740505649E1015E0D05818E0060201 /* MKWebViewExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebViewExecutor.h; sourceTree = "<group>"; };
-		59DD83FA9D9D557933C173F0896B401F /* MKConvert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKConvert.m; sourceTree = "<group>"; };
-		5A8649FE788EBDD5D60263BB12A4455F /* MKBuiltinLogListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKBuiltinLogListener.h; sourceTree = "<group>"; };
+		4E21FF12021573392D34B4990E92C377 /* MKModuleMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKModuleMethod.m; sourceTree = "<group>"; };
+		4F38744C79FFBA00F86CA664389BBB3E /* MKModuleManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKModuleManager.h; sourceTree = "<group>"; };
+		5A98183910F6B739C6F126F502FA1B58 /* MKMessageParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKMessageParser.h; sourceTree = "<group>"; };
+		5E22C768EBF5BC6A5E24332371CA7C74 /* MixKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MixKit.h; sourceTree = "<group>"; };
+		5F226D0C32A93C32A8369A07BA20FA3E /* MKWebView+Console.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKWebView+Console.m"; sourceTree = "<group>"; };
+		5FFD41703D656EB1C783E537D09F145D /* MKModuleManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKModuleManager.m; sourceTree = "<group>"; };
 		61C23EC892A6D76A5C0E135DE7A1A52E /* Pods_MixKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MixKit_Tests.framework; path = "Pods-MixKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6ECCCABFC3513782650F1AA1B0F38E9C /* MKConvert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKConvert.h; sourceTree = "<group>"; };
-		6F42CB01349B7B1E63823170D7883A36 /* MKModuleData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKModuleData.m; sourceTree = "<group>"; };
-		71CF6693D8CBCBD85A6B9C748731DB56 /* MKModuleMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKModuleMethod.m; sourceTree = "<group>"; };
+		6B4006C219305FE1DEC0968F7B14681B /* MKUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKUtils.m; sourceTree = "<group>"; };
+		714D9DE287E92E4BAC2FFB9659A9E240 /* MKMessageParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKMessageParser.m; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7340E24AB11242C6D4F0BE556D8683CE /* MixKit.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MixKit.pch; sourceTree = "<group>"; };
+		73B3A4DD2B502B894070ACE167CC6C4A /* MKWebViewExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKWebViewExecutor.m; sourceTree = "<group>"; };
+		7539DFDFBD03813DD7360EF0FBA1B8DC /* MKConsoleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKConsoleView.m; sourceTree = "<group>"; };
+		75EB77708BF6B7CC91D2149E79B574F6 /* MKUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKUtils.h; sourceTree = "<group>"; };
 		79528BD514659114205E0F3A7710EB8A /* Pods-MixKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MixKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		7C8F72F55291DA3175B3823880751D19 /* MKPerfMonitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKPerfMonitor.h; sourceTree = "<group>"; };
-		7D3D0623FA177BE5B8B182CF0DAED00B /* MKBridgeModuleCreator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKBridgeModuleCreator.m; sourceTree = "<group>"; };
+		7B04F917112398FF86AEA4333C014BF1 /* MKModuleData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKModuleData.h; sourceTree = "<group>"; };
 		8032C2070802593E691838054E6B5334 /* Pods-MixKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MixKit_Example-dummy.m"; sourceTree = "<group>"; };
 		812582DE2357E1AC24C73AEB68486374 /* MixKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MixKit.release.xcconfig; sourceTree = "<group>"; };
-		885775E1DB2811DDAB44A2DB92154AB6 /* MKBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKBridge.h; sourceTree = "<group>"; };
+		826A6F46BD74F9536A7DBA8F91263E37 /* MKModuleMethod+Invoke.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKModuleMethod+Invoke.m"; sourceTree = "<group>"; };
+		861F506CA50A32A86B56E14FCE5356FB /* MKPerfMonitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKPerfMonitor.h; sourceTree = "<group>"; };
+		8798ACDBA4721577A420ACF67E622BB9 /* MKWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKWebView.m; sourceTree = "<group>"; };
 		892BB206CF84DF7CDB1293D8B5157EA3 /* mix.js */ = {isa = PBXFileReference; includeInIndex = 1; path = mix.js; sourceTree = "<group>"; };
-		8AA4647EA8D325C34C51CCE6703701E3 /* MKMessageParserManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKMessageParserManager.m; sourceTree = "<group>"; };
-		91DF9E986DD65932B051702DE0116F53 /* MKMessageParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKMessageParser.m; sourceTree = "<group>"; };
-		93A999E14AA3B8185DA88F58DDB21757 /* MKWebView+Console.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKWebView+Console.m"; sourceTree = "<group>"; };
-		93B25A91B22F7CEB39719651BD997AE6 /* MKMessageProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKMessageProtocol.h; sourceTree = "<group>"; };
+		89872424F1E6E8B86B84FAEA6A25A38F /* MKWebViewKernel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebViewKernel.h; sourceTree = "<group>"; };
+		8D52FE7BEEFEEB93F877B96C1808F213 /* MKMessageProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKMessageProtocol.h; sourceTree = "<group>"; };
+		8EEDA3A50196D175311994D6D2E09364 /* MKModuleMethod+Invoke.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKModuleMethod+Invoke.h"; sourceTree = "<group>"; };
+		90D36187BAB15C71F3824692B3175C0C /* MKDataUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKDataUtils.h; sourceTree = "<group>"; };
 		965DB4E0A4E881DDE9A629D849672086 /* Pods-MixKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MixKit_Tests-Info.plist"; sourceTree = "<group>"; };
+		96FC511C8670690C9703A2458989AD00 /* MKWebViewExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebViewExecutor.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A28E2F18E49BEF758434D8F0A169434E /* MKModuleMethod+Invoke.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKModuleMethod+Invoke.h"; sourceTree = "<group>"; };
-		A2D849D8F0B0FD02A05B51ACBCF3EB68 /* MKConsoleSwitch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKConsoleSwitch.m; sourceTree = "<group>"; };
-		A39890615977BBDAC796B1A3B6453BC7 /* MKPerfMonitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKPerfMonitor.m; sourceTree = "<group>"; };
+		A18A2A9C9B028B8858B38506F4BF5090 /* MKBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKBridge.h; sourceTree = "<group>"; };
+		A3B7859DB5F2624878E8422B76378C3D /* MixKit.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MixKit.pch; sourceTree = "<group>"; };
 		A4652D51D890D274996CF457F488DE94 /* Pods-MixKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MixKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A65570F1F309FB78D49E549065FEB07C /* MixKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MixKit-dummy.m"; sourceTree = "<group>"; };
-		AD5DEB929995D05A0F613A38F56FE7DD /* MKMessageParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKMessageParser.h; sourceTree = "<group>"; };
+		A7CE5391E100D3A0C6AD3B75FCC41468 /* MKConvert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKConvert.m; sourceTree = "<group>"; };
+		A9DD323CC33F2B4582ED6FA1318A74BD /* NSString+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+MKAdd.h"; sourceTree = "<group>"; };
+		AE2FDF9CD37750ADD2251EB8A4235994 /* MKWebViewPerfConstant.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebViewPerfConstant.h; sourceTree = "<group>"; };
 		B0F14DF023B39117D8528869D1047B6D /* Pods-MixKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MixKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B1D67C606F752343F5B14CFB48B6132A /* MixKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MixKit.modulemap; sourceTree = "<group>"; };
-		BE4CBE52232CEE4E702B4A4697234E99 /* MKUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKUtils.h; sourceTree = "<group>"; };
+		B48C026A231B204D15C628C732C2BE26 /* MKBridgeModuleCreator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKBridgeModuleCreator.m; sourceTree = "<group>"; };
+		B95597741ACDF3475E7038F4A53342CE /* MKLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKLogger.m; sourceTree = "<group>"; };
+		BB6009333C4719493EB5FC559A2A86C9 /* MKWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebView.h; sourceTree = "<group>"; };
 		C0EBD2C059968C61193C63249E8DE27D /* Pods-MixKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MixKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		C210DDB410523D3E12EBDD7379EA7E87 /* MKDataUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKDataUtils.h; sourceTree = "<group>"; };
+		C38139B4F141E5D8B2F423CFCF79FAA7 /* MKScriptEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKScriptEngine.h; sourceTree = "<group>"; };
 		C3ED33B9E5B1D994281C496BD401FCB7 /* Pods-MixKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MixKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C61A6E1A7E686CE4A2C6E10F1B11BDFE /* Pods-MixKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MixKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CA555CF0BED4AF69E0F359E6A31C0A60 /* MKBridgeModuleCreator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKBridgeModuleCreator.h; sourceTree = "<group>"; };
-		CC151EB60AD0A6CF6AD5C490CA06D1BB /* MKWebViewBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKWebViewBridge.m; sourceTree = "<group>"; };
+		CBF985A9775C3FC01FE8B6531B8BDDE5 /* NSString+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKAdd.m"; sourceTree = "<group>"; };
+		CFECA584ABCEA95379D25E452C702B76 /* MKWebViewBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKWebViewBridge.m; sourceTree = "<group>"; };
+		D1017CEA90A17A9D1F666AF7D0922698 /* MKModuleMethod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKModuleMethod.h; sourceTree = "<group>"; };
+		D14B09FDAD91818ADD058A803CBE3C60 /* UIView+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+MKAdd.m"; sourceTree = "<group>"; };
 		D186A30023372255FD825944150F0B19 /* Pods-MixKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MixKit_Example-umbrella.h"; sourceTree = "<group>"; };
-		D22352E0F9B601C24983768DD0E96849 /* MixKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MixKit.h; sourceTree = "<group>"; };
-		D48F5BD9AAEA0E07C395E44246FC6938 /* MKExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKExecutor.m; sourceTree = "<group>"; };
-		D7F3E7CA6527015EB4698BFFDE959750 /* UIView+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+MKAdd.m"; sourceTree = "<group>"; };
-		DC02B95139F3970DA805FE3D84793C9B /* MKScriptEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKScriptEngine.h; sourceTree = "<group>"; };
-		DEE4C6DD9782475CD29EBDFDB95C7513 /* MKModuleMethod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKModuleMethod.h; sourceTree = "<group>"; };
-		DF0CCC1A840078CDC5E579D6EBA1D6D2 /* MKConsoleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKConsoleView.h; sourceTree = "<group>"; };
-		E0EAEEE4A87B09525FBFD3BD1196F4E8 /* MKWebViewKernel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebViewKernel.h; sourceTree = "<group>"; };
-		E25AF3B333D866C44DB92CD108375B1C /* MKWebView+Console.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKWebView+Console.h"; sourceTree = "<group>"; };
+		D777FE258B93C95665CE6FAFAB0F5AF7 /* MKConsoleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKConsoleView.h; sourceTree = "<group>"; };
+		D91F51F06F7CE765C393A18E8F2242A6 /* MKWebViewPerfConstant.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKWebViewPerfConstant.m; sourceTree = "<group>"; };
+		DC5E39687C1E2EAB3B673C6B6CA52395 /* MKBridgeModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKBridgeModule.h; sourceTree = "<group>"; };
+		E100F55CA4CC179792C9A5E59CBE180F /* UIView+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+MKAdd.h"; sourceTree = "<group>"; };
 		E2A5C5C96F47330ADBC7194DC22BBFDC /* MixKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MixKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		EAFF1A40E21FCC54964153C029A933B8 /* MKLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKLogger.m; sourceTree = "<group>"; };
-		EFA70699B0B4FD1A27076CDBECDC7ECB /* MKWebViewBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebViewBridge.h; sourceTree = "<group>"; };
-		F182FB2CE2644A27DE9C0F99429C7D59 /* MKExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKExecutor.h; sourceTree = "<group>"; };
+		E420EF33B76FC025AAE480EE030707CA /* MKDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKDefines.h; sourceTree = "<group>"; };
+		E839FD24273EE5AE043FD7726151B7C0 /* MKPerfMonitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKPerfMonitor.m; sourceTree = "<group>"; };
+		EA5A0CC852E4406149D5125C77A378D0 /* MKMessageParserManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MKMessageParserManager.m; sourceTree = "<group>"; };
 		F3C47FDDB70F38E76E7790FE5D5C2521 /* Pods-MixKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MixKit_Example-frameworks.sh"; sourceTree = "<group>"; };
-		F742C1441EA5374BCBFE6BFDEC8F7A11 /* MKBridgeModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKBridgeModule.h; sourceTree = "<group>"; };
+		F4C001887A75FCB3D8EDF8952B43011A /* MKExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKExecutor.h; sourceTree = "<group>"; };
+		F5F5134242D90773ACCFB2E47CBBE70D /* MKWebViewBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKWebViewBridge.h; sourceTree = "<group>"; };
+		FA74EED10A701B2E0CED46B9732846BD /* MKMessageParserManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKMessageParserManager.h; sourceTree = "<group>"; };
 		FB7E255BE7DB4983C000FC555452E824 /* MixKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MixKit-Info.plist"; sourceTree = "<group>"; };
+		FCB9E04BE64BC4F14D5294F684A39AB0 /* MKLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKLogger.h; sourceTree = "<group>"; };
+		FE9053890552DAF45D9E8FA6DECA7DC1 /* MKConvert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MKConvert.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,37 +195,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC8031738A4E3D3949042A576FE1745A /* Frameworks */ = {
+		E05C6D83529C901279632D9581F6E882 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31DB410350EFEE91C60CEF5CE9EFEE9D /* Foundation.framework in Frameworks */,
+				4ACC5E882EF5BB78B2E7A230911E6A99 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06BE50D06DF1D0BD69C868DB72241CC4 /* WebViewKernel */ = {
-			isa = PBXGroup;
-			children = (
-				DC02B95139F3970DA805FE3D84793C9B /* MKScriptEngine.h */,
-				13EF74EE02531F6FFF3876ACE19A35FE /* MKWebView.h */,
-				2C73D17C91CBDE261655A96481D0D0A7 /* MKWebView.m */,
-				E25AF3B333D866C44DB92CD108375B1C /* MKWebView+Console.h */,
-				93A999E14AA3B8185DA88F58DDB21757 /* MKWebView+Console.m */,
-				EFA70699B0B4FD1A27076CDBECDC7ECB /* MKWebViewBridge.h */,
-				CC151EB60AD0A6CF6AD5C490CA06D1BB /* MKWebViewBridge.m */,
-				56740505649E1015E0D05818E0060201 /* MKWebViewExecutor.h */,
-				2B0F23175B86EE9C123C7468948DD09F /* MKWebViewExecutor.m */,
-				E0EAEEE4A87B09525FBFD3BD1196F4E8 /* MKWebViewKernel.h */,
-				34527E551309252451FE15DA27A10A36 /* MKWebViewPerfConstant.h */,
-				34F9A968484AEA3633930F12ED232197 /* MKWebViewPerfConstant.m */,
-			);
-			name = WebViewKernel;
-			path = WebViewKernel;
-			sourceTree = "<group>";
-		};
 		096CA57604A20A2DDAF840044CCAF51F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,51 +221,83 @@
 			path = "Example/Pods/Target Support Files/MixKit";
 			sourceTree = "<group>";
 		};
-		22288C1DF5621CDB3F9C19E6130EB8D4 /* Log */ = {
+		1581A9EF5F4F685D237B6986BEBA5782 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				5A8649FE788EBDD5D60263BB12A4455F /* MKBuiltinLogListener.h */,
-				2DC9F278686E7E10ED044A4B9F5D39BD /* MKBuiltinLogListener.m */,
+				5E22C768EBF5BC6A5E24332371CA7C74 /* MixKit.h */,
+				20217D3F45C546968A0A0C1FC8766E38 /* Base */,
+				306F0FEC27C2B00DE6CB25C49371C30C /* Kernel */,
+				B7D2E1C47C3E8A05B731A72C97A5EACB /* Module */,
+				976511CA7C208508F7E221BDF06EA3D5 /* Parser */,
 			);
-			name = Log;
-			path = Log;
+			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
-		2FA3B9B9AC0A4B32ACC087287EB73DB1 /* Utils */ = {
+		20217D3F45C546968A0A0C1FC8766E38 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				15D4279AEEAED626ADA1E9D998BBCFFE /* NSString+MKAdd.h */,
-				44EB099CF8435A47E0A1C39BC85F6673 /* NSString+MKAdd.m */,
-				298801675356CC701A78B82B82308753 /* UIView+MKAdd.h */,
-				D7F3E7CA6527015EB4698BFFDE959750 /* UIView+MKAdd.m */,
+				FE9053890552DAF45D9E8FA6DECA7DC1 /* MKConvert.h */,
+				A7CE5391E100D3A0C6AD3B75FCC41468 /* MKConvert.m */,
+				90D36187BAB15C71F3824692B3175C0C /* MKDataUtils.h */,
+				3A1ABE2FD02A6F41464D791203A84229 /* MKDataUtils.m */,
+				E420EF33B76FC025AAE480EE030707CA /* MKDefines.h */,
+				FCB9E04BE64BC4F14D5294F684A39AB0 /* MKLogger.h */,
+				B95597741ACDF3475E7038F4A53342CE /* MKLogger.m */,
+				861F506CA50A32A86B56E14FCE5356FB /* MKPerfMonitor.h */,
+				E839FD24273EE5AE043FD7726151B7C0 /* MKPerfMonitor.m */,
+				75EB77708BF6B7CC91D2149E79B574F6 /* MKUtils.h */,
+				6B4006C219305FE1DEC0968F7B14681B /* MKUtils.m */,
 			);
-			name = Utils;
-			path = Utils;
+			name = Base;
+			path = Base;
 			sourceTree = "<group>";
 		};
-		3C319B81EFB4F2F0F561CD24928302A8 /* Parser */ = {
+		2405DAE81DA97B5C064DCE4CFB3EF852 /* OC */ = {
 			isa = PBXGroup;
 			children = (
-				AD5DEB929995D05A0F613A38F56FE7DD /* MKMessageParser.h */,
-				91DF9E986DD65932B051702DE0116F53 /* MKMessageParser.m */,
-				1DAB389A1B28ADA93061B01AEF6DE288 /* MKMessageParserManager.h */,
-				8AA4647EA8D325C34C51CCE6703701E3 /* MKMessageParserManager.m */,
-				93B25A91B22F7CEB39719651BD997AE6 /* MKMessageProtocol.h */,
+				A3B7859DB5F2624878E8422B76378C3D /* MixKit.pch */,
+				1581A9EF5F4F685D237B6986BEBA5782 /* Core */,
+				546266442D0B7899BF82A7E72E072635 /* Debug */,
+				CA4BC4F417025D67DC42B98CF6532963 /* WebViewKernel */,
 			);
-			name = Parser;
-			path = Parser;
+			name = OC;
+			path = MixKit/Classes/OC;
 			sourceTree = "<group>";
 		};
-		5290D7061403CB43D73E3B02FDCE6174 /* Console */ = {
+		306F0FEC27C2B00DE6CB25C49371C30C /* Kernel */ = {
 			isa = PBXGroup;
 			children = (
-				14ECDB82F18BFFF121EEF14BCF686253 /* MKConsoleSwitch.h */,
-				A2D849D8F0B0FD02A05B51ACBCF3EB68 /* MKConsoleSwitch.m */,
-				DF0CCC1A840078CDC5E579D6EBA1D6D2 /* MKConsoleView.h */,
-				23C7051B45222F481494224607FA4010 /* MKConsoleView.m */,
+				A18A2A9C9B028B8858B38506F4BF5090 /* MKBridge.h */,
+				0BB34C3458AD804F70DD2941D4BB9097 /* MKBridgeModuleCreator.h */,
+				B48C026A231B204D15C628C732C2BE26 /* MKBridgeModuleCreator.m */,
+				F4C001887A75FCB3D8EDF8952B43011A /* MKExecutor.h */,
+				2F7D7D1E869B1630E6FD09FF4548AB54 /* MKExecutor.m */,
+			);
+			name = Kernel;
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+		358C5A7C30517BF0695ECDF705DD4D50 /* Console */ = {
+			isa = PBXGroup;
+			children = (
+				0465EC2A85664A011D1D46BF9590D0FA /* MKConsoleSwitch.h */,
+				082EC1E44BFD3EF37415A7FC900A32CA /* MKConsoleSwitch.m */,
+				D777FE258B93C95665CE6FAFAB0F5AF7 /* MKConsoleView.h */,
+				7539DFDFBD03813DD7360EF0FBA1B8DC /* MKConsoleView.m */,
 			);
 			name = Console;
 			path = Console;
+			sourceTree = "<group>";
+		};
+		546266442D0B7899BF82A7E72E072635 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				358C5A7C30517BF0695ECDF705DD4D50 /* Console */,
+				729BA5CA2DE60A882A25B37C27A8CB0A /* Utils */,
+			);
+			name = Debug;
+			path = Debug;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -300,22 +308,29 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		68F08A0E8EB26B174F4C2F2D5577BCBB /* Module */ = {
+		729BA5CA2DE60A882A25B37C27A8CB0A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				F742C1441EA5374BCBFE6BFDEC8F7A11 /* MKBridgeModule.h */,
-				2705F563A4825715D075104DBC12CD29 /* MKBridgeModule.m */,
-				2EF641270F7AF40BA7436A9870B17B26 /* MKModuleData.h */,
-				6F42CB01349B7B1E63823170D7883A36 /* MKModuleData.m */,
-				565633303C8A54EB29F6511E77263B00 /* MKModuleManager.h */,
-				0F1E7EA65AA66770F2693E0FDB29891A /* MKModuleManager.m */,
-				DEE4C6DD9782475CD29EBDFDB95C7513 /* MKModuleMethod.h */,
-				71CF6693D8CBCBD85A6B9C748731DB56 /* MKModuleMethod.m */,
-				A28E2F18E49BEF758434D8F0A169434E /* MKModuleMethod+Invoke.h */,
-				0D7F5617C82C6AA50E12C9D18539A42D /* MKModuleMethod+Invoke.m */,
+				A9DD323CC33F2B4582ED6FA1318A74BD /* NSString+MKAdd.h */,
+				CBF985A9775C3FC01FE8B6531B8BDDE5 /* NSString+MKAdd.m */,
+				E100F55CA4CC179792C9A5E59CBE180F /* UIView+MKAdd.h */,
+				D14B09FDAD91818ADD058A803CBE3C60 /* UIView+MKAdd.m */,
 			);
-			name = Module;
-			path = Module;
+			name = Utils;
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		976511CA7C208508F7E221BDF06EA3D5 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				5A98183910F6B739C6F126F502FA1B58 /* MKMessageParser.h */,
+				714D9DE287E92E4BAC2FFB9659A9E240 /* MKMessageParser.m */,
+				FA74EED10A701B2E0CED46B9732846BD /* MKMessageParserManager.h */,
+				EA5A0CC852E4406149D5125C77A378D0 /* MKMessageParserManager.m */,
+				8D52FE7BEEFEEB93F877B96C1808F213 /* MKMessageProtocol.h */,
+			);
+			name = Parser;
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		A02B1BDD2F2EC20DE54E1F02A82B4AA5 /* Pods-MixKit_Tests */ = {
@@ -334,25 +349,6 @@
 			path = "Target Support Files/Pods-MixKit_Tests";
 			sourceTree = "<group>";
 		};
-		A150CF1B752D6CE81D85586D68CCB96E /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				6ECCCABFC3513782650F1AA1B0F38E9C /* MKConvert.h */,
-				59DD83FA9D9D557933C173F0896B401F /* MKConvert.m */,
-				C210DDB410523D3E12EBDD7379EA7E87 /* MKDataUtils.h */,
-				3142B11F5D8743ABC31C074630BB38E7 /* MKDataUtils.m */,
-				54054542E20DB719D1BF718DBABDAB34 /* MKDefines.h */,
-				1681850A021BD964A59C4CFA596C7969 /* MKLogger.h */,
-				EAFF1A40E21FCC54964153C029A933B8 /* MKLogger.m */,
-				7C8F72F55291DA3175B3823880751D19 /* MKPerfMonitor.h */,
-				A39890615977BBDAC796B1A3B6453BC7 /* MKPerfMonitor.m */,
-				BE4CBE52232CEE4E702B4A4697234E99 /* MKUtils.h */,
-				42CF99F2287C0548DB24DC4797F3E1D3 /* MKUtils.m */,
-			);
-			name = Base;
-			path = Base;
-			sourceTree = "<group>";
-		};
 		ACB339C4D26451C8047EF465A1CE9E98 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,18 +357,6 @@
 				4843C774E7C130A4158FDF83ECA16CAD /* README.md */,
 			);
 			name = Pod;
-			sourceTree = "<group>";
-		};
-		B1C6D61E6235B5D4DA5511E41B8B23EC /* OC */ = {
-			isa = PBXGroup;
-			children = (
-				7340E24AB11242C6D4F0BE556D8683CE /* MixKit.pch */,
-				F8E697FFFE0C28A58769BA18584EBCB5 /* Core */,
-				D86778BEF9BA3278947F01E8976A4BA8 /* Debug */,
-				06BE50D06DF1D0BD69C868DB72241CC4 /* WebViewKernel */,
-			);
-			name = OC;
-			path = MixKit/Classes/OC;
 			sourceTree = "<group>";
 		};
 		B707E79CFFEB75B5132997693929CBFE /* Targets Support Files */ = {
@@ -384,11 +368,29 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		B7D2E1C47C3E8A05B731A72C97A5EACB /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E39687C1E2EAB3B673C6B6CA52395 /* MKBridgeModule.h */,
+				12188BCE9DA1556EA75ACD58114FD4F5 /* MKBridgeModule.m */,
+				7B04F917112398FF86AEA4333C014BF1 /* MKModuleData.h */,
+				17600090BB449F406BD7696C9AF906E0 /* MKModuleData.m */,
+				4F38744C79FFBA00F86CA664389BBB3E /* MKModuleManager.h */,
+				5FFD41703D656EB1C783E537D09F145D /* MKModuleManager.m */,
+				D1017CEA90A17A9D1F666AF7D0922698 /* MKModuleMethod.h */,
+				4E21FF12021573392D34B4990E92C377 /* MKModuleMethod.m */,
+				8EEDA3A50196D175311994D6D2E09364 /* MKModuleMethod+Invoke.h */,
+				826A6F46BD74F9536A7DBA8F91263E37 /* MKModuleMethod+Invoke.m */,
+			);
+			name = Module;
+			path = Module;
+			sourceTree = "<group>";
+		};
 		C44FE5FC2DDF58C2C2E42F39F0A424EF /* MixKit */ = {
 			isa = PBXGroup;
 			children = (
 				D5660001152158F88857E29C6EB2C21D /* JS */,
-				B1C6D61E6235B5D4DA5511E41B8B23EC /* OC */,
+				2405DAE81DA97B5C064DCE4CFB3EF852 /* OC */,
 				ACB339C4D26451C8047EF465A1CE9E98 /* Pod */,
 				096CA57604A20A2DDAF840044CCAF51F /* Support Files */,
 			);
@@ -396,17 +398,24 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		C8A70B624B819D616A8BF4FEEB4DFEEF /* Kernel */ = {
+		CA4BC4F417025D67DC42B98CF6532963 /* WebViewKernel */ = {
 			isa = PBXGroup;
 			children = (
-				885775E1DB2811DDAB44A2DB92154AB6 /* MKBridge.h */,
-				CA555CF0BED4AF69E0F359E6A31C0A60 /* MKBridgeModuleCreator.h */,
-				7D3D0623FA177BE5B8B182CF0DAED00B /* MKBridgeModuleCreator.m */,
-				F182FB2CE2644A27DE9C0F99429C7D59 /* MKExecutor.h */,
-				D48F5BD9AAEA0E07C395E44246FC6938 /* MKExecutor.m */,
+				C38139B4F141E5D8B2F423CFCF79FAA7 /* MKScriptEngine.h */,
+				BB6009333C4719493EB5FC559A2A86C9 /* MKWebView.h */,
+				8798ACDBA4721577A420ACF67E622BB9 /* MKWebView.m */,
+				2654C3A93B7948562C1197083A30B562 /* MKWebView+Console.h */,
+				5F226D0C32A93C32A8369A07BA20FA3E /* MKWebView+Console.m */,
+				F5F5134242D90773ACCFB2E47CBBE70D /* MKWebViewBridge.h */,
+				CFECA584ABCEA95379D25E452C702B76 /* MKWebViewBridge.m */,
+				96FC511C8670690C9703A2458989AD00 /* MKWebViewExecutor.h */,
+				73B3A4DD2B502B894070ACE167CC6C4A /* MKWebViewExecutor.m */,
+				89872424F1E6E8B86B84FAEA6A25A38F /* MKWebViewKernel.h */,
+				AE2FDF9CD37750ADD2251EB8A4235994 /* MKWebViewPerfConstant.h */,
+				D91F51F06F7CE765C393A18E8F2242A6 /* MKWebViewPerfConstant.m */,
 			);
-			name = Kernel;
-			path = Kernel;
+			name = WebViewKernel;
+			path = WebViewKernel;
 			sourceTree = "<group>";
 		};
 		CB93D2F1AC6AD66BD110D2C42C83EE6B /* Development Pods */ = {
@@ -445,17 +454,6 @@
 			path = MixKit/Classes/JS;
 			sourceTree = "<group>";
 		};
-		D86778BEF9BA3278947F01E8976A4BA8 /* Debug */ = {
-			isa = PBXGroup;
-			children = (
-				5290D7061403CB43D73E3B02FDCE6174 /* Console */,
-				22288C1DF5621CDB3F9C19E6130EB8D4 /* Log */,
-				2FA3B9B9AC0A4B32ACC087287EB73DB1 /* Utils */,
-			);
-			name = Debug;
-			path = Debug;
-			sourceTree = "<group>";
-		};
 		EE342806386B60EE4D4793D5D91A241F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,19 +462,6 @@
 				61C23EC892A6D76A5C0E135DE7A1A52E /* Pods_MixKit_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F8E697FFFE0C28A58769BA18584EBCB5 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				D22352E0F9B601C24983768DD0E96849 /* MixKit.h */,
-				A150CF1B752D6CE81D85586D68CCB96E /* Base */,
-				C8A70B624B819D616A8BF4FEEB4DFEEF /* Kernel */,
-				68F08A0E8EB26B174F4C2F2D5577BCBB /* Module */,
-				3C319B81EFB4F2F0F561CD24928302A8 /* Parser */,
-			);
-			name = Core;
-			path = Core;
 			sourceTree = "<group>";
 		};
 		FA8A4166F8D4420F1DF808D71615C548 /* Pods-MixKit_Example */ = {
@@ -499,49 +484,48 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1227250FC6A0379F1FF69B9B0155552D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				275816B1485A56AF99D131201C9932E7 /* MixKit-umbrella.h in Headers */,
-				0DF47B0FCD797F248B0BE5CC15D69DF7 /* MixKit.h in Headers */,
-				2DA1C8FCC303C7F47493CCA93F60DBA4 /* MKBridge.h in Headers */,
-				843A9A149F29ACA84AB1533017CF9658 /* MKBridgeModule.h in Headers */,
-				32642F58240227B867B02FF1A8B30AE5 /* MKBridgeModuleCreator.h in Headers */,
-				FF01D626DBC64333BA8FCA3DC3365D42 /* MKBuiltinLogListener.h in Headers */,
-				0C121C019D2E874C90B229F85CA49CF6 /* MKConsoleSwitch.h in Headers */,
-				92FEB1C26D8BD1B1C284AEB4BB85EA30 /* MKConsoleView.h in Headers */,
-				1CBB4BD32B76453CC0DB6A37A65B85D0 /* MKConvert.h in Headers */,
-				4AA14BC7B82E4BE009D7612FEECB46B7 /* MKDataUtils.h in Headers */,
-				DE0D73B8FB140E82C8266A2E46AB1EDC /* MKDefines.h in Headers */,
-				E955067A3085BC4039A8DD01D8B92C66 /* MKExecutor.h in Headers */,
-				4CFB8240217E030E86BCED3D90DB3F4A /* MKLogger.h in Headers */,
-				02B1C92B4C47F4DCB699630533DE98CD /* MKMessageParser.h in Headers */,
-				406BC20A4F754C4EBF963D33E8502511 /* MKMessageParserManager.h in Headers */,
-				70BB7625692F042566A438C77E31D6AF /* MKMessageProtocol.h in Headers */,
-				46CA4CD54CDF95B2EBD53426C8E3B801 /* MKModuleData.h in Headers */,
-				A8CDB8B36025100882EB67813D261D83 /* MKModuleManager.h in Headers */,
-				6C3D73C541C36639DDBFF89D183B93FB /* MKModuleMethod+Invoke.h in Headers */,
-				932B93C574BEF6A794BD98FB8E31B62E /* MKModuleMethod.h in Headers */,
-				9B1829CE6410A95E016FE15EB00F85A9 /* MKPerfMonitor.h in Headers */,
-				AB8874C17B1465AF6D7FD9C7C4E32638 /* MKScriptEngine.h in Headers */,
-				0B3E884B6A5D1D9B796A4FC900063FC1 /* MKUtils.h in Headers */,
-				5A3ECCE835D8B5C8454B193A7D61B022 /* MKWebView+Console.h in Headers */,
-				F5775022D455CCDBA660B0B52CFA9304 /* MKWebView.h in Headers */,
-				5E511588F593640DBA40480C8D2DA300 /* MKWebViewBridge.h in Headers */,
-				517100206F57EA21DC1F0B49DB767C0E /* MKWebViewExecutor.h in Headers */,
-				C093979BFB95D4FBD6A1CD6155D3A12D /* MKWebViewKernel.h in Headers */,
-				67314339F600D71FC3889070C043478C /* MKWebViewPerfConstant.h in Headers */,
-				92B3B76DF5EE1A971BD626A0725D2D90 /* NSString+MKAdd.h in Headers */,
-				F69C5A36FAA0438955C612EF4F3067F0 /* UIView+MKAdd.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		55EC3FB849A83D9AA1E6EE3508AF9C53 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				548BDD08CBB979318C6A942691F81B72 /* Pods-MixKit_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7491F3CE310B87C9C5E2EBE7911AD9F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACEA56CF037A4D60E49875B353DF119 /* MixKit-umbrella.h in Headers */,
+				83AAAC47A8C62C1354A2D0BB2C5EC13A /* MixKit.h in Headers */,
+				0624901905FAD06C56EA351BAC2E7553 /* MKBridge.h in Headers */,
+				61A28E19500B07FFA9D857E0BF1F7040 /* MKBridgeModule.h in Headers */,
+				481C16F7FEDDA14E473E756EBA179F5E /* MKBridgeModuleCreator.h in Headers */,
+				1386A98C7B15380780B1DF56E21A108E /* MKConsoleSwitch.h in Headers */,
+				6B1FD5A8C7504CF703F494E6EEC3005F /* MKConsoleView.h in Headers */,
+				EDCFB23BFA170054B22256A8606B00D6 /* MKConvert.h in Headers */,
+				58CB7195997908B7F59730AC1B4DD06C /* MKDataUtils.h in Headers */,
+				3F00F3978D8D9CA349A82E73846AFE11 /* MKDefines.h in Headers */,
+				2672A14C3CA8396D1C410D8FDF50DBA4 /* MKExecutor.h in Headers */,
+				624C788EFDF2A9B27A20122A4F5A4FDE /* MKLogger.h in Headers */,
+				2CF0BE1F5120BF40C6B009FF27836BE3 /* MKMessageParser.h in Headers */,
+				E8BB1ADF0CCC59715F5C283EFD4C9609 /* MKMessageParserManager.h in Headers */,
+				345B11D344099AAD6268862ACD8220C1 /* MKMessageProtocol.h in Headers */,
+				9F6F23B4B4B3C0F409DF01A480D7822D /* MKModuleData.h in Headers */,
+				C61881D0C5DB9C370ED17681CBB51E73 /* MKModuleManager.h in Headers */,
+				DA8319227B6817ADA67E0309498FB41A /* MKModuleMethod+Invoke.h in Headers */,
+				D06FBB77730811AEB935418E3D3AED4D /* MKModuleMethod.h in Headers */,
+				F6366275D94FC8D50D4AD265E127878A /* MKPerfMonitor.h in Headers */,
+				32BC2FE191993316DB7BC4AA6A2A1FFD /* MKScriptEngine.h in Headers */,
+				13AE21BBDF8D14C252B489B2004A73C7 /* MKUtils.h in Headers */,
+				5A5F20E5268C9F423F5EAF42AAAF191F /* MKWebView+Console.h in Headers */,
+				7F83BCBB63ABD57956EE3AE9F3E86648 /* MKWebView.h in Headers */,
+				213F9380CCE74DB42F2402D05DBEFFE3 /* MKWebViewBridge.h in Headers */,
+				E2CFF649C55BBCA13CAD8193296B916B /* MKWebViewExecutor.h in Headers */,
+				FD3D241D4A8F3031C57B35C0F30D6B83 /* MKWebViewKernel.h in Headers */,
+				E0A78C2826416AB772D66D24B98AC63B /* MKWebViewPerfConstant.h in Headers */,
+				89BB1648255A683BF6D62229B16E4B23 /* NSString+MKAdd.h in Headers */,
+				9CC21BCB2193775DCD4F0D8A1F2CCE1C /* UIView+MKAdd.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +552,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C5C729E4F61D17851D0E9EC092A56089 /* PBXTargetDependency */,
+				880CD890467B11050F36471ECF6FDE67 /* PBXTargetDependency */,
 			);
 			name = "Pods-MixKit_Tests";
 			productName = "Pods-MixKit_Tests";
@@ -587,7 +571,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B89C395C90463E252934D9D6E097F1CA /* PBXTargetDependency */,
+				947533A7C76941C045E71C1CB8BE533F /* PBXTargetDependency */,
 			);
 			name = "Pods-MixKit_Example";
 			productName = "Pods-MixKit_Example";
@@ -596,12 +580,12 @@
 		};
 		B6C2760E03FBB0372A9725623A3CBF3E /* MixKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3005D2D1154D1766F5BD89699B58254 /* Build configuration list for PBXNativeTarget "MixKit" */;
+			buildConfigurationList = 897C361A0D22E99BBA22287211ACEE31 /* Build configuration list for PBXNativeTarget "MixKit" */;
 			buildPhases = (
-				1227250FC6A0379F1FF69B9B0155552D /* Headers */,
-				619092E25F265187076D266D7505E696 /* Sources */,
-				DC8031738A4E3D3949042A576FE1745A /* Frameworks */,
-				D6F981DF1CF1F25C3E5A5C3B238A342F /* Resources */,
+				7491F3CE310B87C9C5E2EBE7911AD9F9 /* Headers */,
+				38C8EE956B4EDDC46D7590E9A75219FC /* Sources */,
+				E05C6D83529C901279632D9581F6E882 /* Frameworks */,
+				0D0539230022534CE8EAC1D2AA73E0F6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -642,6 +626,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D0539230022534CE8EAC1D2AA73E0F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23BFBCCF96F0B703D13616C128FC4FBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -650,13 +641,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7E4A1A8E733801BE850A2DE62985700F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6F981DF1CF1F25C3E5A5C3B238A342F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -674,6 +658,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38C8EE956B4EDDC46D7590E9A75219FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E38C7A1405C715993E71BB135FB42F18 /* mix.js in Sources */,
+				9CF30A330BE1234C1EDD7A7A4B71D463 /* MixKit-dummy.m in Sources */,
+				53FA14ACB0A9823BB0202AE6F9C75852 /* MixKit.pch in Sources */,
+				4E317D3C485C5F89E944547AB2BC0B4C /* MKBridgeModule.m in Sources */,
+				F2921F700DC27D4FBA7EAD89C74D1FFC /* MKBridgeModuleCreator.m in Sources */,
+				910B8609FD6C3174F666116E03018E07 /* MKConsoleSwitch.m in Sources */,
+				416CC5379565B9B4CC710C7DEBDDD149 /* MKConsoleView.m in Sources */,
+				08B92990398817E65353AEFE1F691B5E /* MKConvert.m in Sources */,
+				9BF03C2B4CBB2A3AE9EF6AF147C50123 /* MKDataUtils.m in Sources */,
+				CB3E41DC718C0143334266C02C1379C7 /* MKExecutor.m in Sources */,
+				B43E635E564443BD54CF1CBE4103055B /* MKLogger.m in Sources */,
+				90BE9CC461864D54ABAFB6DE0DFE15E9 /* MKMessageParser.m in Sources */,
+				71378C47067BC8ED2D826CFB4B5D0595 /* MKMessageParserManager.m in Sources */,
+				62EB81AFE830EE6451FDDFA36225C9B3 /* MKModuleData.m in Sources */,
+				81B8DFBBB4BE7C9ED64EEE834E770D22 /* MKModuleManager.m in Sources */,
+				8849ACFDA01412EA1109CEE628CEBE6E /* MKModuleMethod+Invoke.m in Sources */,
+				BFC1E54B4D04D343E9F86C02A73E0213 /* MKModuleMethod.m in Sources */,
+				3D1F4D659C380E23E53ED7AC73746D3F /* MKPerfMonitor.m in Sources */,
+				50BA336EDB87E7AAF7DA9865789B3B39 /* MKUtils.m in Sources */,
+				5186A7228ADEE8D2DC3D505931EBAACC /* MKWebView+Console.m in Sources */,
+				A9440B198269DACA1375136680C54AF2 /* MKWebView.m in Sources */,
+				B1D829EA7FDFB4D500C98DE241FC7CDA /* MKWebViewBridge.m in Sources */,
+				6AE94017A1D27B5018B25C122C6B5451 /* MKWebViewExecutor.m in Sources */,
+				B983B5355C5282F1B49C26BC1C8C8124 /* MKWebViewPerfConstant.m in Sources */,
+				147C05D69CDA0FB3BDD832B6D383A923 /* NSString+MKAdd.m in Sources */,
+				A71F3601E14115D024D9E4E9C23A823B /* UIView+MKAdd.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C1012495AD69BFD2E92768C650190EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -682,54 +699,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		619092E25F265187076D266D7505E696 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1F3BCDAFBEBE793C846F8C0EC67E8B41 /* mix.js in Sources */,
-				C632BCDA839BB63D293CBAED87296FDD /* MixKit-dummy.m in Sources */,
-				1C549206BBBCD3A1EF6F88A041ECAC6C /* MixKit.pch in Sources */,
-				B21EA7D98A07B323ED5EC7AFEA98EE9A /* MKBridgeModule.m in Sources */,
-				AB56180377F1B3DF9A914EB8690D58C6 /* MKBridgeModuleCreator.m in Sources */,
-				0FF0B7366D93A81B7AF7E5F921AEE65A /* MKBuiltinLogListener.m in Sources */,
-				B3220A2476C04EA50FEA956FF68DD633 /* MKConsoleSwitch.m in Sources */,
-				F2BD65014FF08C48E24070B5800B0D13 /* MKConsoleView.m in Sources */,
-				CD48C97A9751989D36C9D6B6AA5DEB52 /* MKConvert.m in Sources */,
-				66BFEE38FF42DDE62A74039FA72C2A9F /* MKDataUtils.m in Sources */,
-				CF0FFD3687E1FA44509F14D45B67A873 /* MKExecutor.m in Sources */,
-				29E7C4896A8E2B49BB20F95EF6F45DC4 /* MKLogger.m in Sources */,
-				F3AAE5C4BC00284A937BA6FE24C44A0E /* MKMessageParser.m in Sources */,
-				3EB51F357ABE55FAE2E08DC8BE05836E /* MKMessageParserManager.m in Sources */,
-				AAD2E78DA956B503292DE2A01D8945E9 /* MKModuleData.m in Sources */,
-				C716CFD51E0945BB03EE8E12F48CE674 /* MKModuleManager.m in Sources */,
-				1336CDDCF0E14671925DBE03F60B49A9 /* MKModuleMethod+Invoke.m in Sources */,
-				B51E283E48093926C32276CF432B47AF /* MKModuleMethod.m in Sources */,
-				043997D30047742FAC8DAE213A308483 /* MKPerfMonitor.m in Sources */,
-				BB72C1EEDE31FD5CECAE7CE7B67BC826 /* MKUtils.m in Sources */,
-				613AA3538CB28C156753ACED90C33D4B /* MKWebView+Console.m in Sources */,
-				9E441E2D6C612275FF856657A97B919F /* MKWebView.m in Sources */,
-				EA007A9CCCF8EE7753E5DD5AF68A211E /* MKWebViewBridge.m in Sources */,
-				98588664EAF5DD1DF487CC78795C6EE0 /* MKWebViewExecutor.m in Sources */,
-				106E6192A18BDFD3A25A6E52C059FD2F /* MKWebViewPerfConstant.m in Sources */,
-				9B55EA6D8DCBC86537FEFCA4424BF19A /* NSString+MKAdd.m in Sources */,
-				94A8E37F2D1786143A4A1F77B28CB9A4 /* UIView+MKAdd.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B89C395C90463E252934D9D6E097F1CA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MixKit;
-			target = B6C2760E03FBB0372A9725623A3CBF3E /* MixKit */;
-			targetProxy = 05C74070ACE34480E0043D7C036DFC8D /* PBXContainerItemProxy */;
-		};
-		C5C729E4F61D17851D0E9EC092A56089 /* PBXTargetDependency */ = {
+		880CD890467B11050F36471ECF6FDE67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MixKit_Example";
 			target = 64973812F13BE82BEDECB538C24EB8FF /* Pods-MixKit_Example */;
-			targetProxy = 256EDD9F9A807F2E8202F1B5FB31F86B /* PBXContainerItemProxy */;
+			targetProxy = 52D72EB8FD2747B80EA8B3252BCDF284 /* PBXContainerItemProxy */;
+		};
+		947533A7C76941C045E71C1CB8BE533F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MixKit;
+			target = B6C2760E03FBB0372A9725623A3CBF3E /* MixKit */;
+			targetProxy = 223E9513D287A92E5D2CD5F47247C879 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -800,6 +783,37 @@
 			};
 			name = Debug;
 		};
+		754766F805387EA89569FAB10943304D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 812582DE2357E1AC24C73AEB68486374 /* MixKit.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MixKit/MixKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MixKit/MixKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MixKit/MixKit.modulemap";
+				PRODUCT_MODULE_NAME = MixKit;
+				PRODUCT_NAME = MixKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		821132B88D946F892048C6C9697F575E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C61A6E1A7E686CE4A2C6E10F1B11BDFE /* Pods-MixKit_Example.debug.xcconfig */;
@@ -832,36 +846,6 @@
 			};
 			name = Debug;
 		};
-		83159B38C8988D4074FA8622DB306FAB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04EFF23810CB4F9C1BB1AD074746E511 /* MixKit.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MixKit/MixKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MixKit/MixKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MixKit/MixKit.modulemap";
-				PRODUCT_MODULE_NAME = MixKit;
-				PRODUCT_NAME = MixKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		8E7B861E1684C15AB7BAD0512242C02E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26EB549F8320B4EA1579D7F1A8551ADD /* Pods-MixKit_Example.release.xcconfig */;
@@ -888,37 +872,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		93C0CC18B06028C6F7290FAB7FDAF9CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 812582DE2357E1AC24C73AEB68486374 /* MixKit.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MixKit/MixKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MixKit/MixKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MixKit/MixKit.modulemap";
-				PRODUCT_MODULE_NAME = MixKit;
-				PRODUCT_NAME = MixKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -987,6 +940,36 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
+		};
+		D0A3008FAE6A462B16409ED1045B2EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04EFF23810CB4F9C1BB1AD074746E511 /* MixKit.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MixKit/MixKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MixKit/MixKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MixKit/MixKit.modulemap";
+				PRODUCT_MODULE_NAME = MixKit;
+				PRODUCT_NAME = MixKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		E1DBDFD42D7E6CB535E1BA6AE509859A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1065,6 +1048,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		897C361A0D22E99BBA22287211ACEE31 /* Build configuration list for PBXNativeTarget "MixKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A3008FAE6A462B16409ED1045B2EF4 /* Debug */,
+				754766F805387EA89569FAB10943304D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E65F43E206067CD806B767DD65666192 /* Build configuration list for PBXNativeTarget "Pods-MixKit_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1079,15 +1071,6 @@
 			buildConfigurations = (
 				F02969FFBEEAD6CECD1083F7DFF8D3E7 /* Debug */,
 				E1DBDFD42D7E6CB535E1BA6AE509859A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3005D2D1154D1766F5BD89699B58254 /* Build configuration list for PBXNativeTarget "MixKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				83159B38C8988D4074FA8622DB306FAB /* Debug */,
-				93C0CC18B06028C6F7290FAB7FDAF9CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

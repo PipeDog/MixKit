@@ -44,7 +44,7 @@
 }
 
 - (void)addListener:(id<MKLogListener>)listener {
-    if ([listener respondsToSelector:@selector(logWithLevel:file:func:line:format:)]) {
+    if ([listener respondsToSelector:@selector(logMessage:level:file:func:line:)]) {
         [_listeners addObject:listener];
     }
 }

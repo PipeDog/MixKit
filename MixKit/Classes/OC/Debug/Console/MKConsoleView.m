@@ -278,9 +278,9 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
         UIButton *button = self.consoleTypeButtons[type];
         
         [NSLayoutConstraint activateConstraints:@[
-            [recordView.topAnchor constraintEqualToAnchor:self.topAnchor],
+            [recordView.topAnchor constraintEqualToAnchor:self.topAnchor constant:5.f],
             [recordView.leftAnchor constraintEqualToAnchor:self.leftAnchor],
-            [recordView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:-consoleTypeButtonHeight],
+            [recordView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:-(consoleTypeButtonHeight + 5.f)],
             [recordView.rightAnchor constraintEqualToAnchor:self.rightAnchor],
         ]];
         

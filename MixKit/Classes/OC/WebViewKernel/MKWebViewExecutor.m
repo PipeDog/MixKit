@@ -86,7 +86,8 @@
     [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_MATCH_MESSAGE_PARSER];
     id<MKMessageParser> parser = [manager parserWithMetaData:metaData];
     [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_MATCH_MESSAGE_PARSER];
-    
+
+    MKLogInfo(@"[JS] parser to : %@", parser);
     if (!parser) { return NO; }
     
     id<MKMessageBody> body = parser.messageBody;
@@ -97,6 +98,8 @@
     MKModuleMethod *method = [moduleManager methodWithModuleName:moduleName JSMethodName:methodName];
     id<MKBridgeModule> bridgeModule = [self.bridge.bridgeModuleCreator moduleWithClass:method.cls];
     
+    MKLogInfo(@"[Native] module = %@, method = %@, arguments = %@",
+              method.cls, method.name, parser.messageBody.arguments);
     if (!bridgeModule) {
         MKLogError(@"Can not find match module, moduleName = [%@], js_name = [%@].",
                      moduleName, methodName);
@@ -131,7 +134,9 @@
             [method mk_invokeWithModule:bridgeModule arguments:nativeArgs];
         } withKey:PERF_KEY_INVOKE_NATIVE_METHOD extra:extra];
     } @catch (NSException *exception) {
-        NSAssert(NO, @"Call objc_msgSend fatal!");
+        NSAssert(NO, @"Invoke module method failed!");
+        MKLogFatal(@"[Native] invoke method failed, module = %@, method = %@, arguments = %@",
+                   method.cls, method.name, nativeArgs);
     }
         
     return YES;
