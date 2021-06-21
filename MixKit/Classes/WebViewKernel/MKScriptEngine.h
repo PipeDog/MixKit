@@ -18,7 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param method 函数名
 /// @param arguments 参数列表
 /// @param doneHandler 调用异步回调
-- (void)invokeMethod:(NSString *)method withArguments:(NSArray *)arguments
+- (void)invokeMethod:(NSString *)method
+       withArguments:(NSArray *)arguments
          doneHandler:(void (^ _Nullable)(id _Nullable result, NSError * _Nullable error))doneHandler;
 
 /// @brief 调用函数
