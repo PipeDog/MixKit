@@ -117,38 +117,57 @@ static WKProcessPool *_MKGlobalProcessPool(void) {
 }
 
 #pragma mark - MKScriptEngine
-- (void)executeScript:(NSString *)script {
-    [self executeScript:script doneHandler:nil];
+- (void)invokeMethod:(NSString *)method
+       withArguments:(NSArray *)arguments
+         doneHandler:(void (^)(id _Nullable, NSError * _Nullable))doneHandler {
+    [self invokeModule:nil method:method withArguments:arguments doneHandler:doneHandler];
+}
+
+- (void)invokeModule:(NSString *)module
+              method:(NSString *)method
+       withArguments:(NSArray *)arguments
+         doneHandler:(void (^)(id _Nullable, NSError * _Nullable))doneHandler {
+    if (!method.length) {
+        NSError *error = [NSError errorWithDomain:@"MixKitErrorDomain"
+                                             code:-1000
+                                         userInfo:@{NSLocalizedFailureReasonErrorKey: @"[Call JS] The argument `method` can not be nil!"}];
+        !doneHandler ?: doneHandler(nil, error);
+        return;
+    }
+    
+    NSMutableString *jsScript = [NSMutableString string];
+    if (module.length > 0) { [jsScript appendFormat:@"%@.", module]; }
+    
+    [jsScript appendString:method];
+    [jsScript appendString:@"("];
+    
+    NSUInteger numberOfArguments = arguments.count;
+    [arguments enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSDictionary class]]) {
+            NSString *argument = MKValueToJSONText(obj);
+            [jsScript appendString:argument];
+        } else if ([obj isKindOfClass:[NSString class]]) {
+            [jsScript appendFormat:@"'%@'", obj];
+        } else if ([obj isKindOfClass:[NSNumber class]]) {
+            [jsScript appendString:[obj description]];
+        } else {
+            NSAssert(NO, @"Unsupport data type, obj's class is `%@`, obj = %@", [obj class], obj);
+            [jsScript appendString:@"null"];
+        }
+        
+        if (idx != numberOfArguments - 1) {
+            [jsScript appendString:@", "];
+        }
+    }];
+    
+    [jsScript appendString:@");"];
+    [self executeScript:jsScript doneHandler:doneHandler];
 }
 
 - (void)executeScript:(NSString *)script
           doneHandler:(void (^)(id _Nullable, NSError * _Nullable))doneHandler {
     MKDispatchAsyncMainQueue(^{
-        [self evaluateJavaScript:script completionHandler:doneHandler];
-    });
-}
-
-- (void)invokeMethod:(NSString *)method withArguments:(NSArray *)arguments {
-    [self invokeMethod:method withArguments:arguments doneHandler:nil];
-}
-
-- (void)invokeMethod:(NSString *)method withArguments:(NSArray *)arguments
-         doneHandler:(void (^)(id _Nullable, NSError * _Nullable))doneHandler {
-    MKDispatchAsyncMainQueue(^{
-        NSMutableString *script = [[NSMutableString alloc] initWithFormat:@"%@(", method];
-        
-        NSUInteger numberOfArguments = arguments.count;
-        [arguments enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            BOOL toJson = ([obj isKindOfClass:[NSArray class]] || [obj isKindOfClass:[NSDictionary class]]);
-            NSString *argument = toJson ? MKValueToJSONText(obj) : [obj description];
-            [script appendString:argument];
-
-            if (idx != numberOfArguments - 1) {
-                [script appendString:@", "];
-            }
-        }];
-
-        [script appendString:@");"];
         [self evaluateJavaScript:script completionHandler:doneHandler];
     });
 }

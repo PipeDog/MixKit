@@ -20,22 +20,22 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.webView invokeMethod:@"pageWillAppear" withArguments:@[@(animated)]];
+    [self.webView invokeMethod:@"pageWillAppear" withArguments:@[@(animated)] doneHandler:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.webView invokeMethod:@"pageDidAppear" withArguments:@[@(animated)]];
+    [self.webView invokeMethod:@"pageDidAppear" withArguments:@[@(animated)] doneHandler:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.webView invokeMethod:@"pageWillDisappear" withArguments:@[@(animated)]];
+    [self.webView invokeMethod:@"pageWillDisappear" withArguments:@[@(animated)] doneHandler:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [self.webView invokeMethod:@"pageDidDisappear" withArguments:@[@(animated)]];
+    [self.webView invokeMethod:@"pageDidDisappear" withArguments:@[@(animated)] doneHandler:nil];
 }
 
 - (void)viewDidLoad {
