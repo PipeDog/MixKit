@@ -64,28 +64,9 @@
 }
 
 #pragma mark - MKExecutor
-- (BOOL)callNativeMethod:(id)metaData {
-    if (MKIsOnMainQueue()) {
-        return [self _callNativeMethod:metaData];
-    }
-    
-    __block BOOL ret = NO;
-    dispatch_semaphore_t lock = dispatch_semaphore_create(0);
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        ret = [self _callNativeMethod:metaData];
-        dispatch_semaphore_signal(lock);
-    });
-    
-    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-    return ret;
-}
-
-#pragma mark - Tool Methods
-- (BOOL)_callNativeMethod:(id)metaData {
-    id<MKMessageParserManager> manager = self.bridge.bridgeMessageParserManager;
-    
+- (BOOL)invokeMethodOnCurrentQueue:(id)metaData {
     [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_MATCH_MESSAGE_PARSER];
+    id<MKMessageParserManager> manager = self.bridge.bridgeMessageParserManager;
     id<MKMessageParser> parser = [manager parserWithMetaData:metaData];
     [[MKPerfMonitor defaultMonitor] endPerf:PERF_KEY_MATCH_MESSAGE_PARSER];
 
@@ -142,6 +123,7 @@
     return YES;
 }
 
+#pragma mark - Internal Methods
 - (MKResponseCallback)_makeCallbackWithCallbackID:(NSString *)callbackID {
     @weakify(self)
     // Marked as autoreleasing, because NSInvocation doesn't retain arguments

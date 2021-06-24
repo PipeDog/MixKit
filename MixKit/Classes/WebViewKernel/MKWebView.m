@@ -111,7 +111,7 @@ static WKProcessPool *_MKGlobalProcessPool(void) {
         return;
     }
 
-    if (![self.webViewBridge.bridgeExecutor callNativeMethod:message.body]) {
+    if (![self.webViewBridge.bridgeExecutor invokeMethodOnMainQueue:message.body]) {
         [self.bridgeHandler webView:self didFailParseMessage:message];
     }
 }

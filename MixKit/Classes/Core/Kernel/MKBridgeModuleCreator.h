@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @brief 模块构造器模版类，一般情况下不需要重新自定义
 @interface MKBridgeModuleCreator : NSObject <MKBridgeModuleCreator>
 
-/// @brief 禁用初始化方法，使用 `MKBridgeModuleCreator` 协议提供方法代替
++ (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
 @end

@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, MKMethodType) {
 @property (nonatomic, assign, readonly) MKMethodType methodType;        ///< method type
 @property (nonatomic, strong, readonly) NSMethodSignature *methodSignature; ///< method's signature
 
-/// @brief 禁用初始化方法，使用 `- [MKModuleMethod initWithClass:method:]` 代替
++ (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
 /// @brief 指定初始化方法

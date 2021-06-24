@@ -15,9 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @brief webView 执行器
 @interface MKWebViewExecutor : MKExecutor
 
-/// @brief 禁用初始化方法，使用 `MKExecutor` 协议提供初始化方法
-- (instancetype)init NS_UNAVAILABLE;
-
 /// @brief 注入自定义 js 回调函数脚本
 /// @param bridgeName bridge 实例名称
 /// @param funcName 回调函数名称

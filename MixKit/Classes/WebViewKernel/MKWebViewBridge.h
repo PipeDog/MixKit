@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @brief 桥接代理
 @property (nonatomic, weak, readonly) id<MKWebViewBridgeDelegate> bridgeDelegate;
 
-/// @brief 禁用初始化方法，使用 `- initWithBridgeDelegate:` 方法代替
++ (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
 /// @brief 指定初始化方法

@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @brief 向 JS 侧注入的配置内容
 @property (nonatomic, strong, readonly) NSDictionary *injectJSConfig;
 
-/// @brief 禁用初始化方法，使用 `- [MKModuleData initWithModuleName:moduleClass:]` 代替
++ (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
 /// @brief 指定初始化方法

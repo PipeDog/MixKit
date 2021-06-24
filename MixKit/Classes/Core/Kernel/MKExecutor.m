@@ -7,6 +7,7 @@
 //
 
 #import "MKExecutor.h"
+#import "MKUtils.h"
 
 @implementation MKExecutor
 
@@ -20,8 +21,26 @@
     return self;
 }
 
-- (BOOL)callNativeMethod:(id)metaData {
-    MKLogError(@"You should override method [%s] in class [%@]!", __FUNCTION__, [self class]);
+#pragma mark - MKExecutor
+- (BOOL)invokeMethodOnMainQueue:(id)metaData {
+    if (MKIsOnMainQueue()) {
+        return [self invokeMethodOnCurrentQueue:metaData];
+    }
+    
+    __block BOOL ret = NO;
+    dispatch_semaphore_t lock = dispatch_semaphore_create(0);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ret = [self invokeMethodOnCurrentQueue:metaData];
+        dispatch_semaphore_signal(lock);
+    });
+    
+    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+    return ret;
+}
+
+- (BOOL)invokeMethodOnCurrentQueue:(id)metaData {
+    NSAssert(NO, @"Override this method [%s] in class [%@]!", __FUNCTION__, [self class]);
     return NO;
 }
 
