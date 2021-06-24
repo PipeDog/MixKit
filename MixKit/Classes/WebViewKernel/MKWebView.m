@@ -103,6 +103,7 @@ static WKProcessPool *_MKGlobalProcessPool(void) {
     
     // Check default logic
     if (![message.name isEqualToString:MKWebViewMessageName]) {
+        MKLogError(@"Invalid message name `%@`!", message.name);
         return;
     }
     if (![message.body isKindOfClass:[NSDictionary class]]) {
