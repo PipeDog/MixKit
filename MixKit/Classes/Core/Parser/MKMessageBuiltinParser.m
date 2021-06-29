@@ -1,16 +1,16 @@
 //
-//  MKMessageParser.m
+//  MKMessageBuiltinParser.m
 //  MixKit
 //
 //  Created by liang on 2020/8/21.
 //  Copyright © 2020 liang. All rights reserved.
 //
 
-#import "MKMessageParser.h"
+#import "MKMessageBuiltinParser.h"
 #import "MKMessageParserManager.h"
 #import "MKDefines.h"
 
-@implementation MKMessageBody
+@implementation MKMessageBuiltinBody
 
 @synthesize moduleName = _moduleName;
 @synthesize methodName = _methodName;
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation MKMessageParser
+@implementation MKMessageBuiltinParser
 
 MK_EXPORT_MESSAGE_PARSER()
 
@@ -46,7 +46,7 @@ MK_EXPORT_MESSAGE_PARSER()
     self = [super init];
     if (self) {
         NSDictionary *dict = (NSDictionary *)metaData;
-        id<MKMessageBody> messageBody = [[MKMessageBody alloc] init];
+        id<MKMessageBody> messageBody = [[MKMessageBuiltinBody alloc] init];
         messageBody.moduleName = [dict[@"moduleName"] copy];
         messageBody.methodName = [dict[@"methodName"] copy];
         messageBody.arguments = [dict[@"arguments"] copy];

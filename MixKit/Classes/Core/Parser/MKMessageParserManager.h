@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MKMessageProtocol.h"
+#import "MKMessageParser.h"
 #import "MKDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
