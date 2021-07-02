@@ -23,8 +23,9 @@
     [self _mk_buildArgumentBlocksIfNeeded];
 
     if (arguments.count != self.argumentBlocks.count) {
-        MKLogError(@"Wrong number of arguments, check it!");
-        return;
+        MKLogError(@"Wrong number of arguments, module = `%@`, method = `%@`, arguments = %@!",
+                           self.cls, self.name, arguments);
+        NSAssert(NO, @"You should have the same number of JS side arguments as native side arguments!");
     }
         
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.methodSignature];
@@ -32,7 +33,7 @@
     [invocation retainArguments];
     
     // Set arguments
-    NSUInteger count = arguments.count;
+    NSUInteger count = MIN(arguments.count, self.argumentBlocks.count);
     for (NSUInteger index = 0; index < count; index++) {
         id argument = arguments[index];
         id arg = MKNilIfNull(argument);

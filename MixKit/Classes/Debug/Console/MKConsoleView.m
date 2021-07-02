@@ -53,7 +53,7 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
     if (!text.length) { return 0.f; }
     
     CGFloat width = CGRectGetWidth([UIScreen mainScreen].bounds) - 15.f * 2;
-    return [text mk_heightForFont:[UIFont systemFontOfSize:12] width:width];
+    return [text mk_heightForFont:[UIFont systemFontOfSize:12] width:width] + 5.f * 2;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -77,9 +77,9 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
 
 - (void)layoutContentViews {
     [NSLayoutConstraint activateConstraints:@[
-        [self.contentLabel.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:0.f],
+        [self.contentLabel.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:5.f],
         [self.contentLabel.leftAnchor constraintEqualToAnchor:self.contentView.leftAnchor constant:15.f],
-        [self.contentLabel.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant:0.f],
+        [self.contentLabel.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant:-5.f],
         [self.contentLabel.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor constant:-15.f],
     ]];
 }
@@ -359,13 +359,10 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
               file:(const char *)file
               func:(const char *)func
               line:(NSUInteger)line {
-    NSString *filename = [NSString stringWithUTF8String:file].lastPathComponent;
-    NSString *funcName = [NSString stringWithUTF8String:func];
-    
-    NSString *formattedLog = [NSString stringWithFormat:@"%@ [%@][%@|%@|%lu] %@",
+    NSString *formattedLog = [NSString stringWithFormat:@"%@ [%@][%@] %@",
                               [self.dateFormatter stringFromDate:[NSDate date]],
                               MKLogGetFlag(level),
-                              filename, funcName, (unsigned long)line,
+                              [NSString stringWithUTF8String:func],
                               message];
     
     MKLogRecordView *recordView = self.recordViews[MKConsoleTypeDebugLog];
