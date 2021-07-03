@@ -8,7 +8,7 @@
 #import "MKLogger.h"
 
 @implementation MKLogger {
-    NSMutableArray<id<MKLogListener>> *_listeners;
+    NSHashTable<id<MKLogListener>> *_listeners;
 }
 
 + (MKLogger *)defaultLogger {
@@ -23,7 +23,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _listeners = [NSMutableArray array];
+        _listeners = [NSHashTable weakObjectsHashTable];
     }
     return self;
 }
@@ -38,7 +38,8 @@
     NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
     va_end(args);
 
-    for (id<MKLogListener> listener in _listeners) {
+    NSArray<id<MKLogListener>> *listeners = _listeners.allObjects;
+    for (id<MKLogListener> listener in listeners) {
         [listener logMessage:message level:level file:file func:func line:line];
     }    
 }

@@ -30,7 +30,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // Do nothing...
+        [self consoleView];
     }
     return self;
 }
@@ -63,7 +63,6 @@
     self.hidden = NO;
     
     [self.consoleSwitch installTo:self];
-    [self consoleView]; // lazy load
 }
 
 - (void)hide {

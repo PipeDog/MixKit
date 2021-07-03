@@ -37,11 +37,37 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
     }
 }
 
+static inline UIColor *MKLogGetColor(MKLogLevel level) {
+    switch (level) {
+        case MKLogLevelDebug: return [UIColor lightGrayColor];
+        case MKLogLevelInfo: return [UIColor whiteColor];
+        case MKLogLevelWarn: return [UIColor yellowColor];
+        case MKLogLevelError: return [UIColor orangeColor];
+        case MKLogLevelFatal: return [UIColor redColor];
+        default: return [UIColor whiteColor];
+    }
+}
+
+static inline MKLogLevel MKLogGetLevel(NSString *log) {
+    if ([log containsString:@"[Debug]"]) {
+        return MKLogLevelDebug;
+    } else if ([log containsString:@"[Info]"]) {
+        return MKLogLevelInfo;
+    } else if ([log containsString:@"[Warn]"]) {
+        return MKLogLevelWarn;
+    } else if ([log containsString:@"[Error]"]) {
+        return MKLogLevelError;
+    } else if ([log containsString:@"[Fatal]"]) {
+        return MKLogLevelFatal;
+    }
+    return MKLogLevelDebug;
+}
+
 @interface MKLogRecordCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *contentLabel;
 
-- (void)setText:(NSString *)text;
+- (void)setText:(NSString *)text level:(MKLogLevel)level;
 
 + (CGFloat)cellHeightByText:(NSString *)text;
 
@@ -85,8 +111,9 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
 }
 
 #pragma mark - Public Methods
-- (void)setText:(NSString *)text {
+- (void)setText:(NSString *)text level:(MKLogLevel)level {
     self.contentLabel.text = text ?: @"";
+    self.contentLabel.textColor = MKLogGetColor(level);
 }
 
 #pragma mark - Getter Methods
@@ -167,7 +194,7 @@ static inline NSString *MKLogGetFlag(MKLogLevel level) {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MKLogRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MKLogRecordCell class]) forIndexPath:indexPath];
     NSString *text = self.records[indexPath.row];
-    [cell setText:text];
+    [cell setText:text level:MKLogGetLevel(text)];
     return cell;
 }
 

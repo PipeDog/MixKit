@@ -9,6 +9,7 @@
 #import "MKAppDelegate.h"
 #import <MKPerfMonitor.h>
 #import <MKConsoleWindow.h>
+#import "MKLogger.h"
 
 @interface MKAppDelegate () <MKPerfMonitorDelegate>
 
@@ -22,8 +23,10 @@
     
     [[MKPerfMonitor defaultMonitor] bind:self];
     
+    MKConsoleWindow *consoleWindow = [MKConsoleWindow sharedInstance];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[MKConsoleWindow sharedInstance] show];
+        [consoleWindow show];
     });
     
     return YES;
