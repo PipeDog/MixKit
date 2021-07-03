@@ -10,6 +10,7 @@
 #import "MKModuleManager.h"
 #import "MKDataUtils.h"
 #import "UIView+MKAdd.h"
+#import "MKUtils.h"
 
 typedef NS_ENUM(NSUInteger, MKConsoleType) {
     MKConsoleTypeDebugLog = 0,
@@ -174,11 +175,26 @@ static inline MKLogLevel MKLogGetLevel(NSString *log) {
 - (void)addRecord:(NSString *)record {
     [self.records addObject:record ?: @""];
     [self.tableView reloadData];
+    [self scrollToBottom];
 }
 
 - (void)addRecords:(NSArray<NSString *> *)records {
     [self.records addObjectsFromArray:records ?: @[]];
     [self.tableView reloadData];
+    [self scrollToBottom];
+}
+
+#pragma mark - Tool Methods
+- (void)scrollToBottom {
+    NSInteger row = self.records.count - 1;
+    if (!self.superview.superview || row < 0) { return; }
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView scrollToRowAtIndexPath:indexPath
+                              atScrollPosition:UITableViewScrollPositionBottom
+                                      animated:YES];
+    });
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
@@ -329,13 +345,16 @@ static inline MKLogLevel MKLogGetLevel(NSString *log) {
 
 - (void)loadExportNativeModules {
     NSDictionary *config = [MKModuleManager defaultManager].injectJSConfig;
+    NSMutableArray<NSString *> *jsons = [NSMutableArray array];
     
     [config enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         NSDictionary *dict = @{key: obj};
         NSString *json = MKValueToJSONText(dict);
-        MKLogRecordView *recordView = self.recordViews[MKConsoleTypeExpInfos];
-        [recordView addRecord:json];
+        [jsons addObject:json ?: @""];
     }];
+    
+    MKLogRecordView *recordView = self.recordViews[MKConsoleTypeExpInfos];
+    [recordView addRecords:jsons];
 }
 
 - (void)openConsoleViewWithType:(MKConsoleType)type {
@@ -399,11 +418,14 @@ static inline MKLogLevel MKLogGetLevel(NSString *log) {
 #pragma mark - MKPerfMonitorDelegate
 - (void)perfMonitor:(MKPerfMonitor *)perfMonitor flushAllPerfRecords:(NSArray<NSDictionary *> *)perfRecords {
     MKLogRecordView *recordView = self.recordViews[MKConsoleTypePerfLogs];
+    NSMutableArray<NSString *> *jsons = [NSMutableArray array];
     
     for (NSDictionary *perfRecord in perfRecords) {
-        NSString *text = MKValueToJSONText(perfRecord);
-        [recordView addRecord:text];
+        NSString *json = MKValueToJSONText(perfRecord);
+        [jsons addObject:json ?: @""];
     }
+    
+    [recordView addRecords:jsons];
 }
 
 #pragma mark - Public Methods
