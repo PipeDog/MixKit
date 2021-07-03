@@ -60,7 +60,7 @@ static inline MKLogLevel MKLogGetLevel(NSString *log) {
     } else if ([log containsString:@"[Fatal]"]) {
         return MKLogLevelFatal;
     }
-    return MKLogLevelDebug;
+    return MKLogLevelInfo;
 }
 
 @interface MKLogRecordCell : UITableViewCell
