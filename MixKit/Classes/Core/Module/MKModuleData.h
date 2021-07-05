@@ -24,8 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSArray<MKModuleMethod *> *methods;
 /// @brief 方法导出集合，Key - js_name，Value - MKModuleMethod 实例
 @property (nonatomic, strong, readonly) NSDictionary<NSString *, MKModuleMethod *> *methodMap;
-/// @brief 向 JS 侧注入的配置内容
-@property (nonatomic, strong, readonly) NSDictionary *injectJSConfig;
+/// @brief 导出信息表（目前仅用于向 JS 侧注入）
+@property (nonatomic, strong, readonly) NSDictionary *exportDispatchTable;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;

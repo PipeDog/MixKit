@@ -25,7 +25,7 @@
         _moduleClass = moduleClass;
         
         [self loadMethods];
-        [self generateJSConfig];
+        [self builtExportDispatchTable];
     }
     return self;
 }
@@ -81,8 +81,8 @@
     }
 }
 
-- (void)generateJSConfig {
-    _injectJSConfig = @{
+- (void)builtExportDispatchTable {
+    _exportDispatchTable = @{
         @"methods": _methodMap.allKeys ?: @[],
     };
 }

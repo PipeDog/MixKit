@@ -18,7 +18,7 @@
 @implementation MKModuleManager {
     NSMutableArray<MKModuleData *> *_moduleDatas;
     NSMutableDictionary<NSString *, MKModuleData *> *_moduleDataMap;
-    NSMutableDictionary *_injectJSConfig;
+    NSMutableDictionary *_exportDispatchTable;
 }
 
 static MKModuleManager *__defaultManager;
@@ -47,7 +47,7 @@ static MKModuleManager *__defaultManager;
     if (self) {
         _moduleDatas = [NSMutableArray array];
         _moduleDataMap = [NSMutableDictionary dictionary];
-        _injectJSConfig = [NSMutableDictionary dictionary];
+        _exportDispatchTable = [NSMutableDictionary dictionary];
         
         [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_REGISTER_MODULE_DATA];
         [self registerModules];
@@ -90,7 +90,7 @@ static MKModuleManager *__defaultManager;
             MKModuleData *moduleData = [[MKModuleData alloc] initWithModuleName:modulename moduleClass:NSClassFromString(classname)];
             [_moduleDatas addObject:moduleData];
             _moduleDataMap[modulename] = moduleData;
-            _injectJSConfig[modulename] = moduleData.injectJSConfig;
+            _exportDispatchTable[modulename] = moduleData.exportDispatchTable;
         }
     }
 }
@@ -113,8 +113,8 @@ static MKModuleManager *__defaultManager;
     return _moduleDataMap;
 }
 
-- (NSDictionary *)injectJSConfig {
-    return _injectJSConfig;
+- (NSDictionary *)exportDispatchTable {
+    return _exportDispatchTable;
 }
 
 @end

@@ -81,7 +81,7 @@ static WKProcessPool *_MKGlobalProcessPool(void) {
     if (self) {
         _webViewBridge = [[MKWebViewBridge alloc] initWithBridgeDelegate:self];
         
-        NSDictionary *config = [MKModuleManager defaultManager].injectJSConfig;
+        NSDictionary *config = [MKModuleManager defaultManager].exportDispatchTable;
         NSString *injectScript = [NSString stringWithFormat:@
                                   "window.__mk_nativeConfig = %@;"
                                   "window.__mk_systemType = %zd;",

@@ -344,7 +344,7 @@ static inline MKLogLevel MKLogGetLevel(NSString *log) {
 }
 
 - (void)loadExportNativeModules {
-    NSDictionary *config = [MKModuleManager defaultManager].injectJSConfig;
+    NSDictionary *config = [MKModuleManager defaultManager].exportDispatchTable;
     NSMutableArray<NSString *> *jsons = [NSMutableArray array];
     
     [config enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {

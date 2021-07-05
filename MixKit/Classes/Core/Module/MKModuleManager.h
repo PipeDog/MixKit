@@ -26,8 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @brief 模块数据映射表，{ 'js_method_name': module }
 @property (nonatomic, copy, readonly) NSDictionary<NSString *, MKModuleData *> *moduleDataMap;
 
-/// @brief 注入 JS 侧的配置信息，包括模块名和函数名称列表
-@property (nonatomic, copy, readonly) NSDictionary *injectJSConfig;
+/// @brief 导出信息表，包括模块名和函数名称列表（目前仅用于向 JS 侧注入）
+@property (nonatomic, copy, readonly) NSDictionary *exportDispatchTable;
 
 /// @brief 通过 moduleName 和 JSMethodName 获取对应的 MKModuleMethod 实例
 /// @param moduleName 模块名
