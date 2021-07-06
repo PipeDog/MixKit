@@ -57,8 +57,15 @@
 
 #pragma mark - MKWebSocketDelegate
 - (void)webSocket:(id<MKWebSocket>)webSocket didReceiveMessage:(id)message {
-    id<MKExecutor> executor = _socketBridge.bridgeExecutor;
     NSDictionary *dict = MKValueToJSONObject(message);
+    if (!dict) { return; }
+    
+    if (![dict isKindOfClass:[NSDictionary class]]) {
+        NSAssert(NO, @"Invalid message format, check it, message = %@!", message);
+        return;
+    }
+
+    id<MKExecutor> executor = _socketBridge.bridgeExecutor;
     [executor invokeMethodOnMainQueue:dict];
 }
 

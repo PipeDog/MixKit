@@ -33,9 +33,7 @@
 }
 
 #pragma mark - MBExecutor
-- (BOOL)invokeMethodOnCurrentQueue:(id)metaData {
-    // TODO: Add socket data parse if needed...
-        
+- (BOOL)invokeMethodOnCurrentQueue:(id)metaData {        
     [[MKPerfMonitor defaultMonitor] startPerf:PERF_KEY_SOCKET_MATCH_MESSAGE_PARSER];
     id<MKMessageParserManager> manager = self.bridge.bridgeMessageParserManager;
     id<MKMessageParser> parser = [manager parserWithMetaData:metaData];
