@@ -17,7 +17,7 @@
 #import "MKBridgeModule.h"
 #import "MKUtils.h"
 #import "MKDataUtils.h"
-#import "MKModuleMethod+Invoke.h"
+#import "MKMethodInvoker.h"
 #import "MKDefines.h"
 #import "MKWebViewPerfConstant.h"
 
@@ -112,7 +112,8 @@
         };
         
         [[MKPerfMonitor defaultMonitor] perfBlock:^{
-            [method mk_invokeWithModule:bridgeModule arguments:nativeArgs];
+            MKMethodInvoker *invoker = [moduleManager invokerWithModuleName:moduleName methodName:methodName];
+            [invoker invokeWithModule:bridgeModule arguments:nativeArgs];
         } withKey:PERF_KEY_INVOKE_NATIVE_METHOD extra:extra];
     } @catch (NSException *exception) {
         NSAssert(NO, @"Invoke module method failed!");

@@ -10,7 +10,8 @@
 #import "MKLogger.h"
 #import "MKPerfMonitor.h"
 #import "MKUtils.h"
-#import "MKModuleMethod+Invoke.h"
+#import "MKMethodInvoker.h"
+#import "MKModuleMethod.h"
 #import "MKMessageParserManager.h"
 #import "MKModuleManager.h"
 #import "MKBridgeModule.h"
@@ -79,7 +80,8 @@
         };
         
         [[MKPerfMonitor defaultMonitor] perfBlock:^{
-            [method mk_invokeWithModule:bridgeModule arguments:[nativeArgs copy]];
+            MKMethodInvoker *invoker = [moduleManager invokerWithModuleName:moduleName methodName:methodName];
+            [invoker invokeWithModule:bridgeModule arguments:[nativeArgs copy]];
         } withKey:PERF_KEY_SOCKET_INVOKE_NATIVE_METHOD extra:extra];
     } @catch (NSException *exception) {
         NSAssert(NO, @"Invoke module method failed!");

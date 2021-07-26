@@ -10,6 +10,7 @@
 
 @class MKModuleData;
 @class MKModuleMethod;
+@class MKMethodInvoker;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -35,6 +36,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return 期望的 MKModuleMethod 实例
 - (MKModuleMethod * _Nullable)methodWithModuleName:(NSString *)moduleName
                                       JSMethodName:(NSString *)JSMethodName;
+
+/// @brief 获取 invoker 实例
+/// @param moduleName 导出模块名
+/// @param methodName js 函数名
+/// @return 对应 invoker 实例
+- (MKMethodInvoker *)invokerWithModuleName:(NSString *)moduleName
+                                methodName:(NSString *)methodName;
 
 @end
 

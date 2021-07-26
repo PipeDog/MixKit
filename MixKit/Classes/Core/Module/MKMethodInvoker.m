@@ -1,35 +1,45 @@
 //
-//  MKModuleMethod+Invoke.m
+//  MKMethodInvoker.m
 //  MixKit
 //
-//  Created by liang on 2021/6/10.
+//  Created by liang on 2021/7/26.
 //
 
-#import "MKModuleMethod+Invoke.h"
+#import "MKMethodInvoker.h"
+#import "MKModuleMethod.h"
 #import "MKConvert.h"
 #import "MKUtils.h"
-#import <objc/runtime.h>
 #import "MKDefines.h"
 
-@interface MKModuleMethod ()
+@interface MKMethodInvoker ()
 
+@property (nonatomic, strong) MKModuleMethod *method;
 @property (nonatomic, copy) NSArray *argumentBlocks;
 
 @end
 
-@implementation MKModuleMethod (Invoke)
+@implementation MKMethodInvoker
 
-- (void)mk_invokeWithModule:(id)module arguments:(NSArray *)arguments {
-    [self _mk_buildArgumentBlocksIfNeeded];
+- (instancetype)initWithMethod:(MKModuleMethod *)method {
+    self = [super init];
+    if (self) {
+        _method = method;
+        
+        [self buildArgumentBlocks];
+    }
+    return self;
+}
 
+#pragma mark - Public Methods
+- (void)invokeWithModule:(id)module arguments:(NSArray *)arguments {
     if (arguments.count != self.argumentBlocks.count) {
         MKLogError(@"Wrong number of arguments, module = `%@`, method = `%@`, arguments = %@!",
-                           self.cls, self.name, arguments);
+                           self.method.cls, self.method.name, arguments);
         NSAssert(NO, @"You should have the same number of JS side arguments as native side arguments!");
     }
         
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.methodSignature];
-    invocation.selector = self.sel;
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:self.method.methodSignature];
+    invocation.selector = self.method.sel;
     [invocation retainArguments];
     
     // Set arguments
@@ -46,31 +56,27 @@
     [invocation invokeWithTarget:module];
 }
 
-#pragma mark - Internal Methods
-- (void)_mk_buildArgumentBlocksIfNeeded {
-    if (self.argumentBlocks.count > 0) {
-        return;
-    }
-    
-    NSUInteger numberOfArguments = self.argumentTypeEncodings.count;
+#pragma mark - Private Methods
+- (void)buildArgumentBlocks {
+    NSUInteger numberOfArguments = self.method.argumentTypeEncodings.count;
     NSMutableArray *argumentBlocks = [[NSMutableArray alloc] initWithCapacity:numberOfArguments - 2];
     
     for (NSUInteger index = 2; index < numberOfArguments; index++) {
-        NSString *argumentType = self.argumentTypeEncodings[index];
+        NSString *argumentType = self.method.argumentTypeEncodings[index];
         
         __weak typeof(self) weakSelf = self;
         [argumentBlocks addObject:^(NSInvocation *invocation, NSUInteger index, id argument) {
-            [weakSelf _mk_setArgument:argument argumentType:argumentType toInvocation:invocation atIndex:index];
+            [weakSelf setArgument:argument argumentType:argumentType toInvocation:invocation atIndex:index];
         }];
     }
     
     self.argumentBlocks = [argumentBlocks copy];
 }
 
-- (void)_mk_setArgument:(id)argument
-           argumentType:(NSString *)argumentType
-           toInvocation:(NSInvocation *)invocation
-                atIndex:(NSUInteger)index {
+- (void)setArgument:(id)argument
+       argumentType:(NSString *)argumentType
+       toInvocation:(NSInvocation *)invocation
+            atIndex:(NSUInteger)index {
 #define MK_NUMBER_CONVERT(match, type, func)        \
 case match: {                                       \
     type _arg = [MKConvert func:argument];          \
@@ -86,7 +92,7 @@ case match: {                                       \
         } return;
             
         MK_NUMBER_CONVERT('B', BOOL, BOOL);
-        MK_NUMBER_CONVERT('d', double, double);            
+        MK_NUMBER_CONVERT('d', double, double);
         MK_NUMBER_CONVERT('f', float, float);
         MK_NUMBER_CONVERT('c', int8_t, int8_t);
         MK_NUMBER_CONVERT('s', int16_t, int16_t);
@@ -122,16 +128,6 @@ case match: {                                       \
             NSAssert(NO, @"Unsupport argument type, argument = %@!", argument);
         } return;
     }
-}
-
-#pragma mark - Setter Methods
-- (void)setArgumentBlocks:(NSArray *)argumentBlocks {
-    objc_setAssociatedObject(self, @selector(argumentBlocks), argumentBlocks, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-#pragma mark - Getter Methods
-- (NSArray *)argumentBlocks {
-    return objc_getAssociatedObject(self, _cmd);
 }
 
 @end
