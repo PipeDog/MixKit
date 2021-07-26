@@ -105,22 +105,22 @@
         }
     } withKey:PERF_KEY_CONVERT_NATIVE_ARGUMENTS];
     
-    @try {
-        NSDictionary *extra = @{
-            @"js_module": moduleName ?: @"",
-            @"js_method": methodName ?: @"",
-        };
-        
-        [[MKPerfMonitor defaultMonitor] perfBlock:^{
-            MKMethodInvoker *invoker = [moduleManager invokerWithModuleName:moduleName methodName:methodName];
-            [invoker invokeWithModule:bridgeModule arguments:nativeArgs];
-        } withKey:PERF_KEY_INVOKE_NATIVE_METHOD extra:extra];
-    } @catch (NSException *exception) {
-        NSAssert(NO, @"Invoke module method failed!");
+    NSDictionary *extra = @{
+        @"js_module": moduleName ?: @"",
+        @"js_method": methodName ?: @"",
+    };
+    
+    __block BOOL invokeResult = NO;
+    [[MKPerfMonitor defaultMonitor] perfBlock:^{
+        MKMethodInvoker *invoker = [moduleManager invokerWithModuleName:moduleName methodName:methodName];
+        invokeResult = [invoker invokeWithModule:bridgeModule arguments:nativeArgs];
+    } withKey:PERF_KEY_INVOKE_NATIVE_METHOD extra:extra];
+    
+    if (!invokeResult) {
         MKLogFatal(@"[Native] invoke method failed, module = %@, method = %@, arguments = %@",
                    method.cls, method.name, nativeArgs);
     }
-        
+
     return YES;
 }
 
