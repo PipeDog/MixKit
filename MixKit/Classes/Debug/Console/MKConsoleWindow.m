@@ -36,25 +36,22 @@
 }
 
 - (void)show {
-    
-#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
-    BOOL matchScene = NO;
-    
     if (@available(iOS 13.0, *)) {
+        UIWindowScene *matchScene = nil;
+        
         for (UIWindowScene *windowScene in [UIApplication sharedApplication].connectedScenes) {
             if (windowScene.activationState == UISceneActivationStateForegroundActive) {
-                self.windowScene = windowScene;
-                matchScene = YES;
+                matchScene = windowScene;
                 break;
             }
         }
+        
+        if (!matchScene) {
+            matchScene = (UIWindowScene *)[UIApplication sharedApplication].connectedScenes.anyObject;
+        }
+        
+        self.windowScene = matchScene;
     }
-    
-    if (!matchScene) {
-        NSAssert(NO, @"Match scene failed, delay show console window in launch task!");
-        return;
-    }
-#endif
         
     UIViewController *controller = [[UIViewController alloc] init];
     controller.view.backgroundColor = [UIColor clearColor];
