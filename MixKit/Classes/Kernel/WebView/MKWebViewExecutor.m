@@ -78,7 +78,7 @@
     NSString *methodName = body.methodName;
         
     MKModuleManager *moduleManager = [MKModuleManager defaultManager];
-    MKModuleMethod *method = [moduleManager methodWithModuleName:moduleName JSMethodName:methodName];
+    MKModuleMethod *method = [moduleManager methodWithModuleName:moduleName methodName:methodName];
     id<MKBridgeModule> bridgeModule = [self.bridge.bridgeModuleCreator moduleWithClass:method.cls];
     
     if (!bridgeModule) {

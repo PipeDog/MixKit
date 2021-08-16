@@ -60,12 +60,12 @@ static MKModuleManager *__defaultManager;
 }
 
 #pragma mark - Public Methods
-- (MKModuleMethod *)methodWithModuleName:(NSString *)moduleName JSMethodName:(NSString *)JSMethodName {
+- (MKModuleMethod *)methodWithModuleName:(NSString *)moduleName methodName:(NSString *)methodName {
     MKModuleData *moduleData = _moduleDataMap[moduleName];
     if (!moduleData) { return nil; }
     
-    MKModuleMethod *method = moduleData.methodMap[JSMethodName];
-    NSAssert(method, @"Get method failed, moduleName = [%@], js_name = [%@]", moduleName, JSMethodName);
+    MKModuleMethod *method = moduleData.methodMap[methodName];
+    NSAssert(method, @"Get method failed, moduleName = [%@], js_name = [%@]", moduleName, methodName);
     return method;
 }
 
@@ -74,7 +74,7 @@ static MKModuleManager *__defaultManager;
     MKMethodInvoker *invoker = _invokerMap[invokerID];
     if (invoker) { return invoker; }
     
-    MKModuleMethod *method = [self methodWithModuleName:moduleName JSMethodName:methodName];
+    MKModuleMethod *method = [self methodWithModuleName:moduleName methodName:methodName];
     if (!method) { return nil; }
     
     invoker = [[MKMethodInvoker alloc] initWithMethod:method];
