@@ -110,13 +110,13 @@
         @"js_method": methodName ?: @"",
     };
     
-    __block BOOL invokeResult = NO;
+    __block NSInvocation *invocation;
     [[MKPerfMonitor defaultMonitor] perfBlock:^{
         MKMethodInvoker *invoker = [moduleManager invokerWithModuleName:moduleName methodName:methodName];
-        invokeResult = [invoker invokeWithModule:bridgeModule arguments:nativeArgs];
+        invocation = [invoker invokeWithModule:bridgeModule arguments:nativeArgs];
     } withKey:PERF_KEY_INVOKE_NATIVE_METHOD extra:extra];
     
-    if (!invokeResult) {
+    if (!invocation) {
         MKLogFatal(@"[Native] invoke method failed, module = %@, method = %@, arguments = %@",
                    method.cls, method.name, nativeArgs);
     }

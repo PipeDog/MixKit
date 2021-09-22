@@ -31,7 +31,7 @@
 }
 
 #pragma mark - Public Methods
-- (BOOL)invokeWithModule:(id)module arguments:(NSArray *)arguments {
+- (NSInvocation *)invokeWithModule:(id)module arguments:(NSArray *)arguments {
     if (arguments.count != self.argumentBlocks.count) {
         MKLogError(@"Wrong number of arguments, module = `%@`, method = `%@`, arguments = %@!",
                            self.method.cls, self.method.name, arguments);
@@ -57,10 +57,10 @@
         [invocation invokeWithTarget:module];
     } @catch (NSException *exception) {
         NSAssert(NO, @"Invoke module method failed!");
-        return NO;
+        return nil;
     }
     
-    return YES;
+    return invocation;
 }
 
 #pragma mark - Private Methods

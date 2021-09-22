@@ -78,18 +78,18 @@
         @"socket_method": methodName ?: @"",
     };
     
-    __block BOOL invokeResult = NO;
+    __block NSInvocation *invocation;
     [[MKPerfMonitor defaultMonitor] perfBlock:^{
         MKMethodInvoker *invoker = [moduleManager invokerWithModuleName:moduleName methodName:methodName];
-        invokeResult = [invoker invokeWithModule:bridgeModule arguments:[nativeArgs copy]];
+        invocation = [invoker invokeWithModule:bridgeModule arguments:[nativeArgs copy]];
     } withKey:PERF_KEY_SOCKET_INVOKE_NATIVE_METHOD extra:extra];
 
-    if (!invokeResult) {
+    if (!invocation) {
         MKLogFatal(@"[Native] invoke method failed, module = %@, method = %@, arguments = %@",
                    method.cls, method.name, nativeArgs);
     }
 
-    return invokeResult;
+    return invocation;
 }
 
 #pragma mark - Internal Methods

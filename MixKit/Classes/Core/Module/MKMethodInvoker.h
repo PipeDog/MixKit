@@ -22,8 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @brief 向 module 实例发送当前方法对应的消息
 /// @param module 遵守了 `MKBridgeModule` 协议的 module 实例
 /// @param arguments 参数列表
-/// @return 调用方法是否成功
-- (BOOL)invokeWithModule:(id)module arguments:(NSArray *)arguments;
+/// @return 如果调用方法成功，则返回 NSInvocation 实例，否则返回 nil，可以使用 - [NSInvocation getReturnValue:] 获取执行结果
+- (NSInvocation * _Nullable)invokeWithModule:(id)module arguments:(NSArray *)arguments;
 
 @end
 
