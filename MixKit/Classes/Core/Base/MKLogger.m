@@ -33,15 +33,32 @@
                 func:(const char *)func
                 line:(NSUInteger)line
               format:(NSString *)format, ... {
-    va_list args;
-    va_start(args, format);
-    NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
-    va_end(args);
+    @try {
+        va_list args;
+        va_start(args, format);
+        NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
+        va_end(args);
 
-    NSArray<id<MKLogListener>> *listeners = _listeners.allObjects;
-    for (id<MKLogListener> listener in listeners) {
-        [listener logMessage:message level:level file:file func:func line:line];
-    }    
+        NSArray<id<MKLogListener>> *listeners = _listeners.allObjects;
+        for (id<MKLogListener> listener in listeners) {
+            [listener logMessage:message level:level file:file func:func line:line];
+        }
+    } @catch (NSException *exception) {
+        NSLog(@"                                \
+              [Mix] Catch exception : {         \
+                name : %@,                      \
+                reason : %@,                    \
+                userInfo : %@,                  \
+                callStackReturnAddresses : %@,  \
+                callStackSymbols : %@,          \
+              }",
+              exception.name,
+              exception.reason,
+              exception.userInfo,
+              exception.callStackReturnAddresses,
+              exception.callStackSymbols
+        );
+    }
 }
 
 - (void)addListener:(id<MKLogListener>)listener {
