@@ -42,8 +42,13 @@ typedef NS_ENUM(NSUInteger, MKLogLevel) {
 
 @end
 
-#define LOG_MACRO(level, ...) \
-    [[MKLogger defaultLogger] logWithLevel:level file:__FILE__ func:__PRETTY_FUNCTION__ line:__LINE__ format:[NSString stringWithFormat:__VA_ARGS__]]
+#if DEBUG
+    #define LOG_MACRO(level, ...) \
+    [[MKLogger defaultLogger] logWithLevel:level file:__FILE__ func:__PRETTY_FUNCTION__ line:__LINE__ format:__VA_ARGS__]
+#else
+    #define LOG_MACRO(level, ...)
+#endif
+
 
 #define MKLogDebug(...)   LOG_MACRO(MKLogLevelDebug, __VA_ARGS__)
 #define MKLogInfo(...)    LOG_MACRO(MKLogLevelInfo, __VA_ARGS__)
