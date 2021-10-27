@@ -87,9 +87,10 @@
     if (!invocation) {
         MKLogFatal(@"[Native] invoke method failed, module = %@, method = %@, arguments = %@",
                    method.cls, method.name, nativeArgs);
+        return NO;
     }
 
-    return invocation;
+    return YES;
 }
 
 #pragma mark - Internal Methods

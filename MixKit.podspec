@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MixKit'
-  s.version          = '0.2.7'
+  s.version          = '0.2.8'
   s.summary          = 'MixKit is a lightweight hybrid framework'
 
 # This description is used to generate tags and improve search results.
