@@ -1,7 +1,17 @@
-class NativeModules {
+//
+// 注意：
+// js 侧业务层使用时，需要把 NativeModules 对象挂载到 window 下，确保客户端能够找到 NativeModules 对象，eg：
+//  ```
+//  import NativeModules from '@/utils/mix'
+//  window.NativeModules = NativeModules;
+//  ```
+//
+
+class MixMetaClass {
 
     constructor() {
         this._callbacksMap = {};
+        this._systemType = this._getSystemType();
         this._registerModules(this._getNativeConfig());
     }
 
@@ -74,7 +84,7 @@ class NativeModules {
             arguments: nativeArguments
         };
 
-        switch (this._getSystemType()) {
+        switch (this._systemType) {
             case '1': { // iOS
                 window.webkit.messageHandlers.MixKit.postMessage(message);
             } break;
@@ -121,4 +131,4 @@ class NativeModules {
 
 }
 
-NativeModules = new NativeModules();
+NativeModules = new MixMetaClass();
