@@ -152,6 +152,8 @@ static WKProcessPool *_MKGlobalProcessPool(void) {
             [jsScript appendFormat:@"'%@'", obj];
         } else if ([obj isKindOfClass:[NSNumber class]]) {
             [jsScript appendString:[obj description]];
+        } else if ([obj isKindOfClass:[NSNull class]]) {
+            [jsScript appendString:@"null"];
         } else {
             NSAssert(NO, @"Unsupport data type, obj's class is `%@`, obj = %@", [obj class], obj);
             [jsScript appendString:@"null"];
