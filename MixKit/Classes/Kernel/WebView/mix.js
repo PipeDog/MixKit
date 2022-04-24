@@ -46,19 +46,27 @@ class MixMetaClass {
             return console.error('ERROR: modulesMap is not an object!');
         }
         Object.keys(modulesMap).forEach(moduleName => {
-            const moduleConfig = modulesMap[moduleName];
-            const moduleMethods = moduleConfig.methods;
             if (!this[moduleName]) {
                 this[moduleName] = {};
             }
-            if (!Array.isArray(moduleMethods)) {
-                return;
+
+            const moduleConfig = modulesMap[moduleName];
+            
+            // Assign constants to module
+            const moduleConstants = moduleConfig.constants;
+            if (moduleConstants != null) {
+                Object.assign(this[moduleName], moduleConfig.constants);
             }
-            moduleMethods.forEach(moduleMethodName => {
-                this[moduleName][moduleMethodName] = (...args) => {
-                    this._callNativeFunction(moduleName, moduleMethodName, args);
-                };
-            });
+            
+            // Assign methods to module
+            const moduleMethods = moduleConfig.methods;
+            if (Array.isArray(moduleMethods)) {
+                moduleMethods.forEach(moduleMethodName => {
+                    this[moduleName][moduleMethodName] = (...args) => {
+                        this._callNativeFunction(moduleName, moduleMethodName, args);
+                    };
+                });
+            }
         });
     }
 

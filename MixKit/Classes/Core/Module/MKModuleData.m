@@ -9,6 +9,7 @@
 #import "MKModuleData.h"
 #import "MKModuleMethod.h"
 #import "MKDefines.h"
+#import "MKBridgeModule.h"
 #import <objc/message.h>
 
 @implementation MKModuleData
@@ -24,10 +25,17 @@
         _moduleName = [moduleName copy];
         _moduleClass = moduleClass;
         
+        [self loadConstants];
         [self loadMethods];
         [self builtExportDispatchTable];
     }
     return self;
+}
+
+- (void)loadConstants {
+    if ([_moduleClass respondsToSelector:@selector(constantsToExport)]) {
+        _constantsTable = [_moduleClass constantsToExport];
+    }
 }
 
 - (void)loadMethods {
@@ -84,6 +92,7 @@
 - (void)builtExportDispatchTable {
     _exportDispatchTable = @{
         @"methods": _methodMap.allKeys ?: @[],
+        @"constants": _constantsTable ?: @{},
     };
 }
 

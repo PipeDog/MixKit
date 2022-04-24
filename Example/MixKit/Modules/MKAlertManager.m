@@ -33,4 +33,10 @@ MK_EXPORT_METHOD(showAlert, showAlertWithParams:callback:)
     !callback ?: callback(@[resp]);
 }
 
++ (NSDictionary<NSString *,id> *)constantsToExport {
+    return @{
+        @"version": @"v1.0.0"
+    };
+}
+
 @end

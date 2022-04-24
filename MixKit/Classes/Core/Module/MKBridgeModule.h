@@ -57,6 +57,9 @@ static const MKBridgeModuleName __MK_exp_module_##modulename##__ = {#modulename,
 /// @brief 桥接模块将要被卸载销毁，在这个方法里做一些回收相关的操作
 - (void)unload;
 
+/// @brief 导出的常量表，允许 js 侧通过 NativeModules.ModuleName.ConstantName 直接对常量进行访问
++ (NSDictionary<NSString *, id> *)constantsToExport;
+
 @end
 
 
